@@ -1,0 +1,10 @@
+//
+// Prefix header for all source files of the 'AlipayWalletTweakF' target in the 'AlipayWalletTweakF' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import "/opt/theos/Prefix.pch"  //path/to/theos/Prefix.pch
+#import <UIKit/UIKit.h>
+#import "KNHook.h"
+#endif
