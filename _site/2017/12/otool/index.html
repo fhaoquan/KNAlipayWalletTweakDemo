@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html xmlns:wb="https://open.weibo.com/wb"><!-- 微博分享 在HTML标签中增加XML命名空间 -->
+
+
+  <head>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NXGLR9F');</script>
+<!-- End Google Tag Manager -->
+
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>otool</title>
+  <meta name="description" content="前言">
+  <meta name="author" content="zhangkn">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="otool">
+  <meta name="twitter:description" content="前言">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="otool">
+  <meta property="og:description" content="前言">
+  
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
+  <link href="/images/favicon.png" rel="shortcut icon" type="image/png">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="http://localhost:4000/2017/12/otool/">
+  <link rel="alternate" type="application/rss+xml" title="ReverseEngineering" href="http://localhost:4000/feed.xml">
+  <!--Google网站管理员工具的特定元标记  显示您网站的专用搜寻框，以及导向您网站的其他直接link  google的网站认证代码，也就是证明这个网站的所有者是你 获取以上代码到自己网站上，可以进入http://www.google.com/webmasters/tools/，将自己网站添加进google网站管理，有利于google的收录 
+
+  https://www.google.com/webmasters/verification/verification?hl=zh-CN&siteUrl=https://zhangkn.github.io/
+  -->
+  <meta name="google-site-verification" content="OEpYd_8xV1ri67dIngAWDEoYNeVBe_cMXrdBugMW5TI" />
+
+
+  <meta name="robots" content="all" />
+  <meta name="googlebot" content="all" />
+  <!-- baiducse-->
+
+  <meta name="baidu-site-verification" content="e7615181b86ddd4f27bb47ab18b021e4"/><!--  验证新域名 （该代码当日有效)-->
+
+<!-- 站点统计 两行代码 搞定计数 http://busuanzi.ibruce.info/-->
+  <script 
+  async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>  
+
+<!-- 百度统计 -->
+  
+  <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?e7f6d46714fcd28fb24be011203bee5f";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+  </script>
+  
+
+<!-- google 统计 -->
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-111030597-1', 'auto');
+      ga('send', 'pageview');
+  </script>
+  
+
+  
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-5776998009494842",
+    enable_page_level_ads: true
+  });
+</script>
+<!-- linkedin  http://www.linkedin.com/badges/profile/create?vanityname=iosre&trk=pprof-settings-badge 
+<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>-->
+
+
+
+</head>
+
+
+  <body>
+
+   <!-- Google Tag Manager (noscript) -->
+   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXGLR9F"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <span class="mobile btn-mobile-menu">        
+      <div class="nav_container">
+         <nav class="nav-menu-item" style = "float:right">
+            <i class="nav-menu-item">
+              <a href="/#blog" title="" class="blog-button">  博客主页
+              </a>
+            </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/archive" title="archive" class="btn-mobile-menu__icon">
+                      所有文章
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/tags" title="tags" class="btn-mobile-menu__icon">
+                      标签
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/about" title="about" class="btn-mobile-menu__icon">
+                      关于我
+                  </a>
+                </i>
+            
+          </nav>
+      </div>
+    </span>
+    <header class="panel-cover panel-cover--collapsed" style="background-image: url('/images/background-cover.jpg')" itemscope itemtype="https://schema.org/WPHeader">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+        <!-- 头像效果-start -->
+        <div class="ih-item circle effect right_to_left" itemprop="author" itemscope itemtype="https://schema.org/Person">            
+            <a href="/#blog" title="前往 ReverseEngineering 的主页" class="blog-button">
+                <div class="img" itemprop="image"><img src="/images/avatar.jpg" alt="img"></div>
+                <div class="info">
+                    <div class="info-back" >
+                        <h2  itemprop="name" > 
+                            
+                                zhangkn
+                            
+                        </h2>
+                        <p  itemprop="description">
+                           
+                                iOSre / Anti
+                            
+                        </p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- 头像效果-end -->
+        <h1 class="panel-cover__title panel-title" itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><a  itemprop="name" href="/#blog" title="link to homepage for ReverseEngineering" class="blog-button">ReverseEngineering</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">个人站</span>
+        
+        <hr class="panel-cover__divider" />
+        <p itemprop="description" itemscope itemtype="https://schema.org/Organization" class="panel-cover__description">Kunnan Zhang's Personal Website</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+        
+        
+
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">博客主页</a></li>
+                
+                  <li class="navigation__item"><a href="/archive" title="archive">所有文章</a></li>
+                
+                  <li class="navigation__item"><a href="/tags" title="tags">标签</a></li>
+                
+                  <li class="navigation__item"><a href="/about" title="about">关于我</a></li>
+                
+              </ul>
+            </nav>
+          </div>          
+        </div>
+
+
+
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="panel-cover--overlay cover-clear"></div>
+    
+  </div>
+
+ 
+
+  
+
+</header>
+
+
+    <div class="content-wrapper" >
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single" itemscope itemtype="https://schema.org/BlogPosting">
+  <link itemprop="mainEntityOfPage" href="https://zhangkn.github.io/archive/">
+  <header class="post-header" itemscope itemtype="https://schema.org/WPHeader">
+    <h1  itemprop="Headline" class="post-title">otool <!-- <div class="social-share"> -->
+
+   <ul class="share-buttons">
+    <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fzhangkn.github.io&quote=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&quote=' + encodeURIComponent(document.URL)); return false;"><img alt="Share on Facebook" src="/images/flat_web_icon_set/color/Facebook.png" /></a></li>
+    <li><a href="https://twitter.com/intent/tweet?source=https%3A%2F%2Fzhangkn.github.io&text=:%20https%3A%2F%2Fzhangkn.github.io&via=zhangkunnan" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20'  + encodeURIComponent(document.URL)); return false;"><img alt="Tweet" src="/images/flat_web_icon_set/color/Twitter.png" /></a></li>
+    <li><a href="https://plus.google.com/share?url=https%3A%2F%2Fzhangkn.github.io" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(document.URL)); return false;"><img alt="Share on Google+" src="/images/flat_web_icon_set/color/Google+.png" /></a></li>
+    <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fzhangkn.github.io&title=&summary=&source=https%3A%2F%2Fzhangkn.github.io" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(document.URL) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/flat_web_icon_set/color/LinkedIn.png" /></a></li>
+    <li><a href="mailto:zhang_kn@icloud.com?subject=&body=:%20https%3A%2F%2Fzhangkn.github.io" target="_blank" title="Send email" onclick="window.open('mailto:zhang_kn@icloud.com?subject=' + encodeURIComponent(document.title) + '&body=' +  encodeURIComponent(document.URL)); return false;"><img alt="Send email" src="/images/flat_web_icon_set/color/Email.png" /></a></li>
+
+    <!--<wb:share-button appkey="3233061066" addition="simple" type="button" ralateUid="2939794294"></wb:share-button>-->
+
+  </ul>
+<!-- </div> -->
+
+
+
+
+</h1> 
+    <div class="post-meta">
+      <img src="/images/calendar.png" width="20px"/> 
+      <time datetime="2017-12-25 00:00:00 +0800" itemprop="datePublished" class="post-meta__date date">2017-12-25</time>  
+         
+      <span id="busuanzi_container_page_pv"> | 阅读：<span id="busuanzi_value_page_pv"></span>次</span>
+
+    </p>
+
+
+    </div>
+
+    
+  </header>
+
+  <section class="post"  itemscope itemtype="https://schema.org/BlogPosting" >
+    <h3 id="前言">前言</h3>
+
+<p>使用<a href="https://github.com/opensource-apple/cctools/tree/master/otool">otool</a> 之前有必要对Mach-O 了解一下。可以使用Mach-O文件的可视化工具<a href="">MachOExplorer</a>进行查看。</p>
+
+<blockquote>
+  <ul>
+    <li>iPhone app 存放的路径
+      <div class="highlighter-rouge"><pre class="highlight"><code>#app 下载的app路径
+iPhone:~ root# ls -l  /var/mobile/Containers/Bundle/Application
+total 0
+drwxr-xr-x 3 mobile mobile 170 Dec 17 11:43 15912B70-1938-479E-A21E-624525AEC733/
+#Apple原生的应用路径
+lrwxr-xr-x 1 root admin 32 Apr 23  2017 /Applications -&gt; /var/stash/_.TvfJPY/Applications/
+iPhone:~ root# cd /var/stash/_.TvfJPY/Applications/
+iPhone:/var/stash/_.TvfJPY/Applications root# ls -l
+total 0
+drwxrwxr-x  3 root   admin   272 Sep 27  2014 AACredentialRecoveryDialog.app/
+drwxrwxr-x  3 root   admin   306 Sep 13  2014 AccountAuthenticationDialog.app/
+drwxrwxr-x 42 root   admin  1700 Oct 14  2014 AdSheet.app/
+</code></pre>
+      </div>
+    </li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>Universal Binary 通用二进制文件，也称胖二进制文件 Fat headers
+      <div class="highlighter-rouge"><pre class="highlight"><code>iPhone:/var/stash/_.TvfJPY/Applications/iRE.app root# otool -f iRE2
+Fat headers
+fat_magic 0xcafebabe
+nfat_arch 2
+architecture 0
+  cputype 12
+  cpusubtype 9
+  capabilities 0x0
+  offset 16384
+  size 67248
+  align 2^14 (16384)
+architecture 1
+  cputype 12
+  cpusubtype 11
+  capabilities 0x0
+  offset 98304
+  size 67264
+  align 2^14 (16384)
+</code></pre>
+      </div>
+    </li>
+    <li>Fat Header的数据结构在&lt;mach-o/fat.h&gt;头文件上有定义：
+      <div class="highlighter-rouge"><pre class="highlight"><code>#define FAT_MAGIC	0xcafebabe
+#define FAT_CIGAM	0xbebafeca	/* NXSwapLong(FAT_MAGIC) */
+struct fat_header {
+  uint32_t	magic;		/* FAT_MAGIC */
+  uint32_t	nfat_arch;	/* number of structs that follow */
+};
+//说明对应Mach-O文件大小、支持的CPU架构、偏移地址
+struct fat_arch {
+  cpu_type_t	cputype;	/* cpu specifier (int) */
+  cpu_subtype_t	cpusubtype;	/* machine specifier (int) */
+  uint32_t	offset;		/* file offset to this object file */
+  uint32_t	size;		/* size of this object file */
+  uint32_t	align;		/* alignment as a power of 2 */
+};
+</code></pre>
+      </div>
+      <p>从上面的例子，可以看出胖文件的fat_magic是0xcafebabe；顺便说一下64位的Mach-O文件的魔数值为#define MH_MAGIC_64 0xfeedfacf</p>
+    </li>
+    <li>file 就是根据Magic 来判断的
+      <div class="highlighter-rouge"><pre class="highlight"><code>devzkndeMacBook-Pro:knMoknKKKKKKokkn.decryptedV5.4.0 devzkn$ file knMoknKKKKKKokkn.decrypted.dec*
+knMoknKKKKKKokkn.decrypted.decrypted: Mach-O universal binary with 2 architectures: [arm_v7:Mach-O executable arm_v7] [arm64]
+knMoknKKKKKKokkn.decrypted.decrypted (for architecture armv7):	Mach-O executable arm_v7
+knMoknKKKKKKokkn.decrypted.decrypted (for architecture arm64):	Mach-O 64-bit executable arm64
+</code></pre>
+      </div>
+      <p><a href="https://zhangkn.github.io/2017/12/usefulCommand/">magic 存放的位置在/usr/share/file/magic，更多信息请看这里</a></p>
+    </li>
+  </ul>
+</blockquote>
+
+<h3 id="mach-o">Mach-O</h3>
+
+<p><img src="/images/posts/otool/mach0.png" alt="" /></p>
+
+<p>是Mach object文件格式的缩写，是一种可执行文件、目标代码、共享程序库、动态加载代码和核心DUMP;是a.out格式的一种替代;Mach-O提供更多的可扩展性和更快的符号表信息存取。</p>
+
+<blockquote>
+  <ul>
+    <li>#include &lt;mach-o/loader.h&gt;</li>
+  </ul>
+</blockquote>
+
+<h3 id="-l-print-the-load-commands">-l print the load commands</h3>
+
+<p>这些加载命令在Mach-O文件加载解析时，被内核加载器或者动态链接器调用，指导如何设置加载对应的二进制数据段；</p>
+
+<blockquote>
+  <ul>
+    <li>Load Commend的数据结构如下：
+      <div class="highlighter-rouge"><pre class="highlight"><code>struct load_command {
+  uint32_t cmd;		/* type of load command */
+  uint32_t cmdsize;	/* total size of command in bytes */
+};
+</code></pre>
+      </div>
+    </li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>otool -l MKNooJn.dec*
+      <div class="highlighter-rouge"><pre class="highlight"><code>devzkndeMacBook-Pro:knMoknKKKKKKokkn.decrypted.4.0 devzkn$ 
+knMoknKKKKKKokkn.decrypted.decrypted (architecture armv7):
+Mach header
+    magic cputype cpusubtype  caps    filetype ncmds sizeofcmds      flags
+ 0xfeedface      12          9  0x00           2    75       7500 0x00218085
+Load command 0
+    cmd LC_SEGMENT
+cmdsize 56
+segname __PAGEZERO
+ vmaddr 0x00000000
+ vmsize 0x00004000
+fileoff 0
+ filesize 0
+maxprot 0x00000000
+ initprot 0x00000000
+ nsects 0
+  flags 0x0
+</code></pre>
+      </div>
+      <p><img src="/images/posts/otool/loadc.png" alt="" /> 
+OS X/iOS发展到今天，已经有40多条加载命令，其中部分是由内核加载器直接使用，而其他则是由动态链接器处理。其中几个主要的Load Commend为LC_SEGMENT, LC_LOAD_DYLINKER, LC_UNIXTHREAD, LC_MAIN;<a href="https://zhangkn.github.io/2017/12/frida/">LC_SEGMENT 的数据结构的更多信息请查看这里</a></p>
+    </li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>LC_LOAD_DYLIB 、LC_LOAD_WEAK_DYLIB</li>
+  </ul>
+</blockquote>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>#define	LC_LOAD_DYLIB	0xc	/* load a dynamically linked shared library */
+/*
+ * load a dynamically linked shared library that is allowed to be missing
+ * (all symbols are weak imported).
+ */
+#define	LC_LOAD_WEAK_DYLIB (0x18 | LC_REQ_DYLD)
+</code></pre>
+</div>
+
+<h3 id="-h-print-the-mach-header">-h print the mach header</h3>
+
+<blockquote>
+  <ul>
+    <li>otool -h MKNooJn.dec*
+      <div class="highlighter-rouge"><pre class="highlight"><code>Mach header
+   magic cputype cpusubtype  caps    filetype ncmds sizeofcmds      flags
+ 0xfeedface      12          9  0x00           2    75       7500 0x00218085
+Mach header
+   magic cputype cpusubtype  caps    filetype ncmds sizeofcmds      flags
+ 0xfeedfacf 16777228          0  0x00           2    75       8344 0x00218085
+</code></pre>
+      </div>
+      <p><img src="/images/posts/otool/machh.png" alt="" /></p>
+    </li>
+  </ul>
+</blockquote>
+
+<h3 id="-t-print-the-text-section-disassemble-with--v">-t print the text section (disassemble with -v)</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>devzkndeMacBook-Pro:knMokssnossV5.4.0 devzkn$ otool -tv knMokssnoss.decrypted
+knMokssnoss.decrypted (architecture armv7):
+(__TEXT,__text) section
+000097b0  f0 b5 03 af   svcge #0x3b5f0
+llvm-objdump: warning: invalid instruction encoding
+</code></pre>
+</div>
+
+<blockquote>
+  <ul>
+    <li>__TEXT __cstring
+      <div class="highlighter-rouge"><pre class="highlight"><code>devzkndeMacBook-Pro:~ devzkn$ otool -sv __TEXT __cstring  /bin/ls
+/bin/ls:
+Contents of (__TEXT,__cstring) section
+</code></pre>
+      </div>
+    </li>
+  </ul>
+</blockquote>
+
+<h3 id="otool--o">otool -o</h3>
+<p>一个可执行文件包含多个段, 在每一个段内有一些片段。它们包含了可执行文件的不同的部分, 包含了部分的源码及DATA.</p>
+
+<blockquote>
+  <ul>
+    <li>otool -o MKNooJn.dec*
+      <div class="highlighter-rouge"><pre class="highlight"><code>devzkndeMacBook-Pro:knMoknKKKKKKokkn.decrypted.4.0 devzkn$ otool -o MKNooJn.dec* |grep password
+            name 0x82b11e passwordTextFieldFrame
+            name 0x82b135 passwordPlaceholder
+                name 0x82b11e passwordTextFieldFrame
+                name 0x82b135 passwordPlaceholder
+                name 0x82b11e passwordTextFieldFrame
+                name 0x82b135 passwordPlaceholder
+</code></pre>
+      </div>
+    </li>
+    <li>LC_SEGMENT(__TEXT) Number of Sections + LC_SEGMENT(__DATA) Number of Sections = Sections Number of sections
+<img src="/images/posts/otool/sections.png" alt="" /></li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>otool -s
+      <div class="highlighter-rouge"><pre class="highlight"><code>devzkndeMacBook-Pro:knMoknKKKKKKokkn.decrypted.4.0 devzkn$ otool -s __TEXT __const MKNooJn.dec*
+knMoknKKKKKKokkn.decrypted.decrypted (architecture armv7):
+Contents of (__TEXT,__const) section
+00951340	6f6f4d34 3141306e 61724734 6c416564 
+</code></pre>
+      </div>
+    </li>
+    <li>Raw segment data
+      <div class="highlighter-rouge"><pre class="highlight"><code>一般Mach-O文件有多个段(Segement)，段每个段有不同的功能;
+1). __PAGEZERO: 空指针陷阱段，映射到虚拟内存空间的第一页，用于捕捉对NULL指针的引用；&lt;br&gt;
+2). __TEXT: 包含了执行代码以及其他只读数据。该段数据的保护级别为：VM_PROT_READ（读）、VM_PROT_EXECUTE(执行)，防止在内存中被修改；&lt;br&gt;
+3). __DATA: 包含了程序数据，该段可写；&lt;br&gt;
+4). __OBJC: Objective-C运行时支持库；&lt;br&gt;
+5). __LINKEDIT: 链接器使用的符号以及其他表&lt;br&gt;
+一般的段又会按不同的功能划分为几个区（section）。
+</code></pre>
+      </div>
+    </li>
+    <li>section的命名规则
+      <div class="highlighter-rouge"><pre class="highlight"><code>命名规则标识段-区的表示方法为(__SEGMENT.__section)SEGMENT所有字母大写，加两个下横线作为前缀；section为小写，同样加两个下横线作为前缀。
+</code></pre>
+      </div>
+    </li>
+  </ul>
+</blockquote>
+
+<h3 id="sequence-of-steps-in-executing-an-image">Sequence of Steps in Executing an Image</h3>
+
+<blockquote>
+  <ul>
+    <li>flow_of_process_execution
+<img src="/images/posts/otool/flow_of_process_execution.png" alt="" />
+Flow of the various process execution functions in OS X 引用自《Mac OS X and iOS Internals》P519
+      <div class="highlighter-rouge"><pre class="highlight"><code>devzkndeMacBook-Pro:kern devzkn$ open /Users/devzkn/Downloads/kevinsoftware/ios-Reverse_Engineering/xnu-2782.1.97/bsd/kern/kern_exec.c
+</code></pre>
+      </div>
+    </li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>parse_machfile()
+      <div class="highlighter-rouge"><pre class="highlight"><code>(1)：解析线程状态，UUID和代码签名。相关命令为LC_UNIXTHREAD、LC_MAIN、LC_UUID、LC_CODE_SIGNATURE 
+(2)：解析代码段Segment。相关命令为LC_SEGMENT、LC_SEGMENT_64；
+(3)：解析动态链接库、加密信息。相关命令为：LC_ENCRYPTION_INFO、LC_ENCRYPTION_INFO_64、LC_LOAD_DYLINKER
+</code></pre>
+      </div>
+    </li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>load 函数是如何被调用的
+<img src="/images/posts/otool/load.png" alt="" />
+dyld 是Apple 的动态链接器；在 xnu 内核为程序启动做好准备后，就会将 PC 控制权交给 dyld 负责剩下的工作 （dyld 是运行在 用户态的， 这里由 内核态 切到了用户态）.</li>
+  </ul>
+</blockquote>
+
+<h3 id="参考">参考</h3>
+
+<ul>
+  <li><a href="http://www.desgard.com/iosre-1/">Mach-O 文件格式探索</a></li>
+  <li><a href="https://zhuanlan.zhihu.com/macos-sec?topic=%E8%BD%AF%E4%BB%B6%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B">macOS软件安全</a></li>
+  <li><a href="http://blog.sunnyxx.com/2014/08/30/objc-pre-main/">iOS 程序 main 函数之前发生了什么</a></li>
+  <li><a href="https://www.mikeash.com/pyblog/friday-qa-2012-11-09-dyld-dynamic-linking-on-os-x.html">friday-qa-2012-11-09-dyld-dynamic-linking-on-os-x.html</a></li>
+  <li><a href="https://github.com/opensource-apple/dyld">dyld</a></li>
+  <li><a href="https://developer.apple.com/library/content/documentation/Security/Conceptual/Security_Overview/Introduction/Introduction.html">Security_Overview</a></li>
+  <li><a href="https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/dyld.1.html">ManPages/man1/dyld.</a></li>
+  <li><a href="http://newosxbook.com/articles/DYLD.html">newosxbook</a></li>
+  <li>
+    <p><a href="https://developer.apple.com/library/content/documentation/DeveloperTools/Conceptual/MachOTopics/0-Introduction/introduction.html#//apple_ref/doc/uid/TP40001827-SW1">Mach-O Programming Topics</a></p>
+  </li>
+  <li><a href="https://makezl.github.io/2016/06/27/dylib/">App防止dylib注入</a></li>
+  <li><a href="http://oncenote.com/2015/06/01/How-App-Launch/">由App的启动说起</a></li>
+  <li><a href="http://opensource.apple.com/tarballs/xnu/xnu-2782.1.97.tar.gz">XNU版本为v2782.1.97</a></li>
+  <li><a href="http://blog.tingyun.com/web/article/detail/1341?spm=5176.100239.blogcont64288.7.IuEYnv">iOS系统分析（二）Mach-O二进制文件解析</a></li>
+  <li><a href="http://blog.tingyun.com/web/article/detail/1134">阅读内核准备知识</a></li>
+  <li><a href="http://blog.tingyun.com/web/article/detail/1347">Mach-O 的动态链接（Lazy Bind 机制）</a></li>
+</ul>
+
+<p>-<a href="https://github.com/bx/machO-tools">machO-tools</a></p>
+<ul>
+  <li><a href="https://pewpewthespells.com/re.html">Reverse Engineering Resources</a></li>
+  <li><a href="https://github.com/alibaba/iOSSecAudit">iOSSecAudit</a></li>
+  <li><a href="http://anyproxy.io/cn/">AnyProxy</a></li>
+  <li><a href="http://opensource.alibaba.com/">opensource</a></li>
+  <li><a href="http://blog.163.com/iswing@126/blog/static/166700480201129102259978/">otool  </a></li>
+  <li><a href="https://lldb.llvm.org/lldb-gdb.html">The LLDB Debugger</a></li>
+  <li><a href="http://armconverter.com/">在线ARM到十六进制转换器</a></li>
+</ul>
+
+<h3 id="附">附</h3>
+<blockquote>
+  <ul>
+    <li>app 的启动过程
+      <div class="highlighter-rouge"><pre class="highlight"><code>1、内核（OS Kernel）创建一个进程，分配虚拟的进程空间等等，加载动态链接器。
+2、通过动态链接器加载主二进制程序引用的库、绑定符号。
+3、启动程序
+</code></pre>
+      </div>
+    </li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>mach-o_execution:
+<img src="/images/posts/assemblyLanguage/mach-o_execution.png" alt="" /></li>
+    <li>Darwin体系
+      <div class="highlighter-rouge"><pre class="highlight"><code>Darwin是一种类似unix的操作系统，他的核心是XNU。
+XNU是一种混合式内核。结合了mach与BSD两种内核。
+Mach 是微内核实现。
+BSD 实现在Mach的上层，这一层提供的API 支持了POSIX标准模型。在XNU中主要实现了一些高级的API与模块。
+</code></pre>
+      </div>
+      <p><img src="/images/posts/otool/dr.jpg" alt="" /></p>
+    </li>
+  </ul>
+</blockquote>
+
+<h3 id="ios安全机制">iOS安全机制</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>- 代码签名:
+- 强制访问控制（Mandatory Access Control):系统检测安全属性以便确定一个用户是否有权访问该文件
+- sandbox: 沙盒在启动的时候可以设置运行的程序是否可以访问网络、文件、目录
+</code></pre>
+</div>
+<p><img src="/images/posts/otool/sandbox.jpg" alt="" /></p>
+
+
+    <!-- 转载声明的封装-->
+    <p itemprop="publisher">
+      转载请注明：<a  itemprop="author" target="_blank" href='http://localhost:4000'>张坤楠的博客</a> > <a target="_blank" href='/2017/12/otool/'>otool</a> 
+    </p>
+
+    <p>
+
+      在操作过程或者文章有问题的话欢迎在  <a target="_blank" href='/2017/12/otool/'>原文</a> 里提问或指正。
+    </p>
+
+  </section>
+</article>
+
+<section>
+
+            <div class="content-play">
+              <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang" title="打赏，支持一下">赞赏支持</a></p>
+              <div class="hide_box-play"></div>
+              <div class="shang_box-play">
+                <a class="shang_close-play" href="javascript:void(0)" onclick="dashangToggle()" title="关闭"><img src="/images/payimg/close.jpg" alt="取消" /></a>
+                <div class="shang_tit-play">
+                  <p>感谢您的支持，我会继续努力的!</p>
+                </div>
+                <div class="shang_payimg">
+                    <img src="/images/payimg/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+                </div>
+              <div class="shang_payimg">    
+                    <img src="/images/payimg/weipayimg.jpg" alt="扫码支持" title="扫一扫" />
+                </div>
+                <div class="pay_explain">扫码打赏，你说多少就多少</div>
+                <div class="shang_payselect">
+                  <div class="pay_item checked" data-id="alipay">
+                    <span class="pay_logo"><img src="/images/payimg/alipay.jpg" alt="支付宝" /></span>
+                  </div>
+                  <div class="pay_item" data-id="weipay">
+                    <span class="pay_logo"><img src="/images/payimg/wechat.jpg" alt="微信" /></span>
+                  </div>
+                </div>
+               
+              </div>
+            </div>
+            <script type="text/javascript">
+            function dashangToggle(){
+              $(".hide_box-play").fadeToggle();
+              $(".shang_box-play").fadeToggle();
+            }
+            </script>
+
+            <div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';"></div>
+
+            <style type="text/css">
+              .content-play{width:80%;margin-top: 20px;margin-bottom: 10px;height:40px;}
+              .hide_box-play{z-index:999;filter:alpha(opacity=50);background:#666;opacity: 0.5;-moz-opacity: 0.5;left:0;top:0;height:99%;width:100%;position:fixed;display:none;}
+              .shang_box-play{width:540px;height:540px;padding:10px;background-color:#fff;border-radius:10px;position:fixed;z-index:1000;left:50%;top:50%;margin-left:-280px;margin-top:-280px;border:1px dotted #dedede;display:none;}
+              .shang_box-play img{border:none;border-width:0;}
+              .dashang{display:block;width:100px;margin:5px auto;height:25px;line-height:25px;padding:10px;background-color:#E74851;color:#fff;text-align:center;text-decoration:none;border-radius:10px;font-weight:bold;font-size:16px;transition: all 0.3s;}
+              .dashang:hover{opacity:0.8;padding:15px;font-size:18px;}
+              .shang_close-play{float:right;display:inline-block;
+                margin-right: 10px;margin-top: 20px;
+              }
+              .shang_logo{display:block;text-align:center;margin:20px auto;}
+              .shang_tit-play{width: 100%;height: 75px;text-align: center;line-height: 66px;color: #a3a3a3;font-size: 16px;background: url('/images/payimg/cy-reward-title-bg.jpg');font-family: 'Microsoft YaHei';margin-top: 7px;margin-right:2px;}
+              .shang_tit-play p{color:#a3a3a3;text-align:center;font-size:16px;}
+              .shang_payimg{width:140px;padding:10px;padding-left: 80px; /*border:6px solid #EA5F00;**/margin:0 auto;border-radius:3px;height:140px;display:inline-block;}
+              .shang_payimg img{display:inline-block;margin-right:10px;float:left;text-align:center;width:140px;height:140px; }
+              .pay_explain{text-align:center;margin:10px auto;font-size:12px;color:#545454;}
+              .shang_payselect{text-align:center;margin:0 auto;margin-top:40px;cursor:pointer;height:60px;width:500px;margin-left:110px;}
+              .shang_payselect .pay_item{display:inline-block;margin-right:140px;float:left;}
+              .shang_info-play{clear:both;}
+              .shang_info-play p,.shang_info-play a{color:#C3C3C3;text-align:center;font-size:12px;text-decoration:none;line-height:2em;}
+            </style>
+
+       <ul class="pager">
+        
+        <li class="previous">
+            <a href="/2017/12/IDA/" data-toggle="tooltip" data-placement="top" title="IDA">上一篇：  <span>IDA</span>
+            </a>
+        </li>
+        
+        
+        <li class="next">
+            <a href="/2017/12/html/" data-toggle="tooltip" data-placement="top" title="html">下一篇：  <span>html</span>
+            </a>
+        </li>
+        
+    </ul>
+</section>
+
+<section class="post-comments">
+<!-- http://www.uyan.cc/getcode-->
+  
+    <div id="disqus_thread"></div>
+    <script>
+    
+    var disqus_config = function () {
+        this.page.url = "http://localhost:4000/2017/12/otool/";
+        this.page.identifier = "/2017/12/otool/";
+    };
+    var disqus_shortname = 'iosre';
+    
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>要查看<a href="http://disqus.com/?ref_noscript"> Disqus </a>评论，请启用 JavaScript</noscript>
+    <!--<script id="dsq-count-scr" src="//iosre.disqus.com/count.js" async></script>-->
+  
+
+</section>
+
+<section class="post-gitcomments">
+    <!-- http://www.uyan.cc/getcode-->
+    
+
+    <div id="container"></div>
+    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+    <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+  id: '/2017/12/otool/', // 可选。默认为 location.href
+  owner: 'zhangkn',
+  repo: 'githubpages-comments',
+  oauth: {
+    client_id: 'eb8baa6afd018fb78abf',
+    client_secret: 'c7b3a1a69585b929f76b9b849a5266c6198d8498',
+},
+})
+        gitment.render('container')
+    </script>
+
+    
+
+</section>
+<section class="read-more">
+   
+   
+   <div class="read-more-item">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h2 class="post-list__post-title post-title"><a href="/2017/12/html/" title="link to html">html</a></h2>
+       <p class="excerpt">前言HTML（超文本标记语言——HyperText Markup Language）是构成Web世界的基石。它描述并定义了一个网页的内容。其他除HTML以外的技术则通常用来描述一个网页的表现／展示效果（CSS）或功能（JavaScript）。内联元素和块元素的特点      block（块）元素的特点      ①总是在新行上开始；②高度，行高以及外边距和内边距都可控制；③宽度是它的容器的100%，除非设定一个宽度。④它可以容纳内联元素和其他块元素              inline元...&hellip;</p>
+       <div class="post-list__meta"><time datetime="2017-12-26 00:00:00 +0800" class="post-list__meta--date date">2017-12-26</time> &#8226; <span class="post-list__meta--tags tags">html</span><a class="btn-border-small" href=/2017/12/html/>继续阅读</a></div>
+   </div>
+   
+   
+   
+   
+   <div class="read-more-item">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h2 class="post-list__post-title post-title"><a href="/2017/12/IDA/" title="link to IDA">IDA</a></h2>
+       <p class="excerpt">前言Interactive Disassembler Professional(“交互式反汇编器专业版”)  共有（File , Edit , Jump , Search , View , Debugger , Options , Windows , Help）9个模块.“IDA 目录的结构”      /Applications/IDA Pro 7.0/ida64.app/Contents/MacOS      /Applications/IDA Pro 7.0/ida64.app/Co...&hellip;</p>
+       <div class="post-list__meta"><time datetime="2017-12-25 00:00:00 +0800" class="post-list__meta--date date">2017-12-25</time> &#8226; <span class="post-list__meta--tags tags">iOSre</span><a class="btn-border-small" href=/2017/12/IDA/>继续阅读</a></div>
+   </div>
+   
+</section>
+
+
+
+            <section class="footer">
+    <footer>
+        <div class = "footer_div">  
+        <nav class="cover-navigation navigation--social">
+          <ul class="navigation">
+
+          
+          <!-- Weibo -->
+          <li class="navigation__item_social">
+            <a href="http://weibo.com/602056727" title="@602056727 的微博" target="_blank">
+              <i class='social fa fa-weibo fa-2x'></i>
+              <span class="label">Weibo</span>
+            </a>
+          </li>
+          
+
+          
+          <!-- Github -->
+          <li class="navigation__item_social">
+            <a href="https://github.com/zhangkn" title="@zhangkn 的 Github" target="_blank">
+              <i class='social fa fa-github fa-2x'></i>
+              <span class="label">Github</span>
+            </a>
+          </li>
+          
+          
+          
+          <!-- Twitter -->
+          <li class="navigation__item_social">
+            <a href="http://twitter.com/zhangkunnan" title="@zhangkunnan" target="_blank">
+              <i class='social fa fa-twitter fa-2x'></i>
+              <span class="label">Twitter</span>
+            </a>
+          </li>
+          
+
+          
+          <!-- Google Plus -->
+          <li class="navigation__item_social">
+            <a href="https://plus.google.com/114188876079505437133" rel="author" title="Google+" target="_blank">
+              <i class='social fa fa-google-plus-square fa-2x'></i>
+              <span class="label">Google Plus</span>
+            </a>
+          </li>
+          
+
+          <!-- RSS -->
+          <li class="navigation__item_social">
+            <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+              <i class='social fa fa-rss fa-2x'></i>
+              <span class="label">RSS</span>
+            </a>
+          </li>
+
+          
+          <!-- Email -->
+          <li class="navigation__item_social">
+            <a href="mailto:zhang_kn@icloud.com" title="Contact me">
+              <i class='social fa fa-envelope fa-2x'></i>
+              <span class="label">Email</span>
+            </a>
+          </li>
+          
+
+
+         
+
+          <!-- linkedin  medium start 
+        <div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="zh_CN" data-type="vertical" data-theme="light" data-vanity="iosre"><a class="LI-simple-link" href='https://cn.linkedin.com/in/iosre?trk=profile-badge'>张坤楠</a></div>
+linkedin  medium end  -->
+
+
+
+
+
+          </ul>
+        </nav>
+
+        </div>
+
+        <div class = "footer_div"  itemscope itemtype="https://schema.org/BlogPosting" >  
+           <p class="copyright text-muted"  itemprop="author">
+
+            Copyright &copy; ReverseEngineering 2018 Theme by <a href="http://localhost:4000">kn</a> |
+            <iframe  itemprop="image"
+                style="margin-left: 2px; margin-bottom:-5px;"
+                frameborder="0" scrolling="0" width="170px" height="20px"
+                src="https://ghbtns.com/github-btn.html?user=zhangkn&repo=zhangkn.github.io&type=star&count=true" >
+            </iframe>
+
+            <iframe 
+            style="margin-left: 2px; margin-bottom:-5px;"
+            src="https://ghbtns.com/github-btn.html?user=zhangkn&repo=zhangkn.github.io&type=watch&count=true&v=2" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+
+            <iframe
+            style="margin-left: 2px; margin-bottom:-5px;"
+             src="https://ghbtns.com/github-btn.html?user=zhangkn&type=follow&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+
+             <wb:follow-button uid="2939794294" type="red_2" width="136" height="24" scrolling="0"  style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" ></wb:follow-button>
+
+             <iframe width="100%" height="500"  frameborder="0" scrolling="no" src="https://widget.weibo.com/livestream/listlive.php?language=zh_cn&width=0&height=500&uid=5934185471&skin=1&refer=1&appkey=3233061066&pic=0&titlebar=1&border=1&publish=1&atalk=1&recomm=0&at=0&atopic=iOS%E9%80%86%E5%90%91&ptopic=iOS%E9%80%86%E5%90%91&dpc=1"></iframe>
+
+
+            
+
+
+            </p>
+        	<div align="right">
+    			<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+          <!-- 访问统计 -->
+          <span id="busuanzi_container_site_pv">
+            本站总访问量
+            <span id="busuanzi_value_site_pv"></span>次
+          </span>
+
+        </div>
+        <div>
+
+
+
+    </footer>
+</section>
+
+                
+	<!-- google搜索  content-play -->
+<section class="ces">
+<!--  自己申请的ces-->
+<!--<script> 
+  (function() {
+    var cx = '013483152311799686538:__rsnolmpao';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+-->
+<!-- ad ces-->
+<script>
+  (function() {
+    var cx = 'partner-pub-5776998009494842:2886811629';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:searchbox-only></gcse:searchbox-only>
+
+
+<script type="text/javascript" src="https://www.google.com/cse/query_renderer.js"></script>
+<div id="queries"></div>
+<script src="https://www.google.com/cse/api/partner-pub-5776998009494842/cse/2886811629/queries/js?oe=UTF-8&amp;callback=(new+PopularQueryRenderer(document.getElementById(%22queries%22))).render"></script>
+
+
+
+<nav class="animated">
+  <ul>
+  
+    <li>
+      <form class="search" method="get" action="https://www.google.com/search">
+        <div>
+          <input type="text" id="search" name="q" placeholder="站内搜索">
+        </div>
+      </form>
+    </li>
+</nav>
+
+
+
+
+
+</section>
+
+<!--  20171212 新增-->
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+
+<script type="text/javascript" src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+ done = false;
+ $('form.search').on('submit', function (event) {
+    if (false === done) {
+      event.preventDefault();
+      var orgVal = $(this).find('#search').val();
+      $(this).find('#search').val('site:http://localhost:4000 ' + orgVal);
+      done = true;
+      $(this).submit();
+    }
+  });
+
+});
+
+</script>
+<!-- 微博 分享按钮-->
+<script src="https://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+
+
+
+    
+<div class="bdsharebuttonbox" data-tag="share_1">
+	<a class="bds_mshare" data-cmd="mshare"></a>
+	<a class="bds_qzone" data-cmd="qzone" href="#"></a>
+	<a class="bds_tsina" data-cmd="tsina"></a>
+	<a class="bds_baidu" data-cmd="baidu"></a>
+	<a class="bds_renren" data-cmd="renren"></a>
+	<a class="bds_tqq" data-cmd="tqq"></a>
+	<a class="bds_more" data-cmd="more">更多</a>
+	<a class="bds_count" data-cmd="count"></a>
+</div>
+<script>window._bd_share_config={selectShare:[{"bdselectMiniList":['qzone','tqq','twi','bdxc','tqf','fbook','weixin']}],"common":{"bdSnsKey":{"tsina":"apachecn","tqq":"apachecn","t163":"apachecn","tsohu":"apachecn"},"bdDesc":"otool 原文:","bdText":"otool 原文：","bdMini":"2","bdMiniList":["mshare","sqq","weixin","tsina","qzone","tqq","youdao","evernotecn","fbook","twi","linkedin","douban","bdysc","tieba","ty","mail"],"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"6","bdPos":"right","bdTop":"277"},"image":{"viewList":["qzone","tsina","tqq","twi","weixin","fbook"],"viewText":"分享到：","viewSize":"16"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+    
+  </body>
+
+</html>

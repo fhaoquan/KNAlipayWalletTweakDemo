@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html xmlns:wb="https://open.weibo.com/wb"><!-- 微博分享 在HTML标签中增加XML命名空间 -->
+
+
+  <head>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NXGLR9F');</script>
+<!-- End Google Tag Manager -->
+
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>Inter-processCommunicationByRrocketbootstrap</title>
+  <meta name="description" content="前言">
+  <meta name="author" content="zhangkn">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Inter-processCommunicationByRrocketbootstrap">
+  <meta name="twitter:description" content="前言">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Inter-processCommunicationByRrocketbootstrap">
+  <meta property="og:description" content="前言">
+  
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
+  <link href="/images/favicon.png" rel="shortcut icon" type="image/png">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="http://localhost:4000/2018/01/Inter-processCommunicationByRrocketbootstrap/">
+  <link rel="alternate" type="application/rss+xml" title="ReverseEngineering" href="http://localhost:4000/feed.xml">
+  <!--Google网站管理员工具的特定元标记  显示您网站的专用搜寻框，以及导向您网站的其他直接link  google的网站认证代码，也就是证明这个网站的所有者是你 获取以上代码到自己网站上，可以进入http://www.google.com/webmasters/tools/，将自己网站添加进google网站管理，有利于google的收录 
+
+  https://www.google.com/webmasters/verification/verification?hl=zh-CN&siteUrl=https://zhangkn.github.io/
+  -->
+  <meta name="google-site-verification" content="OEpYd_8xV1ri67dIngAWDEoYNeVBe_cMXrdBugMW5TI" />
+
+
+  <meta name="robots" content="all" />
+  <meta name="googlebot" content="all" />
+  <!-- baiducse-->
+
+  <meta name="baidu-site-verification" content="e7615181b86ddd4f27bb47ab18b021e4"/><!--  验证新域名 （该代码当日有效)-->
+
+<!-- 站点统计 两行代码 搞定计数 http://busuanzi.ibruce.info/-->
+  <script 
+  async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>  
+
+<!-- 百度统计 -->
+  
+  <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?e7f6d46714fcd28fb24be011203bee5f";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+  </script>
+  
+
+<!-- google 统计 -->
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-111030597-1', 'auto');
+      ga('send', 'pageview');
+  </script>
+  
+
+  
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-5776998009494842",
+    enable_page_level_ads: true
+  });
+</script>
+<!-- linkedin  http://www.linkedin.com/badges/profile/create?vanityname=iosre&trk=pprof-settings-badge 
+<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>-->
+
+
+
+</head>
+
+
+  <body>
+
+   <!-- Google Tag Manager (noscript) -->
+   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXGLR9F"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <span class="mobile btn-mobile-menu">        
+      <div class="nav_container">
+         <nav class="nav-menu-item" style = "float:right">
+            <i class="nav-menu-item">
+              <a href="/#blog" title="" class="blog-button">  博客主页
+              </a>
+            </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/archive" title="archive" class="btn-mobile-menu__icon">
+                      所有文章
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/tags" title="tags" class="btn-mobile-menu__icon">
+                      标签
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/about" title="about" class="btn-mobile-menu__icon">
+                      关于我
+                  </a>
+                </i>
+            
+          </nav>
+      </div>
+    </span>
+    <header class="panel-cover panel-cover--collapsed" style="background-image: url('/images/background-cover.jpg')" itemscope itemtype="https://schema.org/WPHeader">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+        <!-- 头像效果-start -->
+        <div class="ih-item circle effect right_to_left" itemprop="author" itemscope itemtype="https://schema.org/Person">            
+            <a href="/#blog" title="前往 ReverseEngineering 的主页" class="blog-button">
+                <div class="img" itemprop="image"><img src="/images/avatar.jpg" alt="img"></div>
+                <div class="info">
+                    <div class="info-back" >
+                        <h2  itemprop="name" > 
+                            
+                                zhangkn
+                            
+                        </h2>
+                        <p  itemprop="description">
+                           
+                                iOSre / Anti
+                            
+                        </p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- 头像效果-end -->
+        <h1 class="panel-cover__title panel-title" itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><a  itemprop="name" href="/#blog" title="link to homepage for ReverseEngineering" class="blog-button">ReverseEngineering</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">个人站</span>
+        
+        <hr class="panel-cover__divider" />
+        <p itemprop="description" itemscope itemtype="https://schema.org/Organization" class="panel-cover__description">Kunnan Zhang's Personal Website</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+        
+        
+
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">博客主页</a></li>
+                
+                  <li class="navigation__item"><a href="/archive" title="archive">所有文章</a></li>
+                
+                  <li class="navigation__item"><a href="/tags" title="tags">标签</a></li>
+                
+                  <li class="navigation__item"><a href="/about" title="about">关于我</a></li>
+                
+              </ul>
+            </nav>
+          </div>          
+        </div>
+
+
+
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="panel-cover--overlay cover-clear"></div>
+    
+  </div>
+
+ 
+
+  
+
+</header>
+
+
+    <div class="content-wrapper" >
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single" itemscope itemtype="https://schema.org/BlogPosting">
+  <link itemprop="mainEntityOfPage" href="https://zhangkn.github.io/archive/">
+  <header class="post-header" itemscope itemtype="https://schema.org/WPHeader">
+    <h1  itemprop="Headline" class="post-title">Inter-processCommunicationByRrocketbootstrap <!-- <div class="social-share"> -->
+
+   <ul class="share-buttons">
+    <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fzhangkn.github.io&quote=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&quote=' + encodeURIComponent(document.URL)); return false;"><img alt="Share on Facebook" src="/images/flat_web_icon_set/color/Facebook.png" /></a></li>
+    <li><a href="https://twitter.com/intent/tweet?source=https%3A%2F%2Fzhangkn.github.io&text=:%20https%3A%2F%2Fzhangkn.github.io&via=zhangkunnan" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20'  + encodeURIComponent(document.URL)); return false;"><img alt="Tweet" src="/images/flat_web_icon_set/color/Twitter.png" /></a></li>
+    <li><a href="https://plus.google.com/share?url=https%3A%2F%2Fzhangkn.github.io" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(document.URL)); return false;"><img alt="Share on Google+" src="/images/flat_web_icon_set/color/Google+.png" /></a></li>
+    <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fzhangkn.github.io&title=&summary=&source=https%3A%2F%2Fzhangkn.github.io" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(document.URL) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/flat_web_icon_set/color/LinkedIn.png" /></a></li>
+    <li><a href="mailto:zhang_kn@icloud.com?subject=&body=:%20https%3A%2F%2Fzhangkn.github.io" target="_blank" title="Send email" onclick="window.open('mailto:zhang_kn@icloud.com?subject=' + encodeURIComponent(document.title) + '&body=' +  encodeURIComponent(document.URL)); return false;"><img alt="Send email" src="/images/flat_web_icon_set/color/Email.png" /></a></li>
+
+    <!--<wb:share-button appkey="3233061066" addition="simple" type="button" ralateUid="2939794294"></wb:share-button>-->
+
+  </ul>
+<!-- </div> -->
+
+
+
+
+</h1> 
+    <div class="post-meta">
+      <img src="/images/calendar.png" width="20px"/> 
+      <time datetime="2018-01-10 00:00:00 +0800" itemprop="datePublished" class="post-meta__date date">2018-01-10</time>  
+         
+      <span id="busuanzi_container_page_pv"> | 阅读：<span id="busuanzi_value_page_pv"></span>次</span>
+
+    </p>
+
+
+    </div>
+
+    
+  </header>
+
+  <section class="post"  itemscope itemtype="https://schema.org/BlogPosting" >
+    <h3 id="前言">前言</h3>
+
+<p>These are some of the existing methods to implement IPC on iOS:</p>
+<ul>
+  <li><a href="http://blog.csdn.net/z929118967/article/details/77449097">URL Scheme</a></li>
+  <li>[Keychain]</li>
+  <li>[UIDocumentInteractionController]</li>
+  <li><a href="https://github.com/zhangkn/MPProcessMessage">利用socket进行本地通信</a></li>
+  <li>[Mach Ports]</li>
+  <li>[Pasteboard]</li>
+  <li>[AppleEvents &amp; AppleScript]</li>
+  <li>[Distributed Objects]</li>
+  <li><a href="https://developer.apple.com/library/content/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingXPCServices.html">XPC</a></li>
+  <li><a href="http://iphonedevwiki.net/index.php/Notifications">Notifications</a></li>
+  <li><a href="http://iphonedevwiki.net/index.php/Libobjcipc">libobjcipc</a></li>
+  <li><a href="https://github.com/rpetrich/LightMessaging">LightMessaging</a></li>
+</ul>
+
+<blockquote>
+  <ul>
+    <li>Community Libraries to Help</li>
+  </ul>
+</blockquote>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>1、RocketBootstrap： Service registration and lookup system for iOS 
+2、OBJCIPC ：High-level API for hosting services inside apps (by Alan Yip/a1anyip)
+3、LightMessaging： Header-only library for simple IPC
+</code></pre>
+</div>
+
+<blockquote>
+  <ul>
+    <li>本文重点讲解 RocketBootstrap的两种包装方式：CFMessagePort、CPDistributedMessagingCenter
+      <div class="highlighter-rouge"><pre class="highlight"><code>Easy to use wrappers for CFMessagePort and CPDistributedMessagingCenter(todo: XPC) 
+</code></pre>
+      </div>
+    </li>
+  </ul>
+</blockquote>
+
+<h3 id="uipasteboardnspasteboard">UIPasteboard\NSPasteboard</h3>
+
+<blockquote>
+  <ul>
+    <li><a href="https://github.com/zhangkn/OpenUDID/blob/master/OpenUDID.m">OpenUDID的使用例子</a>
+      <div class="highlighter-rouge"><pre class="highlight"><code>#if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
+#import &lt;UIKit/UIPasteboard.h&gt;
+#import &lt;UIKit/UIKit.h&gt;
+#else
+#import &lt;AppKit/NSPasteboard.h&gt;
+#endif
+#if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
+      UIPasteboard* slotPB = [UIPasteboard pasteboardWithName:slotPBid create:NO];
+#else
+      NSPasteboard* slotPB = [NSPasteboard pasteboardWithName:slotPBid];
+#endif
+</code></pre>
+      </div>
+    </li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li><a href="https://github.com/zhangkn/KNcodeSnippets/blob/master/KNcodeSnippets/KNUIPasteboardIPC.m">//pasteboardWithName 方法的使用</a></li>
+  </ul>
+</blockquote>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>/**
+ 应用级别的，数据在属于自己的应用内部共享；
+ (默认情况下是不会把数据写进沙盒的，也就是说（复制、剪切）粘贴内容会因为应用的退出而销毁掉，我们可以设置相关属性 persistent值为 YES让其进行数据的持久化存储起来)
+ 
+ Ps：例如 persistent 是否进行数据持久化 还有 changeCount 改变次数（剪切板）系统重启方才重新计数
+ 
+ */
+- (NSObject *)model{
+    
+    if (_model == nil) {
+        
+        NSString *contentUserID =@"";
+        UIPasteboard *pasteboardUserID = [UIPasteboard pasteboardWithName:KNpasteboardWithNameKeyUserID create:NO];
+        
+        if (pasteboardUserID){
+            contentUserID = pasteboardUserID.string;////获取内容
+        }
+        
+        _model = [[NSObject alloc]init];
+//        _model.UserId =contentUserID;
+        
+        
+    }
+    return _model;
+}
+</code></pre>
+</div>
+
+<h3 id="lightmessaging"><a href="http://iphonedevwiki.net/index.php/LightMessaging">LightMessaging</a></h3>
+
+<blockquote>
+  <ul>
+    <li>feature</li>
+  </ul>
+</blockquote>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> 1、Mid-level API,
+ 2、Message-oriented 
+ 3、Zero copy, for certain message types
+ 4、No additional cost over standard mach calls 
+ 5、Easy integration with RocketBootstrap 
+ 6、No package dependencies
+
+</code></pre>
+</div>
+<blockquote>
+  <ul>
+    <li>using</li>
+  </ul>
+</blockquote>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> 1、Start services with LMStartService
+
+ 2、Send messages with LMConnectionSendTwoWay (and friends)
+
+ 3、Send replies with LMSendReply (and friends)
+
+ 4、Bring your own security checks still ：Community developers, your input on API please!
+
+
+</code></pre>
+</div>
+
+<h3 id="librocketbootstrap"><a href="http://iphonedevwiki.net/index.php/RocketBootstrap#How_to_use_this_library">librocketbootstrap</a></h3>
+
+<blockquote>
+  <ul>
+    <li>feature
+      <div class="highlighter-rouge"><pre class="highlight"><code>1、Uses iOS7’s security model: Privileged processes can register, any process can look up 
+2、Works with existing mach-based IPC mechanisms
+3、Similar to Apple’s bootstrap APIs: bootstrap_look_up becomes rocketbootstrap_look_up
+bootstrap_register becomes rocketbootstrap_register
+</code></pre>
+      </div>
+      <p><img src="/images/posts/Inter-processCommunicationByRrocketbootstrap/bootstrap_look_up.png" alt="" /></p>
+    </li>
+  </ul>
+</blockquote>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>4、Easy to use wrappers for CFMessagePort and CPDistributedMessagingCenter(todo: XPC) 
+5、Bring your own security model by using audit_token_to_au32 to know who’s calling
+6、Requires package dependency, commonly installed on users’ devices
+</code></pre>
+</div>
+
+<blockquote>
+  <ul>
+    <li>本文重点讲解 RocketBootstrap的两种包装方式：CFMessagePort、CPDistributedMessagingCenter
+      <div class="highlighter-rouge"><pre class="highlight"><code>Easy to use wrappers for CFMessagePort and CPDistributedMessagingCenter(todo: XPC) 
+</code></pre>
+      </div>
+    </li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li><a href="https://github.com/zhangkn/RocketBootstrap/blob/ios7/tests/tests.m">CFMessagePort: Only supports synchronous use</a></li>
+  </ul>
+</blockquote>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>//registerMsgCenter 基本可以解决双向通信；例子：避免重启其他进程从sb获取源地址信息的变更。 守护进行都可以注册成为服务
++ (kern_return_t)rockettest_messageport_server
+{
+    static CFMessagePortRef messagePort;//
+    if (messagePort)
+        return 0;
+    messagePort = CFMessagePortCreateLocal(kCFAllocatorDefault, CFSTR("rockettest_messageport"), messagePortCallback, NULL, NULL);//CFSTR("rockettest_messageport")即server key,
+    CFRunLoopSourceRef source = CFMessagePortCreateRunLoopSource(kCFAllocatorDefault, messagePort, 0);
+    CFRunLoopAddSource(CFRunLoopGetCurrent(), source, kCFRunLoopCommonModes);
+    CFRunLoopAddSource(CFRunLoopGetCurrent(), source, (CFStringRef)UITrackingRunLoopMode);
+    return rocketbootstrap_cfmessageportexposelocal(messagePort);
+}
+typedef CFDataRef (*CFMessagePortCallBack)(CFMessagePortRef local, SInt32 msgid, CFDataRef data, void *info);
+//回调的定义
+static CFDataRef messagePortCallback(CFMessagePortRef local, SInt32 msgid, CFDataRef data, void *info)
+{
+    NSLog(@"rockettest_messageport_server: received %@", data);
+    return CFDataCreate(kCFAllocatorDefault, (const UInt8 *)"bootstrap", 9);
+}
+</code></pre>
+</div>
+<ul>
+  <li><a href="http://iphonedevwiki.net/index.php/RocketBootstrap#CFMessagePort_Example">CFMessagePort_Example</a></li>
+</ul>
+
+<blockquote>
+  <ul>
+    <li><a href="http://iphonedevwiki.net/index.php/RocketBootstrap#CPDistributedMessagingCenter_Example">CPDistributedMessagingCenter: Asynchronous, if you go through the trouble</a></li>
+  </ul>
+</blockquote>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Private API, does change between iOS versions  ： 目前发现这种方式只能在SpringBoard   注册为服务端，处理消息，；进程间其实是单向通信;  http://iphonedevwiki.net/index.php/RocketBootstrap#LightMessaging_example
+#TweakDemo.xm  SpringBoard  接受消息
+#import "rocketbootstrap.h"
+
+#define kXPCCenterNameKey  @"kXPCCenterNameKey_83641"
+
+%hook SpringBoard
+- (void)applicationDidFinishLaunching:(id)application {
+   %orig;
+   CPDistributedMessagingCenter *c = [%c(CPDistributedMessagingCenter) centerNamed:kXPCCenterNameKey];
+   rocketbootstrap_distributedmessagingcenter_apply(c);
+   [c runServerOnCurrentThread];
+   [c registerForMessageName:@"myMessageName" target:self selector:@selector(handleMessage:withUserInfo:)];
+   NSLog(@"注册监听 start");
+}
+
+%new
+- (void)handleMessage:(NSString *)name withUserInfo:(NSDictionary *)userInfo {
+   NSLog(@"handleMessage withUserInfo:%@",userInfo);
+   //TODO:something
+}
+
+%end
+//在需要发送的地方(沙盒 app )，如此这般的写： 
+%hook SomeClass
+
+-(void)someMethod{
+   %orig;
+    NSMutableDictionary *userInfo = [@{} mutableCopy];
+    [userInfo setObject:@"123" forKey:@"arg001"];
+    [userInfo setObject:@"456" forKey:@"arg002"];
+    NSLog(@"发送: %@=%@",kXPCCenterNameKey,userInfo);
+    CPDistributedMessagingCenter *c = [%c(CPDistributedMessagingCenter) centerNamed:kXPCCenterNameKey];
+    rocketbootstrap_distributedmessagingcenter_apply(c);
+    [c sendMessageName:@"myMessageName" userInfo:userInfo];
+}
+%end
+</code></pre>
+</div>
+
+<blockquote>
+  <ul>
+    <li>获取librocketbootstrap ：Install this from Cydia 直接搜索rocketbootstrap安装即可</li>
+  </ul>
+</blockquote>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>iPhone:/var/log root# ls -l /usr/lib/librocketbootstrap.dylib
+-rwxr-xr-x 1 root wheel 221776 Feb  6  2017 /usr/lib/librocketbootstrap.dylib*
+
+/Library/LaunchDaemons/com.rpetrich.rocketbootstrapd.plist
+/usr/libexec/rocketd
+launchctl load  /Library/LaunchDaemons/com.rpetrich.rocketbootstrapd.plist
+launchctl unload /Library/LaunchDaemons/com.rpetrich.rocketbootstrapd.plist
+</code></pre>
+</div>
+
+<h3 id="ipc"><a href="http://iphonedevwiki.net/index.php/IPC">IPC</a></h3>
+<p>allows processes to send each other messages and data</p>
+
+<h3 id="libobjcipc"><a href="http://iphonedevwiki.net/index.php/Libobjcipc">libobjcipc</a></h3>
+
+<blockquote>
+  <ul>
+    <li><a href="http://iphonedevwiki.net/index.php/Libobjcipc">feature</a>
+      <div class="highlighter-rouge"><pre class="highlight"><code>• High level API provides service lookup and IPC, easy to use
+• Background-launches and fakes app lifecycle for you 
+• Message-oriented
+• Mostly asynchronous
+• “Open” security model 
+• Requires separate package dependency, but very small
+• Simple Objective-C APIs: 
+Register using --registerIncomingMessageFromAppHandlerForMessageName:handler:
+Send using -- sendMessageToAppWithIdentifier:messageName:dictionary:replyHandler:  
+• Similar patterns for App to SpringBoard
+</code></pre>
+      </div>
+    </li>
+  </ul>
+</blockquote>
+
+<h3 id="xpc"><a href="https://developer.apple.com/library/content/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingXPCServices.html">XPC</a></h3>
+
+<p>XPC can be accessed through either the libxpc C API, or the NSXPCConnection Objective-C API.</p>
+
+<blockquote>
+  <ul>
+    <li>feature
+      <div class="highlighter-rouge"><pre class="highlight"><code>1、High level API, easy to use ：One of Apple’s many wrappers for Mach messages；
+2、Message-oriented
+3、Public API on OS X only
+4、Asynchronous always, no synchronous versions
+5、Service lookup is restricted on iOS 7+ 
+</code></pre>
+      </div>
+    </li>
+    <li><a href="http://blog.linhere.com/archives/552.html">参考文章</a></li>
+    <li><a href="http://nshipster.com/inter-process-communication/">Inter-Process Communication</a></li>
+  </ul>
+</blockquote>
+
+<h3 id="tweaks-on-a-multi-process-ios"><a href="https://rpetri.ch/jbcon2016/JailbreakCon2016.pdf">Tweaks on a multi-process iOS</a></h3>
+
+<blockquote>
+  <ul>
+    <li>Inter-Process Communication
+      <div class="highlighter-rouge"><pre class="highlight"><code>1、Mechanisms provided by the kernel to facilitate coordinated sharing of data and commands between processes
+2、Used heavily in recent versions of iOS and OS X to implement system frameworks and APIs
+</code></pre>
+      </div>
+    </li>
+    <li>Standard Techniques
+      <div class="highlighter-rouge"><pre class="highlight"><code>1、Save to temp files：High level APIs, easy to use
+2、Unix Domain Sockets： Low level API  ，Stream oriented, requires basic parsing to reconstruct
+messages
+</code></pre>
+      </div>
+    </li>
+    <li>Other standard techniques
+      <div class="highlighter-rouge"><pre class="highlight"><code>• Shared Memory
+• Signals
+• Named pipes
+• Network sockets 
+</code></pre>
+      </div>
+    </li>
+    <li>Apple/iOS-specific Techniques
+      <div class="highlighter-rouge"><pre class="highlight"><code>1、Darwin Notifications：No data, only a simple “go” message，Any process can post or observe ，Always asynchronous
+2、Mach Ports ：seriously low level 
+3、CPDistributedNotificationCenter： Private API, does change between iOS versions
+4、CFMessagePort： Public API，Only supports synchronous use ，Service lookup is restricted on iOS 6+
+5、XPC ： High level API, easy to use �，One of Apple’s many wrappers for Mach messages ；
+</code></pre>
+      </div>
+    </li>
+    <li>Creative Techniques
+      <div class="highlighter-rouge"><pre class="highlight"><code>1、Relax existing service permissions
+2、Repurpose existing iOS services’ IPC channels：Service internals are frequently rewritten in new iOS versions
+3、Delegate to someone else
+</code></pre>
+      </div>
+    </li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>Libraries that use IPC under the hood
+      <div class="highlighter-rouge"><pre class="highlight"><code>1、http://iphonedevwiki.net/index.php/AppList
+2、http://iphonedevwiki.net/index.php/Flipswitch
+3、http://iphonedevwiki.net/index.php/Libactivator
+4、https://github.com/r-plus/libcanopenurl
+</code></pre>
+      </div>
+    </li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>Community Libraries to Help
+      <div class="highlighter-rouge"><pre class="highlight"><code>1、RocketBootstrap： Service registration and lookup system for iOS
+</code></pre>
+      </div>
+    </li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>Be aware of potential deadlocks
+      <div class="highlighter-rouge"><pre class="highlight"><code>1、 SpringBoard will block on backboardd—don’t call from backboardd to SpringBoard! 
+2、Communicate with these processes using one-way IPC, asynchronous IPC, or two-way IPC with timeouts 
+3、Avoid the pitfall of accidentally sending blocking API calls to one’s own process
+4、SpringBoard is usually a good choice for coordinator as it often has much work to do anyway
+5、Batch all of the operations for a single user action into one IPC call, if possible 
+6、Filter to only the data required before sending 
+</code></pre>
+      </div>
+    </li>
+  </ul>
+</blockquote>
+
+<h3 id="qa">Q&amp;A</h3>
+
+<blockquote>
+  <ul>
+    <li>使用yalu102 激活了之后，无法连接ssh</li>
+  </ul>
+</blockquote>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>#/usr/local/bin/dropbear 此次越狱工具默认安装了 SSH。采用了 Dropbear 取代 Openssh。
+因此在部署安装使用yalu102的时候记得修改dropbear.plist的信息：ProgramArguments的127.0.0.1:22 直接改为22。
+如果部署完成，直接修改沙盒的信息的话，记得重启设备。
+
+# 获取直接修改对应的配置信息
+iPhone:~ root# ps -e |grep yalu*
+ 1174 ??         0:00.80 /var/containers/Bundle/Application/B831448D-BCD0-4F29-BDA6-9FC03903D30C/yalu102.app/yalu102
+
+#plutil plist 内容
+iPhone:/var/containers/Bundle/Application/B831448D-BCD0-4F29-BDA6-9FC03903D30C/yalu102.app root# plutil dropbear.plist
+{
+    KeepAlive = 1;
+    Label = ShaiHulud;
+    Program = "/usr/local/bin/dropbear";
+    ProgramArguments =     (
+        "/usr/local/bin/dropbear",
+        "-F",
+        "-R",
+        "-p",
+        22
+    );
+    RunAtLoad = 1;
+}
+</code></pre>
+</div>
+
+<blockquote>
+  <ul>
+    <li>dropbear 参数</li>
+  </ul>
+</blockquote>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> iPhone:/var/containers/Bundle/Application/B831448D-BCD0-4F29-BDA6-9FC03903D30C/yalu102.app root# ps -e |grep dropbear
+  228 ??         0:00.05 /usr/local/bin/dropbear -F -R -p 22
+</code></pre>
+</div>
+
+<blockquote>
+  <ul>
+    <li>利用wget 安装scp( 解决：sh: scp: command not found)</li>
+  </ul>
+</blockquote>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>#两台服务器都要安装scp才能传文件
+#wget + 空格 + 要下载文件的url路径
+# cydia里面安装wget
+#  安装scp,默认安装在当前目录
+wget mila432.com/scp
+ldid -S scp
+# chmod +x scp
+chmod 777 scp
+mv scp /usr/bin/scp
+# 或者使用curl: curl -O mila432.com/scp ./scp
+</code></pre>
+</div>
+
+<p>dyld: Library not loaded: /usr/lib/libssl.0.9.8.dylib 重新安装openssl</p>
+
+<blockquote>
+  <ul>
+    <li>浏览器下载scp</li>
+  </ul>
+</blockquote>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> find . -name "scp" 
+ 
+</code></pre>
+</div>
+
+<blockquote>
+  <ul>
+    <li><a href="https://github.com/rpetrich/deviceconsole">deviceconsole</a>  查看log</li>
+  </ul>
+</blockquote>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>devzkndeMacBook-Pro:deviceconsole-master devzkn$ /Users/devzkn/Library/Developer/Xcode/DerivedData/deviceconsole-gfjsthvevyxiqyahugfpmzjlseye/Build/Products/Debug/deviceconsole --help
+Usage: /Users/devzkn/Library/Developer/Xcode/DerivedData/deviceconsole-gfjsthvevyxiqyahugfpmzjlseye/Build/Products/Debug/deviceconsole [options]
+Options:
+ -d			Include connect/disconnect messages in standard out
+ -u &lt;udid&gt;		Show only logs from a specific device
+ -p &lt;process name&gt;	Show only logs from a specific process
+
+Control-C to disconnect
+Mail bug reports and suggestions to &lt;ryan.petrich@medialets.com&gt;
+</code></pre>
+</div>
+
+<blockquote>
+  <ul>
+    <li><a href="https://github.com/zhangkn/deviceconsole">deviceconsole 的改进版</a>
+      <div class="highlighter-rouge"><pre class="highlight"><code>devzkndeMacBook-Pro:deviceconsole-master devzkn$ knlog -h
+knlog: invalid option -- h
+Usage: knlog [options]
+Options:
+-i | --case-insensitive     Make filters case-insensitive
+-f | --filter &lt;string&gt;      Filter include by single word occurrences (case-sensitive)
+-x | --exclude &lt;string&gt;     Filter exclude by single word occurrences (case-sensitive)
+-p | --process &lt;string&gt;     Filter by process name (case-sensitive)
+-u | --udid &lt;udid&gt;          Show only logs from a specific device
+-s | --simulator &lt;version&gt;  Show logs from iOS Simulator
+   --debug                Include connect/disconnect messages in standard out
+   --use-separators       Skip a line between each line
+   --force-color          Force colored text
+   --message-only          Display only level and message
+Control-C to disconnect
+devzkndeMacBook-Pro:aso.git devzkn$ knlog -i -f AppStore
+Jan 10 18:57:45 iPhone appstored(libsystem_network.dylib)[587] &lt;Info&gt;: nw_endpoint_resolver_start_next_child [6 su.itunes.apple.com:443 in_progress resolver (satisfied)] starting child endpoint 123.53.139.209:443
+Jan 10 18:57:45 iPhone appstored(libsystem_network.dylib)[587] &lt;Info&gt;: nw_endpoint_resolver_start_next_child [6 su.itunes.apple.com:443 in_progress resolver (satisfied)] starting next child endpoint in 250ms
+Jan 10 18:57:45 iPhone appstored(libsystem_network.dylib)[587] &lt;Info&gt;: nw_endpoint_handler_start [6.2 123.53.139.209:443 initial path (null)]
+Jan 10 18:57:45 iPhone appstored(libsystem_network.dylib)[587] &lt;Info&gt;: nw_connection_endpoint_report [6.2 123.53.139.209:443 initial path (null)] reported event path:start
+Jan 10 18:57:45 iPhone appstored(libsystem_network.dylib)[587] &lt;Info&gt;: nw_connection_endpoint_report [6.2 123.53.139.209:443 waiting path (satisfied)] reported event path:satisfied
+</code></pre>
+      </div>
+    </li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <p>*ldid</p>
+  <div class="highlighter-rouge"><pre class="highlight"><code>devzkndeMacBook-Pro:bin devzkn$ which ldid
+/opt/iOSOpenDev/bin/ldid
+</code></pre>
+  </div>
+</blockquote>
+
+<h3 id="see-also">See also</h3>
+<ul>
+  <li><a href="http://nshipster.com/inter-process-communication/">Distributed Notifications</a></li>
+  <li><a href="http://iphonedevwiki.net/index.php/Updating_extensions_for_iOS_7#Inter-process_communication">Inter-process communication</a></li>
+  <li><a href="http://iphonedevwiki.net/index.php/IPC">IPC</a></li>
+  <li><a href="https://github.com/a1anyip/libobjcipc">libobjcipc An inter-process communication (between app and SpringBoard) solution for jailbroken iOS</a></li>
+  <li><a href="http://iphonedevwiki.net/index.php/Libobjcipc">Libobjcipc iphonedevwiki</a></li>
+  <li><a href="https://github.com/lzyroot/MPProcessMessage">多个App之间的数据传输</a></li>
+  <li><a href="http://blog.csdn.net/dianshanglian/article/details/62422627">iOS10 经过yalu越狱后无法ssh登录和无法scp拷贝问题</a></li>
+  <li><a href="http://pangu.io/">http://pangu.io/ ios 9+</a></li>
+  <li><a href="https://www.jianshu.com/p/8a3c492cb5fb">iOS Tweak 进程间通讯</a></li>
+  <li><a href="http://iphonedevwiki.net/index.php/RocketBootstrap#How_to_use_this_library">RocketBootstrap</a></li>
+  <li><a href="http://iphonedevwiki.net/index.php/Updating_extensions_for_iOS_7">Updating_extensions_for_iOS_7</a></li>
+  <li><a href="https://github.com/kpwn/yalu102">yalu102 使用Xcode8</a></li>
+  <li><a href="https://bingozb.github.io/21.html">iOS10.2 SSH连接越狱设备</a></li>
+  <li><a href="http://free.zhzhao.com/">http://free.zhzhao.com/ 参考他人的代码</a></li>
+  <li><a href="https://www.jianshu.com/p/9120e46f98b1">iOS10下打印NSLog syslog信息</a></li>
+  <li><a href="http://iosre.com/t/ios10-2-soca-nslog/6955/15">ios10-2-soca-nslog</a></li>
+  <li><a href="http://cydia.saurik.com/package/com.ichitaso.syslogflipswitch/">syslogflipswitch</a></li>
+  <li><a href="https://ichitaso.com/">https://ichitaso.com/</a></li>
+  <li><a href="https://www.reddit.com/r/jailbreak/comments/50niif/question_does_syslogd_work_on_933/">Does syslogd work on 9.3.3 </a></li>
+  <li><a href="http://cydia.saurik.com/package/com.ichitaso.syslogflipswitch/">cydia 搜索安装com.ichitaso.syslogflipswitch</a></li>
+  <li><a href="https://github.com/MegaCookie/deviceconsole">An iOS system log tailer that doesn’t suck. Improved</a></li>
+  <li><a href="https://yalujailbreak.net/ssh-ios-10-tutorial/">How to SSH via WiFi/USB on Yalu Jailbreak iOS 10</a></li>
+  <li><a href="http://bbs.iosre.com/t/ios-7-udid-3/45">在iOS 7中获取UDID的3种可能方法</a></li>
+  <li><a href="https://opensource.apple.com/source/CF/CF-744.18/CFInternal.h">CFInternal.h</a>
+    <div class="highlighter-rouge"><pre class="highlight"><code>#define CONST_STRING_DECL(S, V) const CFStringRef S = (const CFStringRef)__builtin___CFStringMakeConstantString(V);
+</code></pre>
+    </div>
+  </li>
+</ul>
+
+<h3 id="xpc资料">xpc资料</h3>
+<ul>
+  <li><a href="https://developer.apple.com/library/content/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingXPCServices.html">Creating XPC Services</a></li>
+  <li><a href="https://objccn.io/issue-14-4/">关于 XPC</a></li>
+  <li><a href="https://developer.apple.com/documentation/xpc/xpc_services_xpc.h?preferredLanguage=occ">XPC Services xpc.h</a></li>
+  <li><a href="https://github.com/zhangkn/mac-headers/tree/master/usr/include/xpc">usr/include/xpc</a></li>
+  <li><a href="http://cb.drops.wiki/drops/papers-14170.html">iOS冰与火之歌 – 利用XPC过App沙盒</a>
+    <div class="highlighter-rouge"><pre class="highlight"><code>1、最简单最常见的IPC就是URL Schemes
+2、XPC也是iOS IPC的一种，通过XPC，app可以与一些系统服务进行通讯，并且这些系统服务一般都是在沙盒外的，如果我们可以通过IPC控制这些服务的话，也就成功的做到沙盒逃逸了
+</code></pre>
+    </div>
+  </li>
+  <li><a href="https://github.com/zhengmin1989/iOS_ICE_AND_FIRE">iOS_ICE_AND_FIRE</a></li>
+  <li><a href="https://github.com/zhengmin1989/MyArticles">iOS冰与火之歌系列，一步一步学ROP系列，安卓动态调试七种武器系列等</a></li>
+  <li><a href="https://rpetri.ch/">rpetri.ch</a></li>
+  <li><a href="http://nshipster.com/authors/mattt-thompson/">Mattt Thompson</a></li>
+  <li><a href="https://mat.tt/">Mattt</a></li>
+  <li><a href="http://dama2.com/">打码兔</a></li>
+  <li><a href="http://geek.csdn.net/news/detail/56195">iOS冰与火之歌番外篇 - 在非越狱手机上进行App Hook</a></li>
+  <li><a href="http://www.droidsec.cn/category/ios%E5%AE%89%E5%85%A8%E6%94%BB%E9%98%B2/">ios安全攻防</a></li>
+  <li><a href="http://bbs.iosre.com/t/ios-igrimace/448">深夜福利！越狱iOS清痕暨■■■■■■■■核心代码の无料放送-clearTrace</a></li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>- (void)clearTrace
+{
+        // Kill all App Store Apps
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        if ([fileManager fileExistsAtPath:@"/var/mobile/Library/Caches/com.apple.mobile.installation.plist"])
+        {
+                NSDictionary *dictionary1 = [NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Caches/com.apple.mobile.installation.plist"];
+                NSDictionary *dictionary2 = [dictionary1 objectForKey:@"User"];
+                NSEnumerator *enumerator = [dictionary2 keyEnumerator];
+                NSString *key;
+                while ((key = [enumerator nextObject]))
+                {
+                        NSDictionary *dictionary3 = [dictionary2 objectForKey:key];
+                        NSString *targetApp = [dictionary3 objectForKey:@"CFBundleExecutable"];
+                        system([NSString stringWithFormat:@"killall -9 %@", targetApp] UTF8String]);
+                }
+        }
+
+        // Kill Safari
+        system("killall -9 MobileSafari");
+
+        // Enumerate all App Store Apps' directories and delete /Documents, /Library, /tmp, /StoreKit
+        NSDirectoryEnumerator *dirEnum = [fileManager enumeratorAtPath:@"/var/mobile/Applications/"];
+        NSString *file;
+        while ((file = [dirEnum nextObject]))
+                if ([file hasSuffix:@"/Documents"] || [file hasSuffix:@"/Library"] || [file hasSuffix:@"/tmp"] || [file hasSuffix:@"/StoreKit"])
+                {
+                        [fileManager removeItemAtPath:[NSString stringWithFormat:@"/var/mobile/Applications/%@", file] error:nil];
+                        [fileManager createDirectoryAtPath:[NSString stringWithFormat:@"/var/mobile/Applications/%@", file] withIntermediateDirectories:NO attributes:[NSDictionary dictionaryWithObjectsAndKeys:@"mobile", NSFileOwnerAccountName, @"mobile", NSFileGroupOwnerAccountName, nil] error:nil];
+                }
+
+        // Delete cookies
+        [fileManager removeItemAtPath:@"/var/mobile/Library/Cookies/Cookies.binarycookies" error:nil];
+        [fileManager removeItemAtPath:@"/private/var/root/Library/Cookies/Cookies.binarycookies" error:nil];
+        [fileManager removeItemAtPath:@"/var/mobile/Library/Safari/History.plist" error:nil];
+        [fileManager removeItemAtPath:@"/var/mobile/Library/Safari/SuspendState.plist" error:nil];
+
+        // Delete pasteboard contents and relaunch pasteboardd
+        system("launchctl unload -w /System/Library/LaunchDaemons/com.apple.UIKit.pasteboardd.plist");
+
+        dirEnum = [fileManager enumeratorAtPath:@"/var/mobile/Library/Caches/com.apple.UIKit.pboard/"];
+        while ((file = [dirEnum nextObject]))
+                [fileManager removeItemAtPath:[NSString stringWithFormat:@"/var/mobile/Library/Caches/com.apple.UIKit.pboard/%@", file] error:nil];
+
+        system("launchctl load -w /System/Library/LaunchDaemons/com.apple.UIKit.pasteboardd.plist");
+
+        // Delete entries in keychain-2.db
+        sqlite3 *database;
+        int openResult = sqlite3_open("/var/Keychains/keychain-2.db", &amp;database);
+        if (openResult == SQLITE_OK)
+        {
+                int execResult = sqlite3_exec(database, "DELETE FROM genp WHERE agrp&lt;&gt;'apple'", NULL, NULL, NULL);
+                if (execResult != SQLITE_OK) NSLog(@"iOSRE: Failed to exec DELETE FROM genp WHERE agrp&lt;&gt;'apple', error %d", execResult);
+
+                execResult = sqlite3_exec(database, "DELETE FROM cert WHERE agrp&lt;&gt;'lockdown-identities'", NULL, NULL, NULL);
+                if (execResult != SQLITE_OK) NSLog(@"iOSRE: Failed to exec DELETE FROM cert WHERE agrp&lt;&gt;'lockdown-identities', error %d", execResult);
+
+                execResult = sqlite3_exec(database, "DELETE FROM keys WHERE agrp&lt;&gt;'lockdown-identities'", NULL, NULL, NULL);
+                if (execResult != SQLITE_OK) NSLog(@"iOSRE: Failed to exec DELETE FROM keys WHERE agrp&lt;&gt;'lockdown-identities'', error %d", execResult);
+
+                execResult = sqlite3_exec(database, "DELETE FROM inet", NULL, NULL, NULL);
+                if (execResult != SQLITE_OK) NSLog(@"iOSRE: Failed to exec DELETE FROM inet, error %d", execResult);
+
+                execResult = sqlite3_exec(database, "DELETE FROM sqlite_sequence", NULL, NULL, NULL);
+                if (execResult != SQLITE_OK) NSLog(@"iOSRE: Failed to exec DELETE FROM sqlite_sequence, error %d", execResult);
+
+                sqlite3_close(database);
+        }
+        else NSLog(@"iOSRE: Failed to open /var/Keychains/keychain-2.db, error %d", openResult);
+}
+</code></pre>
+</div>
+<ul>
+  <li><a href="https://github.com/nst/iOS-Runtime-Headers/blob/master/Frameworks/MobileCoreServices.framework/LSApplicationWorkspace.h">LSApplicationWorkspace</a></li>
+  <li><a href="https://github.com/JaviSoto/iOS10-Runtime-Headers/blob/master/PrivateFrameworks/AppStoreDaemon.framework/ASDJobManager.h">iOS10-Runtime-Headers/PrivateFrameworks/AppStoreDaemon.framework/ASDJobManager.h ASDJobManager</a></li>
+  <li><a href="https://ios.ddf.net/">iOS Symbol Pool</a></li>
+  <li><a href="http://www.mengwuji.net/thread-2950-1-1.html">mengwuji</a></li>
+  <li><a href="https://bbs.pediy.com/thread-223622.htm">Apple ID 网页协议注册机源代码 163邮箱</a></li>
+  <li><a href="https://www.qimai.cn/search/index/country/cn/search/%E7%9C%81%E9%92%B1">qimai</a></li>
+</ul>
+
+
+    <!-- 转载声明的封装-->
+    <p itemprop="publisher">
+      转载请注明：<a  itemprop="author" target="_blank" href='http://localhost:4000'>张坤楠的博客</a> > <a target="_blank" href='/2018/01/Inter-processCommunicationByRrocketbootstrap/'>Inter-processCommunicationByRrocketbootstrap</a> 
+    </p>
+
+    <p>
+
+      在操作过程或者文章有问题的话欢迎在  <a target="_blank" href='/2018/01/Inter-processCommunicationByRrocketbootstrap/'>原文</a> 里提问或指正。
+    </p>
+
+  </section>
+</article>
+
+<section>
+
+            <div class="content-play">
+              <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang" title="打赏，支持一下">赞赏支持</a></p>
+              <div class="hide_box-play"></div>
+              <div class="shang_box-play">
+                <a class="shang_close-play" href="javascript:void(0)" onclick="dashangToggle()" title="关闭"><img src="/images/payimg/close.jpg" alt="取消" /></a>
+                <div class="shang_tit-play">
+                  <p>感谢您的支持，我会继续努力的!</p>
+                </div>
+                <div class="shang_payimg">
+                    <img src="/images/payimg/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+                </div>
+              <div class="shang_payimg">    
+                    <img src="/images/payimg/weipayimg.jpg" alt="扫码支持" title="扫一扫" />
+                </div>
+                <div class="pay_explain">扫码打赏，你说多少就多少</div>
+                <div class="shang_payselect">
+                  <div class="pay_item checked" data-id="alipay">
+                    <span class="pay_logo"><img src="/images/payimg/alipay.jpg" alt="支付宝" /></span>
+                  </div>
+                  <div class="pay_item" data-id="weipay">
+                    <span class="pay_logo"><img src="/images/payimg/wechat.jpg" alt="微信" /></span>
+                  </div>
+                </div>
+               
+              </div>
+            </div>
+            <script type="text/javascript">
+            function dashangToggle(){
+              $(".hide_box-play").fadeToggle();
+              $(".shang_box-play").fadeToggle();
+            }
+            </script>
+
+            <div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';"></div>
+
+            <style type="text/css">
+              .content-play{width:80%;margin-top: 20px;margin-bottom: 10px;height:40px;}
+              .hide_box-play{z-index:999;filter:alpha(opacity=50);background:#666;opacity: 0.5;-moz-opacity: 0.5;left:0;top:0;height:99%;width:100%;position:fixed;display:none;}
+              .shang_box-play{width:540px;height:540px;padding:10px;background-color:#fff;border-radius:10px;position:fixed;z-index:1000;left:50%;top:50%;margin-left:-280px;margin-top:-280px;border:1px dotted #dedede;display:none;}
+              .shang_box-play img{border:none;border-width:0;}
+              .dashang{display:block;width:100px;margin:5px auto;height:25px;line-height:25px;padding:10px;background-color:#E74851;color:#fff;text-align:center;text-decoration:none;border-radius:10px;font-weight:bold;font-size:16px;transition: all 0.3s;}
+              .dashang:hover{opacity:0.8;padding:15px;font-size:18px;}
+              .shang_close-play{float:right;display:inline-block;
+                margin-right: 10px;margin-top: 20px;
+              }
+              .shang_logo{display:block;text-align:center;margin:20px auto;}
+              .shang_tit-play{width: 100%;height: 75px;text-align: center;line-height: 66px;color: #a3a3a3;font-size: 16px;background: url('/images/payimg/cy-reward-title-bg.jpg');font-family: 'Microsoft YaHei';margin-top: 7px;margin-right:2px;}
+              .shang_tit-play p{color:#a3a3a3;text-align:center;font-size:16px;}
+              .shang_payimg{width:140px;padding:10px;padding-left: 80px; /*border:6px solid #EA5F00;**/margin:0 auto;border-radius:3px;height:140px;display:inline-block;}
+              .shang_payimg img{display:inline-block;margin-right:10px;float:left;text-align:center;width:140px;height:140px; }
+              .pay_explain{text-align:center;margin:10px auto;font-size:12px;color:#545454;}
+              .shang_payselect{text-align:center;margin:0 auto;margin-top:40px;cursor:pointer;height:60px;width:500px;margin-left:110px;}
+              .shang_payselect .pay_item{display:inline-block;margin-right:140px;float:left;}
+              .shang_info-play{clear:both;}
+              .shang_info-play p,.shang_info-play a{color:#C3C3C3;text-align:center;font-size:12px;text-decoration:none;line-height:2em;}
+            </style>
+
+       <ul class="pager">
+        
+        <li class="previous">
+            <a href="/2018/01/AppSync/" data-toggle="tooltip" data-placement="top" title="AppSync">上一篇：  <span>AppSync</span>
+            </a>
+        </li>
+        
+        
+        <li class="next">
+            <a href="/2018/01/iOSOpenDevInstallFailed/" data-toggle="tooltip" data-placement="top" title="iOSOpenDevInstallFailed">下一篇：  <span>iOSOpenDevInstallFailed</span>
+            </a>
+        </li>
+        
+    </ul>
+</section>
+
+<section class="post-comments">
+<!-- http://www.uyan.cc/getcode-->
+  
+    <div id="disqus_thread"></div>
+    <script>
+    
+    var disqus_config = function () {
+        this.page.url = "http://localhost:4000/2018/01/Inter-processCommunicationByRrocketbootstrap/";
+        this.page.identifier = "/2018/01/Inter-processCommunicationByRrocketbootstrap/";
+    };
+    var disqus_shortname = 'iosre';
+    
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>要查看<a href="http://disqus.com/?ref_noscript"> Disqus </a>评论，请启用 JavaScript</noscript>
+    <!--<script id="dsq-count-scr" src="//iosre.disqus.com/count.js" async></script>-->
+  
+
+</section>
+
+<section class="post-gitcomments">
+    <!-- http://www.uyan.cc/getcode-->
+    
+
+    <div id="container"></div>
+    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+    <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+  id: '/2018/01/Inter-processCommunicationByRrocketbootstrap/', // 可选。默认为 location.href
+  owner: 'zhangkn',
+  repo: 'githubpages-comments',
+  oauth: {
+    client_id: 'eb8baa6afd018fb78abf',
+    client_secret: 'c7b3a1a69585b929f76b9b849a5266c6198d8498',
+},
+})
+        gitment.render('container')
+    </script>
+
+    
+
+</section>
+<section class="read-more">
+   
+   
+   <div class="read-more-item">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h2 class="post-list__post-title post-title"><a href="/2018/01/iOSOpenDevInstallFailed/" title="link to iOSOpenDevInstallFailed">iOSOpenDevInstallFailed</a></h2>
+       <p class="excerpt">iOSOpenDevInstallFailed（iOSOpenDev-1.6-2）      iOSOpenDevInstallFailed info （使用快捷键Command + L 查看）      Jan 10 11:33:54 devzkndeMacBook-Pro Installer[21643]: install:didFailWithError:Error Domain=PKInstallErrorDomain Code=112 "An error occurred whi...&hellip;</p>
+       <div class="post-list__meta"><time datetime="2018-01-10 00:00:00 +0800" class="post-list__meta--date date">2018-01-10</time> &#8226; <span class="post-list__meta--tags tags">iOSre</span><a class="btn-border-small" href=/2018/01/iOSOpenDevInstallFailed/>继续阅读</a></div>
+   </div>
+   
+   
+   
+   
+   <div class="read-more-item">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h2 class="post-list__post-title post-title"><a href="/2018/01/AppSync/" title="link to AppSync">AppSync</a></h2>
+       <p class="excerpt">前言借助AppSync限制签名验证，,利用它可以安装未签名的ipa。安装未签名的ipa      添加源：http://apt.so/，并安装对应系统版本的AppSync        使用iTools 或者ipainstaller 进行ipa文件的安装      #在iPhone安装ipa installer Console之后利用命令行安装iPhone:~ root# ipainstaller ./*_v6.5.9.ipaAnalyzing 信_v6.5.9.ipa...Install...&hellip;</p>
+       <div class="post-list__meta"><time datetime="2018-01-02 00:00:00 +0800" class="post-list__meta--date date">2018-01-02</time> &#8226; <span class="post-list__meta--tags tags">iOSre</span><a class="btn-border-small" href=/2018/01/AppSync/>继续阅读</a></div>
+   </div>
+   
+</section>
+
+
+
+            <section class="footer">
+    <footer>
+        <div class = "footer_div">  
+        <nav class="cover-navigation navigation--social">
+          <ul class="navigation">
+
+          
+          <!-- Weibo -->
+          <li class="navigation__item_social">
+            <a href="http://weibo.com/602056727" title="@602056727 的微博" target="_blank">
+              <i class='social fa fa-weibo fa-2x'></i>
+              <span class="label">Weibo</span>
+            </a>
+          </li>
+          
+
+          
+          <!-- Github -->
+          <li class="navigation__item_social">
+            <a href="https://github.com/zhangkn" title="@zhangkn 的 Github" target="_blank">
+              <i class='social fa fa-github fa-2x'></i>
+              <span class="label">Github</span>
+            </a>
+          </li>
+          
+          
+          
+          <!-- Twitter -->
+          <li class="navigation__item_social">
+            <a href="http://twitter.com/zhangkunnan" title="@zhangkunnan" target="_blank">
+              <i class='social fa fa-twitter fa-2x'></i>
+              <span class="label">Twitter</span>
+            </a>
+          </li>
+          
+
+          
+          <!-- Google Plus -->
+          <li class="navigation__item_social">
+            <a href="https://plus.google.com/114188876079505437133" rel="author" title="Google+" target="_blank">
+              <i class='social fa fa-google-plus-square fa-2x'></i>
+              <span class="label">Google Plus</span>
+            </a>
+          </li>
+          
+
+          <!-- RSS -->
+          <li class="navigation__item_social">
+            <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+              <i class='social fa fa-rss fa-2x'></i>
+              <span class="label">RSS</span>
+            </a>
+          </li>
+
+          
+          <!-- Email -->
+          <li class="navigation__item_social">
+            <a href="mailto:zhang_kn@icloud.com" title="Contact me">
+              <i class='social fa fa-envelope fa-2x'></i>
+              <span class="label">Email</span>
+            </a>
+          </li>
+          
+
+
+         
+
+          <!-- linkedin  medium start 
+        <div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="zh_CN" data-type="vertical" data-theme="light" data-vanity="iosre"><a class="LI-simple-link" href='https://cn.linkedin.com/in/iosre?trk=profile-badge'>张坤楠</a></div>
+linkedin  medium end  -->
+
+
+
+
+
+          </ul>
+        </nav>
+
+        </div>
+
+        <div class = "footer_div"  itemscope itemtype="https://schema.org/BlogPosting" >  
+           <p class="copyright text-muted"  itemprop="author">
+
+            Copyright &copy; ReverseEngineering 2018 Theme by <a href="http://localhost:4000">kn</a> |
+            <iframe  itemprop="image"
+                style="margin-left: 2px; margin-bottom:-5px;"
+                frameborder="0" scrolling="0" width="170px" height="20px"
+                src="https://ghbtns.com/github-btn.html?user=zhangkn&repo=zhangkn.github.io&type=star&count=true" >
+            </iframe>
+
+            <iframe 
+            style="margin-left: 2px; margin-bottom:-5px;"
+            src="https://ghbtns.com/github-btn.html?user=zhangkn&repo=zhangkn.github.io&type=watch&count=true&v=2" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+
+            <iframe
+            style="margin-left: 2px; margin-bottom:-5px;"
+             src="https://ghbtns.com/github-btn.html?user=zhangkn&type=follow&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+
+             <wb:follow-button uid="2939794294" type="red_2" width="136" height="24" scrolling="0"  style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" ></wb:follow-button>
+
+             <iframe width="100%" height="500"  frameborder="0" scrolling="no" src="https://widget.weibo.com/livestream/listlive.php?language=zh_cn&width=0&height=500&uid=5934185471&skin=1&refer=1&appkey=3233061066&pic=0&titlebar=1&border=1&publish=1&atalk=1&recomm=0&at=0&atopic=iOS%E9%80%86%E5%90%91&ptopic=iOS%E9%80%86%E5%90%91&dpc=1"></iframe>
+
+
+            
+
+
+            </p>
+        	<div align="right">
+    			<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+          <!-- 访问统计 -->
+          <span id="busuanzi_container_site_pv">
+            本站总访问量
+            <span id="busuanzi_value_site_pv"></span>次
+          </span>
+
+        </div>
+        <div>
+
+
+
+    </footer>
+</section>
+
+                
+	<!-- google搜索  content-play -->
+<section class="ces">
+<!--  自己申请的ces-->
+<!--<script> 
+  (function() {
+    var cx = '013483152311799686538:__rsnolmpao';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+-->
+<!-- ad ces-->
+<script>
+  (function() {
+    var cx = 'partner-pub-5776998009494842:2886811629';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:searchbox-only></gcse:searchbox-only>
+
+
+<script type="text/javascript" src="https://www.google.com/cse/query_renderer.js"></script>
+<div id="queries"></div>
+<script src="https://www.google.com/cse/api/partner-pub-5776998009494842/cse/2886811629/queries/js?oe=UTF-8&amp;callback=(new+PopularQueryRenderer(document.getElementById(%22queries%22))).render"></script>
+
+
+
+<nav class="animated">
+  <ul>
+  
+    <li>
+      <form class="search" method="get" action="https://www.google.com/search">
+        <div>
+          <input type="text" id="search" name="q" placeholder="站内搜索">
+        </div>
+      </form>
+    </li>
+</nav>
+
+
+
+
+
+</section>
+
+<!--  20171212 新增-->
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+
+<script type="text/javascript" src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+ done = false;
+ $('form.search').on('submit', function (event) {
+    if (false === done) {
+      event.preventDefault();
+      var orgVal = $(this).find('#search').val();
+      $(this).find('#search').val('site:http://localhost:4000 ' + orgVal);
+      done = true;
+      $(this).submit();
+    }
+  });
+
+});
+
+</script>
+<!-- 微博 分享按钮-->
+<script src="https://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+
+
+
+    
+<div class="bdsharebuttonbox" data-tag="share_1">
+	<a class="bds_mshare" data-cmd="mshare"></a>
+	<a class="bds_qzone" data-cmd="qzone" href="#"></a>
+	<a class="bds_tsina" data-cmd="tsina"></a>
+	<a class="bds_baidu" data-cmd="baidu"></a>
+	<a class="bds_renren" data-cmd="renren"></a>
+	<a class="bds_tqq" data-cmd="tqq"></a>
+	<a class="bds_more" data-cmd="more">更多</a>
+	<a class="bds_count" data-cmd="count"></a>
+</div>
+<script>window._bd_share_config={selectShare:[{"bdselectMiniList":['qzone','tqq','twi','bdxc','tqf','fbook','weixin']}],"common":{"bdSnsKey":{"tsina":"apachecn","tqq":"apachecn","t163":"apachecn","tsohu":"apachecn"},"bdDesc":"Inter-processCommunicationByRrocketbootstrap 原文:","bdText":"Inter-processCommunicationByRrocketbootstrap 原文：","bdMini":"2","bdMiniList":["mshare","sqq","weixin","tsina","qzone","tqq","youdao","evernotecn","fbook","twi","linkedin","douban","bdysc","tieba","ty","mail"],"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"6","bdPos":"right","bdTop":"277"},"image":{"viewList":["qzone","tsina","tqq","twi","weixin","fbook"],"viewText":"分享到：","viewSize":"16"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+    
+  </body>
+
+</html>

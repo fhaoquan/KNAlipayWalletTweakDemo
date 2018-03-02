@@ -1,0 +1,1684 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ReverseEngineering</title>
+    <description>Kunnan Zhang's Personal Website</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 02 Mar 2018 17:23:07 +0800</pubDate>
+    <lastBuildDate>Fri, 02 Mar 2018 17:23:07 +0800</lastBuildDate>
+    <generator>Jekyll v3.5.2</generator>
+    
+      <item>
+        <title>GitHub</title>
+        <description>&lt;h3 id=&quot;前言&quot;&gt;前言&lt;/h3&gt;
+
+&lt;h3 id=&quot;正文&quot;&gt;正文&lt;/h3&gt;
+
+&lt;h3 id=&quot;建立主页github用户通过创建特殊名称的git版本库或在git库中建立特别的分支实现对主页的维护&quot;&gt;建立主页:GitHub用户通过创建特殊名称的Git版本库或在Git库中建立特别的分支实现对主页的维护&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;创建个人主页:GitHub 为每一个用户分配了一个二级域名&lt;user-id&gt;.github.io， 例如我自己的site: https://zhangkn.github.io
+```
+托管空间下创建一个名为&lt;user-id&gt;.github.io的版本库，向其master分支提交网站静态页面即可，其中网站首页为index.html:https://github.com/zhangkn/zhangkn.github.io/blob/master/index.html&lt;/user-id&gt;&lt;/user-id&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&amp;gt;* 项目主页:项目主页也通过二级域名进行访问 http://gotgithub.github.io/项目名称
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;在Git库中建立特别的gh-pages分支实现对主页的维护。
+&lt;!-- 使用命令行创建干净的gh-pages分支：http://www.worldhello.net/gotgithub/03-project-hosting/050-homepage.html --&gt;
+&lt;!-- Git底层命令：git symbolic-ref --&gt;
+devzkndeMacBook-Pro:AlipayWalletTweakF devzkn$ git symbolic-ref HEAD refs/heads/gh-pages&lt;/p&gt;
+
+&lt;!-- 删除暂存区文件，即相当于清空暂存区 --&gt;
+&lt;p&gt;devzkndeMacBook-Pro:AlipayWalletTweakF devzkn$ rm .git/index&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+
+
+
+
+### hooks：版本库钩子扩展
+
+&amp;gt;* Services / Add Email 邮件通知功能：zhangkn.github.io/settings/hooks/new?service=email 
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Branch: refs/heads/master
+ Home:   https://github.com/zhangkn/zhangkn.github.io
+ Commit: f74a9c7025159aa516827f37f35054a0a16bcd78
+     https://github.com/zhangkn/zhangkn.github.io/commit/f74a9c7025159aa516827f37f35054a0a16bcd78
+ Author: 张坤楠 &amp;lt;zhangkunnan@.com&amp;gt;
+ Date:   2018-03-02 (Fri, 02 Mar 2018)&lt;/p&gt;
+
+&lt;p&gt;Changed paths:
+   M _posts/2018-03-02-BeyondFree.md
+   M _posts/2018-03-02-GitHub.md&lt;/p&gt;
+
+&lt;p&gt;Log Message:
+ ———–
+ Services&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+### see also
+- [repo-auth](http://www.worldhello.net/gotgithub/03-project-hosting/030-repo-authz.html)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;1、项目级公钥管理：到项目的管理页面，选择菜单中的“Deploy Keys”，即可设置项目级别公钥&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- [使用 Jekyll 将 Markdown 撰写的文档编译为博客:采用 Disqus 的外部评论系统，就不会因迁移造成评论数据损失](https://zhangkn.github.io)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;devzkndeMacBook-Pro:zhangkn.github.io devzkn$ ping https://zhangkn.github.io
+PING sni.github.map.fastly.net (151.101.77.147): 56 data bytes
+64 bytes from 151.101.77.147: icmp_seq=0 ttl=51 time=157.939 ms
+64 bytes from 151.101.77.147: icmp_seq=1 ttl=51 time=157.864 ms&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+- [缺陷追踪（Issue）也是GitHub工作流中一个重要的组件:Gitment：使用 GitHub Issues 搭建评论系统 https://github.com/imsun/gitment](https://imsun.net/posts/gitment-introduction/)
+
+- [join-github/010-account-setup](http://www.worldhello.net/gotgithub/02-join-github/010-account-setup.html)
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;1、将公钥文件中的内容粘贴到GitHub的SSH公钥管理的对话框中
+&lt;!-- 在~/.ssh目录下创建名为gotgithub的私钥和名为gotgithub.pub的公钥文件。 --&gt;
+$ ssh-keygen -C “gotgithub@gmail.com” -f ~/.ssh/gotgithub
+&lt;!-- 在~/.ssh/config配置文件中写入 公钥的配置信息 --&gt;
+Host github.com
+  User git
+  Hostname github.com
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/gotgithub
+&lt;!-- 将~/.ssh/gotgithub.pub文件内容拷贝到剪切板：pbcopy命令[2]将文件内容拷贝到剪切板以避免拷贝错误 --&gt;
+$ cat ~/.ssh/gotgithub.pub | pbcopy
+&lt;!-- ssh命令后面添加-v参数加以诊断 --&gt;
+$ ssh -Tv git@github.com
+2、Mac下的命令行工具pbcopy和pbpaste可以在命令行下操作剪贴板，Linux下的命令行工具xsel亦可实现类似功能。在Linux下可以创建别名用xsel命令来模拟pbcopy和pbpaste 。&lt;/p&gt;
+
+&lt;p&gt;alias pbcopy=’xsel –input’
+alias pbpaste=’xsel –output’&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- [创建新项目¶](http://www.worldhello.net/gotgithub/03-project-hosting/010-new-project.html)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;!-- 为版本库添加名为origin的远程版本库 --&gt;
+&lt;p&gt;$ git remote add origin git@github.com:gotgithub/helloworld.git
+&lt;!-- 注意命令行中的-u参数，在推送成功后自动建立本地分支与远程版本库分支的追踪。 --&gt;
+$ git push -u origin master
+&lt;!-- 使用强制推送。 --&gt;
+$ git push -f&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- [repo-operation](http://www.worldhello.net/gotgithub/03-project-hosting/020-repo-operation.html)
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;!-- GitHub上版本库的默认分支，就是将GitHub版本库的头指针HEAD指向了其他分支 --&gt;
+&lt;p&gt;devzkndeMacBook-Pro:zhangkn.github.io devzkn$ git branch -r
+  origin/HEAD -&amp;gt; origin/master
+  origin/master
+  origin/test
+devzkndeMacBook-Pro:zhangkn.github.io devzkn$ 
+&lt;!-- 从git ls-remote命令看出头指针HEAD和引用refs/heads/master 指向同一个对象的哈希值。 --&gt;
+devzkndeMacBook-Pro:zhangkn.github.io devzkn$ git ls-remote
+From https://github.com/zhangkn/zhangkn.github.io.git
+4d6104714ba6c9305d4aec129131dc043b2268a5	HEAD
+4d6104714ba6c9305d4aec129131dc043b2268a5	refs/heads/master
+921d23cb81f1853692ffb868ea9a535869ded514	refs/heads/test&lt;/p&gt;
+
+&lt;!-- 删除分支：能删除当前工作分支 、禁止删除远程版本库的缺省分支 --&gt;
+&lt;p&gt;$ git branch -D mybranch1
+$ git push origin :mybranch1&lt;/p&gt;
+
+&lt;!-- 里程碑和分支一样也是以引用的形式存在的，保存在.git/refs/tags/路径下 --&gt;
+&lt;p&gt;devzkndeMacBook-Pro:zhangkn.github.io devzkn$ ls -lrt .git/refs/remotes/origin
+total 24
+-rw-r–r–  1 devzkn  staff  32 Dec 11 23:35 HEAD
+-rw-r–r–  1 devzkn  staff  41 Jan 26 17:51 test
+-rw-r–r–  1 devzkn  staff  41 Mar  2 15:24 master
+&lt;!-- git tag &lt;tagname&gt; [&lt;commit&gt;] 命令创建 --&gt;
+$ git tag -m “Tag on initial commit” mytag1 HEAD^&lt;/p&gt;
+
+&lt;!-- 将本地里程碑推送到GitHub远程版本库。 --&gt;
+&lt;p&gt;$ git push origin refs/tags/*
+&lt;!-- 删除本地里程碑 --&gt;
+$ git tag -d mytag3
+&lt;!-- 删除GitHub远程版本库中的里程碑 --&gt;
+$ git push origin :mytag3&lt;/p&gt;
+
+&lt;p&gt;```&lt;/p&gt;
+</description>
+        <pubDate>Fri, 02 Mar 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/03/GitHub/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/03/GitHub/</guid>
+        
+        <category>tool</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>BeyondFree</title>
+        <description>&lt;h3 id=&quot;前言&quot;&gt;前言&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;最近在得到订阅了 《吴军的谷歌方法论》，很喜欢其中的一句话
+      &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;“不错，半农确是浅。但他的浅，却如一条清溪澄澈见底，纵有多少沉渣和腐草，也不掩其大体的清。倘使装的是烂泥，一时就看不出它的深浅来了；如果是烂泥的深渊呢，那就不如浅一点的好”
+&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li&gt;超越免费的6个锦囊
+      &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;第一条就是强化稀缺性、第二条是通过时效性超越免费、
+第三条是个性化、第四条是提供可用性（易理解性）的产品和服务、第五条是提供可靠而易用的服务、第六条是提供具有数据黏性的服务
+&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;正文&quot;&gt;正文&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;强化稀缺性
+      &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;超越免费的第一条是制造一种稀缺性，而这需要产品、服务、技能本身具有一种难以复制的特性
+&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;通过时效性超越免费-
+      &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;终身学习-了解了时效性，你可能也体会了终身学习的重要性，因为这样总是可以领先同辈人一步，让自己成为具有时效性的人才，而不是廉价的人。
+&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;个性化
+      &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;一直强调，要做一个有趣的人，这个有趣，就是个性化。每一个人只有成为了有趣的人，有大家所喜欢的个性的人，大家才能喜欢你。---个性化医疗
+&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li&gt;提供可用性（易理解性）的产品和服务
+      &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;在任何时代能够把事情解释清楚不仅是一个有用的本领，而且是一个很赚钱的生意。---例如得到的每天听一本书
+&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;提供可靠而易用的服务
+      &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li&gt;提供具有数据黏性的服务
+      &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;讲师-听众
+&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;see-also&quot;&gt;see also&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://baike.baidu.com/item/%E8%BE%B9%E9%99%85%E6%88%90%E6%9C%AC&quot;&gt;边际成本:边际成本指的是每一单位新增生产的产品（或者购买的产品）带来的总成本的增量&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://sites.google.com/view/zhangkn/%E9%A6%96%E9%A1%B5&quot;&gt;Google 协作平台 https://sites.google.com/new?usp=jotspot_si&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://search.google.com/search-console?resource_id=https://zhangkn.github.io/&amp;amp;utm_source=wnc_20050170&amp;amp;utm_medium=gamma&amp;amp;utm_campaign=wnc_20050170&amp;amp;utm_content=msg_110105790&amp;amp;hl=zh-CN&quot;&gt;新版的search-console&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 02 Mar 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/03/BeyondFree/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/03/BeyondFree/</guid>
+        
+        <category>JunWu'sGoogleMethodology</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Electra</title>
+        <description>&lt;h3 id=&quot;前言&quot;&gt;前言&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;dylib 存放的目录
+      &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;iPhone:/usr/lib/TweakInject root# ls -lrt
+total 9124
+lrwxr-xr-x 1 mobile staff      33 Nov  3  2015 RocketBootstrap.dylib -&amp;gt; /usr/lib/librocketbootstrap.dylib*
+&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;正文&quot;&gt;正文&lt;/h3&gt;
+
+&lt;h3 id=&quot;see-alse&quot;&gt;see alse&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/coolstar/substitute&quot;&gt;substitute&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/coolstar/electra-ipas&quot;&gt;electra-ipas&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://coolstar.org/electra/&quot;&gt;https://coolstar.org/electra/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://twitter.com/coolstarorg&quot;&gt;https://twitter.com/coolstarorg&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;For Anemone, make sure to get RocketBootstrap from https://rpetri.ch/repo/
+
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/zhangkn/KNiOS-11.0-11.1.2-/blob/master/Electra-1.0.2.zip&quot;&gt;Electra-1.0.2.zip 修改为.ipa即可&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://xlsn0w.github.io/jekyll/2017/06/22/DispatchQueue/&quot;&gt;iOS’s Dispatch Queue&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;并行是指两个或者多个事件在同一时刻发生；而并发是指两个或多个事件在同一时间间隔内发生
+&amp;lt;!-- 1、应用程序使用以下三种形式调用提交到主队列的block --&amp;gt;
+dispatch_main
+UIApplicationMain(iOS)
+在主队列中使用 CFRunLoopRef
+获取主队列的方式：dispatch_get_main_queue()
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.apple.com/videos/play/wwdc2015/718/&quot;&gt;Building Responsive and Efficient Apps with GCDhttps://developer.apple.com/videos/play/wwdc2015/718/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.apple.com/documentation/dispatch?language=objc&quot;&gt;Dispatch&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/BlueCocoa/choose/&quot;&gt;抽离cycript的choose功能&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.alonemonkey.com/2017/05/31/get-start-with-mac-reverse/&quot;&gt;substitute 怎么使用:substitute，它有着和substrate一样的api接口。 &lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://ipod-touch-max.ru/cydia/index.php?cat=search&amp;amp;keyword=lighttpd&quot;&gt; 下载tweak的deb http://ipod-touch-max.ru/cydia/index.php?cat=search&amp;amp;keyword=lighttpd&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 28 Feb 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/02/Electra/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/02/Electra/</guid>
+        
+        <category>iOSre</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>GoogleHacking</title>
+        <description>&lt;h3 id=&quot;前言&quot;&gt;前言&lt;/h3&gt;
+
+&lt;p&gt;Google不仅能帮我们找到所需要的文章，电影，本子[8]和各种gv，还能让我们在渗透检测过程中省时省力&lt;/p&gt;
+
+&lt;h3 id=&quot;正文&quot;&gt;正文&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;intext:ReverseEngineering
+      &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;搜索冒号后接的一个关键字
+https://www.reddit.com/r/ReverseEngineering/
+&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li&gt;allintext:ReverseEngineering&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;能接多个关键字，能与其他操作符混合使用
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;intitle:ReverseEngineering intext:ios
+      &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;intitle搜索网页标题中是否有所输入字符
+&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;allintitle:zhangkn.github.io
+      &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;和ntitle类似，能接多个关键字，但是不能与其他操作符混合使用，可单独使用
+&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;http://webcache.googleusercontent.com/search?q=cache:https://zhangkn.github.io++intitle:ReverseEngineering+intext:ios&amp;amp;num=1&amp;amp;safe=strict&amp;amp;biw=1280&amp;amp;bih=656&amp;amp;strip=1&amp;amp;vwsrc=0&quot;&gt;cache:https://zhangkn.github.io intitle:ReverseEngineering intext:ios&lt;/a&gt;
+      &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;This is Google's cache of https://zhangkn.github.io/. It is a snapshot of the page as it appeared on 20 Feb 2018 15:37:02 GMT.
+输入URL，搜索特定页面的缓存快照，即使目标页面发生变动甚至不存在了，依然可以看到它的副本
+&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;define:ReverseEngineering
+      &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;搜索输入关键词或关键词组的定义来源链接;该操作符不能与其他操作符及关键字混用。
+&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;filetype:md intext:Reverse Engineering intitle:Reverse Engineering
+      &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;搜索指定类型的文件;可以与其他操作符混合使用;
+ext:与filetype等价
+&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;info:https://zhangkn.github.io
+      &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;搜索输入URL的摘要信息和其他相关信息，该操作符不能与其他操作符及关键字混用
+&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;site:https://zhangkn.github.io
+      &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;将搜索范围缩小到特定的网站，域或子域
+&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li&gt;inurl:vi  site:https:zhangkn.github.io
+      &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1、搜索输入字符是否存在于URL中.可以联合site 使用
+https://zhangkn.github.io/2018/02/vi/
+2、allinurl:类似inurl:,但是可指定多个字符，不能与其他操作符混合使用，可单独使用
+allinurl:vi 02 site:https:zhangkn.github.io
+&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;link:https:zhangkn.github.io
+      &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;搜索链接到所输入URL的页面
+&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;related:https:zhangkn.github.io
+      &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;冒号后接一个URL，搜索与该URL相关的页面
+&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;inanchor:reverseEngineering intext:ios
+      &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;搜索一个HTML标记中的一个链接的文本表现形式:
+&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;stocks:高阳&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;搜索关于指定公司的股票市场信息
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;insubject:reverseEngineering intext:ios&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;搜索Google组的标题行
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;h3 id=&quot;例子&quot;&gt;例子&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;端口扫描 inurl:8080 -intext:8080
+      &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;inurl:8080 -intext:8080
+inurl:nqt -intext:8080 filetype:php intext:&quot;network query tool&quot;  --http://portal.trgsites.de/network/nqt.php
+&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;SQL数据库挖掘
+      &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;filetype:sql + &quot;IDENTIFIED BY&quot; -cvs
+filetype:sql + &quot;IDENTIFIED BY&quot; (&quot;Grant * on *&quot; | &quot;create user&quot;)
+filetype:mp4 inurl:xxx intext:xxx: Google不仅能帮我们找到所需要的文章，电影，本子[8]和各种gv，还能让我们在渗透检测过程中省时省力
+&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;see-also&quot;&gt;see also&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/BishopFox/bfinject/blob/master/README.md#credits&quot;&gt;bfinject&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://minapp.com/miniapp/&quot;&gt;https://minapp.com/miniapp/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.elcomsoft.com/2018/02/breaking-into-ios-11/&quot;&gt;breaking-into-ios-11&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blog.pangu.io/iosurfacerootuserclient-port-uaf/&quot;&gt;IOSurfaceRootUserClient Port UAF&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://bugs.chromium.org/p/project-zero/issues/detail?id=1417#c3&quot;&gt;async_wake_ios&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://coolstar.org/electra/&quot;&gt;https://coolstar.org/electra/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://twitter.com/saurik/status/952725123601084416&quot;&gt;https://twitter.com/saurik/status/952725123601084416&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.tylinux.com/2018/02/07/install-tweak-with-electra-on-ios11/&quot;&gt;https://blog.tylinux.com/2018/02/07/install-tweak-with-electra-on-ios11/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/comex/substitute&quot;&gt;知名 Tweak 开发者 CoolStar 基于 Comex 开发的 CydiaSubstrate 的开源替代: Substitute&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.tylinux.com/2018/02/07/install-tweak-with-electra-on-ios11/&quot;&gt;手动完成一个 Tweak 的安装（因为没有 Cydia）,结合 https://github.com/BishopFox/bfinject 使用—-期待Electra的最终版本&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;知名 Tweak 开发者 CoolStar 基于 Comex 开发的 CydiaSubstrate 的开源替代: Substitute，开发了 Electra 越狱工具。支持 iOS11.0 - iOS 11.1.2 的全部 iOS 设备。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.tylinux.com/2017/07/24/reverse-engineering-001/&quot;&gt;《iOS逆向工程》- 越狱&lt;/a&gt;
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jailbreak在Android上叫Root，在iOS上叫越狱，在Symbian上叫免签，在Web入侵时叫提权; 
+iOS 10开始，非完美越狱也越来越难，虽然在 Google Project Zero 的“帮助”下，Luca Todesco 开发了 Yalu102 ，但是支持设备有限，越狱稳定性不高。
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.tylinux.com/2017/07/18/reverse-neteasemusic-001/&quot;&gt;reverse-neteasemusic-001&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.tylinux.com/2016/08/30/live-under-console-on-macOS/&quot;&gt;在macOS下高效使用命令行&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;macOS的内核衍生自FreeBSD，属于正统Unix.
+使用Linux式命令: Linux下的标准命令包含在由GNU提供的coreutils包中，在Mac下可以通过Homebrew安装coreutils包来获取支持(brew install coreutils)
+&amp;lt;!-- 把coreutils的命令设为默认，取代macOS提供的命令。在你的shell配置文件：bash是~/.bashrc，zsh是~/.zshrc中追加如下两条配置： --&amp;gt;
+# 把coreutils的bin目录放在PATH前边，这样就优先执行coreutils的命令
+PATH=&quot;/usr/local/opt/coreutils/libexec/gnubin:$PATH&quot;
+# 优先调用coreutls的man信息
+MANPATH=&quot;/usr/local/opt/coreutils/libexec/gnuman:$MANPATH&quot;
+&amp;lt;!-- coreutils的ls命令默认没有颜色，同样在配置文件中加入下边这行： --&amp;gt;
+alias ls=&quot;ls --color=tty&quot;
+&amp;lt;!-- 修改Homebrew源 :国内良心组织/个人提供国内镜像。比如中科大LUG（Linux User Group），使用如下命令修改：--&amp;gt;
+# 详见https://lug.ustc.edu.cn/wiki/mirrors/help/brew.git
+# 替换homebrew默认源
+cd /usr/local
+git remote set-url origin git://mirrors.ustc.edu.cn/brew.git
+# 详见https://lug.ustc.edu.cn/wiki/mirrors/help/homebrew-bottles
+# 替换homebrew bottles默认源
+echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles' &amp;gt;&amp;gt; ~/.bashrc
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://ban.ninja/&quot;&gt;让天下没有难下的源http://ban.ninja/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;设置环境变量 HOMEBREW_BOTTLE_DOMAIN 即可使用本镜像源加速下载 Homebrew 资源。
+
+bash
+在 ~/.bashrc 中加入
+
+export HOMEBREW_BOTTLE_DOMAIN=http://7xkcej.dl1.z0.glb.clouddn.com
+fish
+在 ~/.config/fish/config.fish 中加入
+
+set -x HOMEBREW_BOTTLE_DOMAIN http://7xkcej.dl1.z0.glb.clouddn.com
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.tylinux.com/2016/08/30/live-under-console-on-macOS/&quot;&gt;让终端程序使用代理&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;!-- 1、环境变量:对于支持从环境变量中读取代理配置的程序，比如wget,git等，可以通过设置http_proxy或者https_proxy环境变量使代理生效。 --&amp;gt;
+export http_proxy=http://ip:port
+wget http://www.baidu.com
+&amp;lt;!--2、 proxychains: ，比如shadowsocks、GoAgent使用的socks5协议 可以使用proxychains命令来使代理生效。--&amp;gt;
+&amp;lt;!-- 首先通过Homebrew安装proxychains-ng包： --&amp;gt;
+brew install proxychains-ng
+&amp;lt;!-- 之后需要对proxychain进行配置，proxychains的配置文件路径是/usr/local/etc/proxychains.conf。打开配置文件，注释掉最后一行的默认配置，在之后按照协议 IP 端口 用户名(可选) 密码(可选)的格式添加自己的代理服务器配置。示例如下： --&amp;gt;
+[ProxyList]
+# add proxy here ...
+# meanwile
+# defaults set to &quot;tor&quot;
+#socks4     127.0.0.1 9050
+socks5 127.0.0.1 1080
+&amp;lt;!-- proxychains本身支持代理链，顾名思义就是通过代理A连接代理B再连接代理C…连接目标服务器，如需使用代理链，只需要按次序将代理服务器信息填写到配置文件中既可。 --&amp;gt;
+
+&amp;lt;!-- 3、有些程序自身支持代理，比如curl和git等。 --&amp;gt;
+&amp;lt;!-- curl支持通过配置文件设置代理的方法，打开curl配置文件（~/.curlrc） --&amp;gt;
+proxy=&quot;protocal://ip:port&quot;
+# protocal可以是http、https、socks4/5
+&amp;lt;!-- git也支持通过将代理信息写入配置文件的方式设置代理： --&amp;gt;
+# git支持http、https、socks代理
+git config --global http.proxy &quot;protocal://ip:port&quot;
+git config --global https.proxy &quot;protocal://ip:port&quot;
+&amp;lt;!-- 或者直接打开git配置文件（~/.gitconfig），写入如下配置：
+
+ --&amp;gt;
+ [http]
+proxy=&quot;protocal://ip:port&quot;
+[https]
+proxy=&quot;protocal://ip:port&quot;
+
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zongquan.wang/archives/&quot;&gt;闷骚的悟空&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://luklab.com/&quot;&gt;Luke’s Homepage&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/wtsxDev/reverse-engineering&quot;&gt;reverse-engineering&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/aozhimin/iOS-Reverse-Engineering-presentation&quot;&gt;iOS-Reverse-Engineering-presentation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.freetechbooks.com&quot;&gt;http://www.freetechbooks.com&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/22161675&quot;&gt;Google Hacking————你真的会用Google吗？&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.quarkslab.com/category/reverseengineering.html&quot;&gt;https://blog.quarkslab.com/category/reverseengineering.html&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s/c0RIfRhEPmVzR0JHvorgFw&quot;&gt;charles 手机抓https包: Configure your device to use Charles as its HTTP proxy on 192.168.2.139:8888, then browse to chls.pro/ssl to download and install the certificate.&lt;/a&gt;
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;charlesV4.2 的辅助功能：
+Compose:可直接自定义对应的请求，并执行该请求。这个对我们抓包用处很大。我们可以从中得到该接口的必填参数、验证我们生成的Sign等等的。
+Repeat：很简单就是执行一次重复请求操作
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://123.w3cschool.cn/webtools&quot;&gt;webtools&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Sun, 25 Feb 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/02/GoogleHacking/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/02/GoogleHacking/</guid>
+        
+        <category>tool</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>vi</title>
+        <description>&lt;h3 id=&quot;前言&quot;&gt;前言&lt;/h3&gt;
+
+&lt;h3 id=&quot;正文&quot;&gt;正文&lt;/h3&gt;
+
+&lt;h3 id=&quot;vi&quot;&gt;vi&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;插入文本类命令
+      &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;L ：光标移至屏幕最后行 
+i ：在光标前 
+I ：在当前行首 
+a：光标后 
+A：在当前行尾 
+o：在当前行之下新开一行 
+O：在当前行之上新开一行 
+r：替换当前字符 
+R：替换当前字符及其后的字符，直至按ESC键 
+s：从当前光标位置处开始，以输入的文本替代指定数目的字符 
+S：删除指定数目的行，并以所输入文本代替之 
+ncw或nCW：修改指定数目的字 
+nCC：修改指定数目的行 
+&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;ssh-工具&quot;&gt;ssh 工具&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;https://itunes.apple.com/cn/app/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%B7%A5%E5%85%B7%E7%AE%B1/id1336790957?mt=8&quot;&gt;程序员工具箱：iPhone、iPad上方便好用的程序员百宝箱，一期支持ssh工具，程序员在移动端也可以方便地登录服务器进行操作&lt;/a&gt;
+&lt;img src=&quot;/images/posts/vi/sshalibaba.PNG&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;see-also&quot;&gt;see also&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.cnblogs.com/88999660/articles/1581524.html&quot;&gt;linux下vi命令大全&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.worldhello.net/gotgithub/01-explore-github/010-what-is-github.html&quot;&gt;什么是GitHub&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://xlab.tencent.com/cn/&quot;&gt;http://xlab.tencent.com/cn/腾讯玄武实验室&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blog.knownsec.com/&quot;&gt;http://blog.knownsec.com/知道创宇&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://weibo.com/ttarticle/p/show?id=2309404195340294189965&quot;&gt;https://weibo.com/ttarticle/p/show?id=2309404195340294189965&lt;/a&gt;
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;*开锁 的例子---基于对某个领域信息的全面掌握，提出达成某个目的的巧妙方法：
+只知道拿钥匙开锁，这是一般用户；
+认真从外部观察锁的人 会想到通过拨锁舌也能开锁，这是比较好的程序员；
+在相应位置设计一个挡片阻止直接拨锁舌，这是漏洞防护；
+学过开锁的人，知道怎么通过拨弹子这种通用的方法把锁打开，这是一般的信息安全技术人员；
+把锁拆开，观察内部原理，这是逆向工程；
+用逆向工程技术全面透彻地分析某种锁的内外结构、运作细节，设计出甚至无人谈及过的开锁方法，这就是安全研究。
+&amp;gt;* 学Windows的方法有三步:一、先把Windows的帮助文件从头到尾看一遍；二、在Windows目录下搜索*.txt、*.htm?、*.log、*.ini，把每一个文件内容都看一遍；三、把注册表浏览一遍。
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://tech.163.com/17/0811/09/CRI3QN8G00097U7R_mobile.html&quot;&gt;http://tech.163.com/17/0811/09/CRI3QN8G00097U7R_mobile.html: 社交心理需求模型：炫耀、荷尔蒙、孤独感、抒情、功利工具、发泄需求&lt;/a&gt;
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;双开微信： iOS 使用slices tweak。
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/PythonSpiderMan&quot;&gt;SpiderMan&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.elcomsoft.com/2018/02/breaking-into-ios-11/&quot;&gt;breaking-into-ios-11&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;iOS 11:
+LiberIOS (iOS 11.0-11.1.2), 64-bit devices, http://newosxbook.com/liberios/
+Electra (iOS 11.0-11.1.2), 64-bit devices, https://coolstar.org/electra/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.worldhello.net/gotgithub/01-explore-github/010-what-is-github.html&quot;&gt;what-is-github&lt;/a&gt;
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1、GitHub的协同模式 collaborate on code with other people： Pull Request、git format-patch命令将本地提交转换为补丁文件或补丁文件序列，
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+    &lt;p&gt;&lt;img src=&quot;/images/posts/vi/collaborate.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Sun, 11 Feb 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/02/vi/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/02/vi/</guid>
+        
+        <category>tool</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>how_to_host_cydia_repo</title>
+        <description>&lt;h3 id=&quot;前言&quot;&gt;前言&lt;/h3&gt;
+
+&lt;p&gt;将 Tweak 部署到大量设备上和更新的解决方案是搭建私有Cydia源 ；而非通常的make package install 、dpkg -i;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Cydia&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;由 Jay Freeman（saurik）和他的公司开发，用于安装、管理越狱设备上的第三方软件、插件。它移植了Debian上的包管理器dpkg并提供了图形化前端，方便普通用户使用。Cydia 中还有个 Cydia Store，提供付费的第三方应用。
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;http://iphonedevwiki.net/index.php/Cydia_Substrate&quot;&gt;CydiaSubstrate&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; iOS7 之前也叫MobileSubstrate，也是由saurik开发的。Cydia Substrate consists of 3 major components: MobileHooker, MobileLoader and safe mode.
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/coolstar/electra.git&quot;&gt;Electra&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;知名 Tweak 开发者 CoolStar 基于 Comex 开发的 CydiaSubstrate 的开源替代: Substitute，开发了 Electra 越狱工具。支持 iOS11.0 - iOS 11.1.2 的全部 iOS 设备
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;目录结构：deb 的源本质上就是需要特定结构的目录
+      &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cydia--
+         |--debs--*.deb
+         |--Packages  :dpkg-scanpackages debs /dev/null &amp;gt; Packages ;Packages 文件中包含源中每个包文件的信息，包括文件路径、大小、依赖、架构及校验信息
+         |--Packages.bz2 ：由Packages文件压缩而来, 命令行: bzip2 Packages；
+         |--Packages.gz
+         |--Release  ：是一个普通的文本文件，用于描述当前源的信息；这些信息会在 Cydia 的源列表及 Tweak 搜索列表中显示
+         |--Release.gpg
+&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;cydia源服务器搭建&quot;&gt;&lt;a href=&quot;https://github.com/zhangkn/KNBin/blob/master/kncydia&quot;&gt;Cydia源服务器搭建.&lt;/a&gt;&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;搭建软件源，必须保证至少有Release【可选】和Packages两个文件,&lt;a href=&quot;https://github.com/zhangkn/KNBin/blob/master/kncydia&quot;&gt;具体请看辅助脚本&lt;/a&gt;
+      &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dpkg-scanpackages: info: Wrote 1 entries to output Packages file.
+Serving HTTP on 0.0.0.0 port 8088 ...
+192.168.2.156 - - [06/Feb/2018 18:50:04] &quot;HEAD /Packages.bz2 HTTP/1.1&quot; 200 -
+192.168.2.156 - - [06/Feb/2018 18:50:04] code 404, message File not found
+192.168.2.156 - - [06/Feb/2018 18:50:04] &quot;HEAD /Packages.gz HTTP/1.1&quot; 404 -
+192.168.2.156 - - [06/Feb/2018 18:50:09] code 404, message File not found
+192.168.2.156 - - [06/Feb/2018 18:50:09] &quot;GET /./InRelease HTTP/1.1&quot; 404 -
+192.168.2.156 - - [06/Feb/2018 18:50:09] code 404, message File not found
+192.168.2.156 - - [06/Feb/2018 18:50:09] &quot;GET /./Release HTTP/1.1&quot; 404 -
+192.168.2.156 - - [06/Feb/2018 18:50:09] &quot;GET /./Packages.bz2 HTTP/1.1&quot; 200 -
+192.168.2.156 - - [06/Feb/2018 18:52:20] code 404, message File not found
+192.168.2.156 - - [06/Feb/2018 18:52:20] &quot;GET /./CydiaIcon.png HTTP/1.1&quot; 404 -
+192.168.2.156 - - [06/Feb/2018 18:52:24] code 404, message File not found
+192.168.2.156 - - [06/Feb/2018 18:52:24] &quot;GET /./CydiaIcon.png HTTP/1.1&quot; 404 -
+192.168.2.156 - - [06/Feb/2018 18:52:25] code 404, message File not found
+192.168.2.156 - - [06/Feb/2018 18:52:25] &quot;GET /./InRelease HTTP/1.1&quot; 404 -
+192.168.2.156 - - [06/Feb/2018 18:52:25] code 404, message File not found
+192.168.2.156 - - [06/Feb/2018 18:52:25] &quot;GET /./Release HTTP/1.1&quot; 404 -
+192.168.2.156 - - [06/Feb/2018 18:52:25] &quot;GET /./Packages.bz2 HTTP/1.1&quot; 200 -
+192.168.2.156 - - [06/Feb/2018 18:52:38] code 404, message File not found
+192.168.2.156 - - [06/Feb/2018 18:52:38] &quot;GET /CydiaIcon.png HTTP/1.1&quot; 404 -
+&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;假设URL地址是 192.168.2.189/cydia, 对于本地的cydia目录来说, 结构如下
+      &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Cydia/
+ --Release
+ --Packages
+ --Packages.gz
+ --Packages.bz2
+ --CydiaIcon.png
+ --debs/
+   --xxxx1.deb
+   --xxxx2.deb
+&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Packages
+      &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;deb包索引文件, 保存了各个deb包的control文件的信息,以及各个deb包的文件信息.
+&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Packages.bz2
+      &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;由Packages文件压缩而来, 命令行: bzip2 Packages
+&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Release
+      &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Cydia源配置文件,客户端通过下载此文件来读取cydia源信息;
+Release文件几乎不用改, 只要准备好deb文件, 然后用dpkg-scanpackage命令生成Packages就可以了
+&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;see-also&quot;&gt;see also&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;http://www.saurik.com/id/7&quot;&gt;How to Host a Cydia™ Repository&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Creating a Repository
+dpkg-scanpackages -m . /dev/null &amp;gt;Packages
+ bzip2 Packages
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;http://blog.kernelpanic.im/2014/01/25/how-to-develop-jailbreak-apps-for-ios&quot;&gt;how-to-develop-jailbreak-apps-for-ios&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Cydia的source/repo基本上是Debian的APT repo, 只需要提供:
+
+Release, repo描述文件
+Packages|Pacakges.gz/bz2, repo的package清单
+*.deb, 实际package文件
+
+可以通过rsync同步到服务器上, 跑个文件下载的web服务就可以了---python -m SimpleHTTPServer 8088
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/hewigovens/hewigovens.github.com/wiki&quot;&gt;hewigovens.github.com&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.tylinux.com/2017/08/22/create-private-cydia-repo/&quot;&gt;create-private-cydia-repo&lt;/a&gt;
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;control  文件 的Depends 项中添加 Tweak 的依赖，以逗号隔开。要注意：这里填写的是包名，比如 Open 这个工具，需要填写的是 com.conradkramer.open，可以先用Cydia安装，然后 dpkg -l 查看。
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.tylinux.com/2017/07/24/reverse-engineering-002/&quot;&gt;《iOS逆向工程》- 砸壳&lt;/a&gt;
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;iOS的加壳操作则是由苹果进行的。这个壳的主要目的不是防止被逆向分析，而是一种DRM(数字版权管理)手段，它与iTunes Store中的其他资源一样，使用FairPlay(Wikipedia)进行加密，只能在特定账户的特定设备上运行。
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.tylinux.com/2017/07/24/reverse-engineering-001/&quot;&gt;《iOS逆向工程》- 越狱&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;!-- 写成一个iproxy服务: --&amp;gt;
+touch ~/Library/LaunchAgents/com.usbmux.iproxy.plist
+devzkndeMacBook-Pro:zhangkn.github.io devzkn$ ls -ler ~/Library/LaunchAgents
+total 32
+-rw-r--r--  1 devzkn  staff  971 Feb 23 10:33 com.qiuyuzhou.shadowsocksX-NG.local.plist
+-rw-r--r--  1 devzkn  staff  909 Feb 23 10:33 com.qiuyuzhou.shadowsocksX-NG.kcptun.plist
+-rw-r--r--  1 devzkn  staff  735 Feb 23 10:33 com.qiuyuzhou.shadowsocksX-NG.http.plist
+-rw-r--r--@ 1 devzkn  staff  803 Aug  2  2017 com.google.keystone.agent.plist
+&amp;lt;!-- iproxy 2222 22 配置执行iproxy的参数 --&amp;gt;
+&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&amp;gt;
+&amp;lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&amp;gt;
+&amp;lt;plist version=&quot;1.0&quot;&amp;gt;
+&amp;lt;dict&amp;gt;
+    &amp;lt;key&amp;gt;Label&amp;lt;/key&amp;gt;
+    &amp;lt;string&amp;gt;com.usbmux.iproxy&amp;lt;/string&amp;gt;
+    &amp;lt;key&amp;gt;ProgramArguments&amp;lt;/key&amp;gt;
+    &amp;lt;array&amp;gt;
+        &amp;lt;string&amp;gt;/usr/local/bin/iproxy&amp;lt;/string&amp;gt;
+        &amp;lt;string&amp;gt;2222&amp;lt;/string&amp;gt;
+        &amp;lt;string&amp;gt;22&amp;lt;/string&amp;gt;
+    &amp;lt;/array&amp;gt;
+    &amp;lt;key&amp;gt;RunAtLoad&amp;lt;/key&amp;gt;
+    &amp;lt;true/&amp;gt;
+    &amp;lt;key&amp;gt;KeepAlive&amp;lt;/key&amp;gt;
+    &amp;lt;true/&amp;gt;
+&amp;lt;/dict&amp;gt;
+&amp;lt;/plist&amp;gt;
+&amp;lt;!-- 启动iproxy服务:iproxy就不依赖终端，独立运行于后台了 --&amp;gt;
+launchctl load com.usbmux.iproxy.plist
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Wed, 07 Feb 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/02/how_to_host_cydia_repo/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/02/how_to_host_cydia_repo/</guid>
+        
+        <category>iOSre</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>aso</title>
+        <description>&lt;h3 id=&quot;前言&quot;&gt;前言&lt;/h3&gt;
+
+&lt;p&gt;例如Debian生成package这样，在必须使用root的时候，使用fakeroot模拟root权限。fakeroot使用libfakeroot-sysv.so库文件中的函数与faked通讯管理文件权限信息。&lt;/p&gt;
+
+&lt;h3 id=&quot;正文&quot;&gt;正文&lt;/h3&gt;
+
+&lt;h3 id=&quot;cydia&quot;&gt;cydia&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;git
+      &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; git clone git://git.saurik.com/cydia.git 
+ Original source git://git.saurik.com/cydia.git Web access http://gitweb.saurik.com/cydia.git. 
+&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/coolstar/electra&quot;&gt;Electra iOS 11.0 - 11.1.2 jailbreak toolkit based on async_awake&lt;/a&gt;
+      &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;https://coolstar.org/electra/
+&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;agplv3-licensed-llvm-obfuscator&quot;&gt;&lt;a href=&quot;https://github.com/HikariObfuscator&quot;&gt;AGPLV3 Licensed LLVM Obfuscator&lt;/a&gt;&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;http://iosre.com/t/llvm-hikari/10720&quot;&gt;LLVM混淆器Hikari&lt;/a&gt;
+      &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;-enable-bcfobf 启用伪控制流  
+-enable-cffobf 启用控制流平坦化
+-enable-splitobf 启用基本块分割  
+-enable-subobf 启用指令替换  
+-enable-adb 启用反调试(需要单独配置)
+-enable-acdobf 启用反class-dump
+-antihook 启用反Hook
+-enable-indibran 启用基于寄存器的相对跳转，配合其他加固可以彻底破坏IDA/Hopper的伪代码(俗称F5)
+-enable-strcry 启用字符串加密
+-enable-funcwra 启用函数封装
+&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/HikariObfuscator/Mirai&quot;&gt;Mirai&lt;/a&gt;
+      &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Hikari是一个基于OLLVM高度优化并包含大量自制混淆功能的二进制加固工具
+&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;/naville.gitbooks.io/hikaricn/content/&quot;&gt;/naville.gitbooks.io/hikaricn/content/&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;http://llvm.org/docs/GettingStarted.html&quot;&gt;Getting Started with the LLVM System¶&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://llvm.org/docs/CMake.html&quot;&gt;Building LLVM with CMake¶&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://gist.github.com/Naville/f1d8ea43ffde61f57497492d599b32fb&quot;&gt;准备编译脚本&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://naville.gitbooks.io/hikaricn/content/Compile-&amp;amp;-Install.html&quot;&gt;Compile-&amp;amp;-Install.html&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;检查混淆效果- 可以使用hopper 查看效果(如果没有对方法进行混淆，目前的方法名称、方法的引用关系、字符串都还在)
+      &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;!-- 如果只是简单看字符串是否混淆，可以使用strings： --&amp;gt;
+devzkndeMacBook-Pro:ninePoethird.app devzkn$  strings /Users/devzkn/Downloads/ninePoethird/Payload/ninePoethird.app/ninePoethird  &amp;gt;  /Users/devzkn/ninePoethird.text
+&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li&gt;kntree
+      &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;devzkndeMacBook-Pro:bin devzkn$ cat kntree
+#!/bin/sh
+#strings AppStore &amp;gt; strings_AppStore.txt
+# kntree strings.text
+# python ~/bin/list_dir_tree.py  /Users/devzkn/strings.text &amp;gt;  /Users/devzkn/tree.text
+python ~/bin/list_dir_tree.py $1 &amp;gt; /Users/devzkn/decrypted/tree/new.text
+open /Users/devzkn/decrypted/tree
+&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;fakeroot&quot;&gt;fakeroot&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;$(FAKEROOT)&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;sudo   chown -R
+      &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# 先修改回来
+sudo   chown -R  devzkn:staff ~/work/aso.git/Package
+# 在dpkg-deb -Zgzip -b之前修改成root:wheel
+sudo   chown -R  root:wheel ~/work
+&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;*fakeroot.sh&lt;/p&gt;
+  &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;devzkndeMacBook-Pro:bin devzkn$ ls -l /opt/theos/bin/fakeroot.sh
+-rwxr-xr-x  1 root  wheel  892 Aug 10 15:18 /opt/theos/bin/fakeroot.sh
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/theos/theos/commit/35e62ae70e13c6c342c867eff961fe4ffe7d2df1&quot;&gt;Add support for fauxsu to fakeroot.sh.&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; if [[ &quot;$USER&quot; == &quot;root&quot; ]]; then
+  	fakeroot=&quot;&quot;
+ +elif type fauxsu &amp;amp;&amp;gt; /dev/null; then
+ +	fakeroot=&quot;fauxsu -p $persistence -- &quot;
+  elif type fakeroot-ng &amp;amp;&amp;gt; /dev/null; then
+  	fakeroot=&quot;fakeroot-ng -p $persistence -- &quot;
+  elif type fakeroot &amp;amp;&amp;gt; /dev/null; then
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;mgcopyanswer&quot;&gt;MGCopyAnswer&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.desgard.com/fishhook-2/&quot;&gt;验证试验 - 探求 fishhook 原理（二）&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://weibo.com/ttarticle/p/show?id=2309404174670051067824&quot;&gt;水文：对漏洞挖掘的一点看法&lt;/a&gt;
+&lt;img src=&quot;/images/posts/aso/Proteas.jpg&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://bbs.pediy.com/thread-216540.htm&quot;&gt;Hooks MGCopyAnswer(arm64)&lt;/a&gt;: https://stackoverflow.com/questions/37903788/libmobilegestalt-dylib-crashed-when-hooking-mgcopyanswer-for-arm64&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;static CFPropertyListRef (*orig_MGCopyAnswer_internal)(CFStringRef prop, uint32_t* outTypeCode);
+CFPropertyListRef new_MGCopyAnswer_internal(CFStringRef prop, uint32_t* outTypeCode) {
+    return orig_MGCopyAnswer_internal(prop, outTypeCode);
+}
+ 
+extern &quot;C&quot; MGCopyAnswer(CFStringRef prop);
+ 
+static CFPropertyListRef (*orig_MGCopyAnswer)(CFStringRef prop);
+CFPropertyListRef new_MGCopyAnswer(CFStringRef prop) {
+    return orig_MGCopyAnswer(prop);
+}
+ 
+%ctor {
+    uint8_t MGCopyAnswer_arm64_impl[8] = {0x01, 0x00, 0x80, 0xd2, 0x01, 0x00, 0x00, 0x14};
+    const uint8_t* MGCopyAnswer_ptr = (const uint8_t*) MGCopyAnswer;
+    if (memcmp(MGCopyAnswer_ptr, MGCopyAnswer_arm64_impl, 8) == 0) {
+        MSHookFunction(MGCopyAnswer_ptr + 8, (void*)new_MGCopyAnswer_internal, (void**)&amp;amp;orig_MGCopyAnswer_internal);
+    } else {
+        MSHookFunction(MGCopyAnswer_ptr, (void*)new_MGCopyAnswer, (void**)&amp;amp;orig_MGCopyAnswer);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;qa&quot;&gt;Q&amp;amp;A&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;TIC TCP Conn Cancel [4:0x1703960a0]
+      &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//通常是由于VPN 、或者其他程序修改代理信息之后，超时的这个请求并没有同步的更新信息，代理信息还是旧的，或者不一致导致这个问题
+1、目前可以采取关闭和打开Wi-Fi的形式来重新同步代理信息（--适合通过设置配置VPN信息连接）
+2、或者重启发起请求的进程，使其重新获取“源地址”信息
+3、通知发起请求的进程，去主动获取新的“源地址”信息
+&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;too-many-open-files&quot;&gt;Too many open files&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;failed to open /System/Library/Preferences/Logging/Subsystems/com.apple.Accessibility.plist: Too many open files&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;adv-cmds :cydia 进行下载
+iPhone:~ root# ulimit -a
+# 修改
+iPhone:~ root# ulimit -n 2048
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/sunkehappy/iOS-reverse-engineering-tools-backup/blob/master/lsof-arm7-iOS4.2&quot;&gt;lsof-arm7-iOS4.2&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://ioscake.com/on-iosiphone-too-many-open-files-need-to-list-open-files-like-lsof.html&quot;&gt;6 Solutions Collect From Internet About “on iOS/iPhone: “Too many open files”: need to list open files (like lsof)”&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#import &amp;lt;sys/types.h&amp;gt;  
+#import &amp;lt;fcntl.h&amp;gt;
+#import &amp;lt;errno.h&amp;gt;
+#import &amp;lt;sys/param.h&amp;gt;
+
++(void) lsof
+{
+    int flags;
+    int fd;
+    char buf[MAXPATHLEN+1] ;
+    int n = 1 ;
+
+    for (fd = 0; fd &amp;lt; (int) FD_SETSIZE; fd++) {
+        errno = 0;
+        flags = fcntl(fd, F_GETFD, 0);
+        if (flags == -1 &amp;amp;&amp;amp; errno) {
+            if (errno != EBADF) {
+                return ;
+            }
+            else
+                continue;
+        }
+        fcntl(fd , F_GETPATH, buf ) ; 
+        NSLog( @&quot;File Descriptor %d number %d in use for: %s&quot;,fd,n , buf ) ;
+        ++n ; 
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://segmentfault.com/a/1190000004899899&quot;&gt;Cydia工具介绍&lt;/a&gt;:http://wyh.life/article/2014/10/27/cydia&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;###Cydia Apps
+1、APT 0.6 Transitional: apt-get包管理工具
+apt-cache search &amp;lt;pkg-name&amp;gt; 查找软件包
+apt-cache show &amp;lt;pkg-name&amp;gt; 显示软件包信息
+apt-get update 从APT源更新软件包列表
+apt-get upgrade 更新软件包
+apt-get remove &amp;lt;pkg-name&amp;gt; 删除已安装的软件包
+apt-get purge &amp;lt;pkg-name&amp;gt; 删除已安装的软件包及配置文件
+apt-get autoremove 删除不需要的软件包（通常是由于依赖关系而安装）
+apt-get autoclean 删除已卸载的软件包的.deb档
+2、dpkg --get-selections | grep &amp;lt;pkg-name&amp;gt; 搜索已安装的软件包
+dpkg -s/-L &amp;lt;pkg-name&amp;gt; 查看已安装的包信息/路径
+3、Gawk: 支持awk编程，awk是一种强大的文本处理及模式匹配语言
+4、MobileTerminal: 设备上的命令行终端
+5、Vim: 文本编辑
+6、Sqlite3: db相关操作
+将DB转储到ASCII文本文件：echo .dump | sqlite file.db &amp;gt; file.dump
+重新构建数据库：cat file.dump | sqlite3 file_new.db
+进入sqlite3后，使查询语句结果打印更直观：.headers on 及 .mode column
+7、adv-cmds: ps, finger, last, lsvfs
+8、lsof:
+备注，Cydia版本若遇到“Cannot allocate memory”，去下载lsof-arm7-iOS4.2替换:https://github.com/zhangkn/iOS-reverse-engineering-tools-backup/blob/master/lsof-arm7-iOS4.2
+devzkndeMBP:aso.git devzkn$ scp /Users/devzkn/Downloads/lsof-arm7-iOS4.2 usb2222://usr/bin/lsof
+
+列出指定文件/设备/目录下被打开的文件：lsof /var/mobile/
+指定PID，查看该进程打开的文件：lsof -p 1234
+查看指定端口有哪些进程在使用：lsof -i:22
+列出所有的TCP/UDP连接：lsof -i tcp/udp
+查看指定用户打开的文件：lsof -u mobile
+shell-cmds: killall, time, which
+重启Springboard（如ipa安装不彻底时。备注：sbreload也可以做到）：killall -HUP SpringBoard
+Core Utilities (/bin): 提供了dirname, kill, mktemp, su
+dirname工具在脚本使用场景较多
+top: 动态查看系统状态，如CPU负载
+inetutils: ping, ftp客户端/服务端
+network-cmds: 网络管理工具，ifconfig, netstat, arp, route, traceroute
+readline: 方便命令行移动
+ctrl+r 搜索
+ctrl+a/e 移动到行首/尾
+ctrl+u/k 删除到行首/尾
+ctrl+l 清屏
+open: 通过命令行打开应用
+ipainstaller 通过命令行安装ipa应用
+plutil (Erica Utilities):
+支持设备上对plist文件进行操作，plutil -show file.plist
+strings (Binutils):
+打印某个文件的可打印字符串，便于了解一些非文本文件的内容。比如可以用来查找浏览器Cookies内容
+cycript: TBD
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;see-also&quot;&gt;see also&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://wiki.honglu.me/iOS/%E5%88%B6%E5%81%9ACydia%E6%BA%90.html&quot;&gt;搭建 Cydia 源&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/mackyle/fakeroot&quot;&gt;https://github.com/mackyle/fakeroot.&lt;/a&gt;
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Only five files are installed:
+/usr/local/bin/faked
+/usr/local/bin/fakeroot
+/usr/local/lib/libfakeroot.dylib
+/usr/local/share/man/man1/faked.1
+/usr/local/share/man/man1/fakeroot.1
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://anonscm.debian.org/gitweb/?p=users/clint/fakeroot.git&quot;&gt;Debian packaging of fakeroot&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://mackyle.github.io/fakeroot/&quot;&gt;http://mackyle.github.io/fakeroot/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://baike.baidu.com/item/fakeroot&quot;&gt;fakeroot&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://labs.mwrinfosecurity.com/&quot;&gt;mwrinfosecurity&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/codesourse/iInjection&quot;&gt;iInjection&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/angelXwind&quot;&gt;angelXwind&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://r-plus.github.io/blog/categories/tweak/&quot;&gt;seekpoint&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://theos.github.io/&quot;&gt;https://theos.github.io/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://tldp.org/HOWTO/html_single/Debian-Binary-Package-Building-HOWTO/&quot;&gt;Debian-Binary-Package-Building-HOWTO&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;invoke 'dpkg-deb --build' using 'fakeroot' on the 'debian' directory
+fakeroot的实现:
+1、fakeroot仅仅是简单的shell script。简单来说fakeroot做下面的事情。
+ * 启动faked，获取FAKEROOTKEY * 设置环境变量FAKEROOTKEY，LD_LIBRARY_PATH，LD_PRELOAD。执行命令（默认是shell）
+2、faked是管理虚拟的文件所有者，文件权限信息的守护进程。 在fakeroot中执行的命令会加载由LD_LIBRARY_PATH，LD_PRELOAD环境变量指定的一个动态链接库（/usr/lib/libfakeroot/libfakeroot-sysv.so）
+3、LD_LIBRARY_PATH=/usr/lib/libfakeroot LD_PRELOAD=libfakeroot-sysv.so
+4、libfakeroot-sysv.so导出了chown()等函数，这些函数会使用FAKEROOTKEY与faked通讯，返回虚拟的所有者与权限信息。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blog.azhuang.me/2009/08/building-deb-with-dpkg-deb.html&quot;&gt;fakeroot dpkg-deb –build debian&lt;/a&gt;
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;devzkndeMacBook-Pro:aso.git devzkn$ id
+uid=501(devzkn) gid=20(staff) groups=20(staff),701(com.apple.sharepoint.group.1),12(everyone),61(localaccounts),79(_appserverusr),80(admin),81(_appserveradm),98(_lpadmin),502(access_bpf),33(_appstore),100(_lpoperator),204(_developer),250(_analyticsusers),395(com.apple.access_ftp),398(com.apple.access_screensharing),399(com.apple.access_ssh-disabled)
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.kghost.info/2011/02/11/%E4%BD%BF%E7%94%A8fakeroot%E6%A8%A1%E6%8B%9Froot%E6%9D%83%E9%99%90%E6%89%A7%E8%A1%8C%E7%A8%8B%E5%BA%8F/&quot;&gt;使用fakeroot模拟root权限执行程序&lt;/a&gt;
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1、fakeroot是什么？
+例如Debian在生成package的时候，编译完之后，不能立刻在当前环境执行make install，需要执行make install DESTDIR=$(pwd)/debian/tmp把生成的文件安装到build目录的里面$(pwd)/debian/tmp。然后使用那个目录里面的全部内容生成Debian包（实际上包里面还会包含control和maintainer script等）。 这个包里面的文件所有者必须是root
+2、解决方案
+在制作Debian包的时候，需要使用root权限来执行某些命令。本来是应该使用sudo来运行这些命令的，但是通常情况下是使用fakeroot模拟root运行
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/comex/substitute&quot;&gt;A free runtime modification library.&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://wiki.honglu.me/&quot;&gt;独奏’s Wiki&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://wiki.honglu.me/iOS/CFRunLoopRun%E6%BA%90%E7%A0%81%E6%A0%87%E6%B3%A8.html&quot;&gt;CFRunLoopRun源码标注&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://undefinedblog.com/archives/&quot;&gt;undefinedblog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/zhangkn/tethering&quot;&gt;Proxy and DNS Server on iOS&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/jasonslyvia/undefinedblog/blob/master/source/_posts/Cydia%E6%BA%90%E6%90%AD%E5%BB%BA%E3%80%81%E7%BB%B4%E6%8A%A4%E3%80%81%E6%9B%B4%E6%96%B0-deb%E6%96%87%E4%BB%B6%E7%BC%96%E8%BE%91%E6%96%B9%E6%B3%95.md&quot;&gt;Cydia源搭建、维护、更新-deb文件编辑方&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;http://www.youtube.com/watch?v=9eHKvCqBDBQ
+主要记录一下如何添加和更新.deb文件
+1、将所有的.deb文件放到 /repo/debs 文件夹中
+
+2、在【终端】里输入命令
+
+cd repo
+
+3、继续输入命令
+
+dpkg-scanpackages debs / &amp;gt; Packages
+
+4、第3步生成了集合所有deb文件信息的 Packages 文件
+
+5、利用 bzip2 生成 Cydia 可以识别的文件格式，输入命令
+
+bzip2 -fks Packages
+
+6、将所有文件上传到服务器即可
+
+注：Release 文件为整个Cydia源的描述
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://wiki.honglu.me/iOS/%E5%88%B6%E5%81%9ACydia%E6%BA%90.html&quot;&gt;搭建 Cydia 源&lt;/a&gt;
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;!-- 制作 Packages: --&amp;gt;
+dpkg-scanpackages debs /dev/null &amp;gt; Packages
+tar zcvf Packages.gz Packages
+bzip2 -k Packages Packages.bz2
+&amp;lt;!-- 制作 Release --&amp;gt;
+Origin: Cydia/NetEase
+Label: Cydia/NetEase
+Suite: stable
+Version: 1.0
+Codename: netease
+Architectures: iphoneos-arm
+Components: main
+Description: Distribution of Unix Software for iOS
+&amp;lt;!-- SimpleHTTPServer --&amp;gt;
+ python -m SimpleHTTPServer 8088
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://hiraku.tw/works/&quot;&gt;Hiraku Dev&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://git.saurik.com/cydia.git&quot;&gt;cydia.git&lt;/a&gt;
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone git://git.saurik.com/cydia.git
+Original source git://git.saurik.com/cydia.git
+Web access http://gitweb.saurik.com/cydia.git
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://search.google.com/search-console?resource_id=https%3A%2F%2Fzhangkn.github.io%2F&amp;amp;hl=zh-CN&quot;&gt;search.google.com&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blog.sina.com.cn/s/blog_9a2a9f370100yfij.html&quot;&gt;在局域网搭建自己的Cydia源&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://bbs.feng.com/forum.php?mod=viewthread&amp;amp;tid=669283&quot;&gt;搭建Cydia软件源&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;搭建软件源，必须保证至少有Release(记录软件源本身的相关信息)和Packages(记录具体软件包的存放位置和安装信息等数据)两个文件。 
+1、Release 格式： http://apt.saurik.com/dists/tangelo-3.7/Release
+必须 
+Origin: 软件源名称，可以使用中文（Cydia的软件源列表中显示的标题） 
+Label:  同上，也可以使用中文 
+Suite: 软件源的类型，比如正式源，测试源等，可以分别用stable, beta, unstable等来表示，一般填stable就可以了 
+Version: 版本号，这个其实不重要，随便填，一般都是写1.0 
+Codename: 代码代号，比如BigBoss的就写BigBoss，威锋的就写WeiPhone，也没什么限制，只能用英文 
+Architectures: 结构。iPhone平台统一写iphoneos-arm 
+Components: main 
+Description: 软件介绍，可以使用中文和html代码，具体能使用哪些代码在下面会介绍。 
+可选 
+Support: 支持，没什么作用，除非特别需要，否则可以不要这个。 
+MD5Sum: 不是必须的，但如果Packages文件位置不与Release文件在同一目录下，则必须有此项。另外，如果需要签名Release文件，也必须有这个。关于MD5Sum的格式，在下文也会介绍。
+2、Packages实质上是deb文件的control信息集合（利用dpkg-scanpackages命令来制作Packages文件）
+另外多了deb文件本身的信息。（control文件是记录软件包本身的信息，但没有deb文件本身） 
+3、服务器上文件存放位置，最简单的
+cydia--
+           |--debs--*.deb
+           |--Packages
+           |--Packages.bz2
+           |--Packages.gz
+           |--Release
+           |--Release.gpg
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://apt.saurik.com/dists/tangelo-3.7/&quot;&gt;cydia 源的结构&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://apt.saurik.com/&quot;&gt;http://apt.saurik.com/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.saurik.com/id/7&quot;&gt;How to Host a Cydia™ Repository&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[root@desktop:/web/apt/xmpl]# dpkg-scanpackages -m . /dev/null &amp;gt;Packages
+ ** Packages in archive but missing from override file: **
+  com.saurik.myprogram
+
+ Wrote 1 entries to output Packages file.
+[root@desktop:/web/apt/xmpl]# bzip2 Packages
+[root@desktop:/web/apt/xmpl]# gpg -abs -o Release.gpg Release
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://bbs.feng.com/read-htm-tid-8052646.html&quot;&gt;在局域网搭建自己的Cydia源&lt;/a&gt;
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dpkg-scanpackages debs /dev/null &amp;gt; Packages
+tar zcvf Packages.gz Packages
+bzip2 -k Packages Packages.bz2
+gpg --gen-key
+gpg -abs -r &quot;你刚才的密钥名字&quot; -o Release.gpg Release
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://mp.blog.csdn.net/postlist&quot;&gt;mypostlist&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blog.kernelpanic.im/2014/01/25/how-to-develop-jailbreak-apps-for-ios&quot;&gt;how-to-develop-jailbreak-apps-for-ios&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;关于Root privilege
+方式一：
+给你的executable加上setuid/setgid bits, 比如说在postinst脚本里加上: chmod 6755 /path/to/executable
+程序启动的时候调用setuid(0)
+iOS不允许直接以root权限运行, 所以还要一个exec trick.
+方式二：
+还有种做法是利用launchd来执行需要root权限的操作. 从权限隔离的角度而言, 这种做法更好
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.jianshu.com/p/7ab7234f5187&quot;&gt;脚本文件- 可以利用这些属性来优化部署脚本&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;preinst
+在Deb包文件解包之前，将会运行该脚本。许多“preinst”脚本的任务是停止作用于待升级软件包的服务，直到软件包安装或升级完成。
+
+postinst
+该脚本的主要任务是完成安装包时的配置工作。许多“postinst”脚本负责执行有关命令为新安装或升级的软件重启服务。
+
+prerm
+该脚本负责停止与软件包相关联的daemon服务。它在删除软件包关联文件之前执行。
+
+postrm
+该脚本负责修改软件包链接或文件关联，或删除由它创建的文件。
+
+Preparing to replace com.. 0.1-1 (using .../Media/com...deb) ...
+[preinstall]  rm -rf
+Unpacking replacement com.. ...
+Setting up com.. (0.1-1) ...
+[postinst]   ...
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://wiki.ubuntu.org.cn/Deb%E5%8C%85%E7%AE%A1%E7%90%86%E5%90%91%E5%AF%BC#deb.E5.8C.85.E7.9A.84.E6.89.A7.E8.A1.8C.E8.84.9A.E6.9C.AC&quot;&gt;deb包的执行脚本&lt;/a&gt;
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;debian/preinst    安装前执行脚本
+debian/postinst   安装后执行脚本
+debian/prerm      卸载前执行脚本
+debian/postrm     卸载后执行脚本
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blog.linhere.com/archives/589.html&quot;&gt;Debian 的 preinst, postinst, prerm, 和 postrm 脚本&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://wiki.ubuntu.org.cn/Deb%E5%8C%85%E7%AE%A1%E7%90%86%E5%90%91%E5%AF%BC&quot;&gt;Deb包管理向导&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.jianshu.com/p/10669d1083b2&quot;&gt;https://www.jianshu.com/p/10669d1083b2&lt;/a&gt;
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ASO 的目标就是提升 App 在 App Store 的自然下载量，而 下载量 = 展示量 × 下载转化率，所以，要么增加展示量，要么提升下载转化率
+1、搜索指数 ≥ 4605 的关键词通常被认为有搜索量
+2、高搜索指数以及低竞争度的关键词是最佳选择
+3、关键词（副标题、关键字域部分）、下载量和活跃用户量对搜索优化有直接作用，而图标、截图以及预览视频、描述和用户评论，则影响下载转化率，对搜索优化有间接作用
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://itunespartner.apple.com/en/apps/faq/App%20Store_Discovery&quot;&gt;app store FAQ&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://book.douban.com/review/8644249/&quot;&gt;ASO基础操作指南&lt;/a&gt;
+&lt;img src=&quot;/images/posts/aso/aso-seo.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/yangzhenglun/hookPro/blob/31f84a055db61dcee15f30b942a8f2f2c0b07860/hkregwx/Tweak.xm&quot;&gt; 安全模式SafeModeMgrExt，可利用cycript 进行分析&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://segmentfault.com/a/1190000011942765?_ea=3227568&quot;&gt;WireShark抓包&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blog.kernelpanic.im/2014/01/25/how-to-develop-jailbreak-apps-for-ios&quot;&gt;how-to-develop-jailbreak-apps-for-ios&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.debian.org/doc/manuals/debian-faq/ch-pkg_basics.zh-cn.html&quot;&gt;Debian 的 preinst, postinst, prerm, 和 postrm 脚本?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;preinst
+Debian软件包(&quot;.deb&quot;)解压前执行的脚本, 为正在被升级的包停止相关服务,直到升级或安装完成.(成功后执行 'postinst' 脚本).
+
+postinst
+主要完成软件包(&quot;.deb&quot;)安装完成后所需的配置工作. 通常, postinst 脚本要求用户输入, 和/或警告用户如果接受默认值, 应该记得按要求返回重新配置这个软件. 一个软件包安装或升级完成后, postinst 脚本驱动命令, 启动或重起相应的服务.
+
+prerm
+停止一个软件包的相关进程, 要卸载软件包的相关文件前执行.T.
+
+postrm
+修改相关文件或连接, 和/或卸载软件包所创建的文件
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://github.com/freewizard/AppProxyCap/blob/master/lib/AppProxyCap.m&quot;&gt;AppProxyCap.m app 级别的代理&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.google.com/doodles&quot;&gt;https://www.google.com/doodles&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.blogjava.net/RomulusW/archive/2008/05/04/197985.html&quot;&gt;Alpha、Beta、RC、GA版本的区别&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Alpha：是内部测试版,一般不向外部发布,会有很多Bug.一般只有测试人员使用。
+
+Beta：也是测试版，这个阶段的版本会一直加入新的功能。在Alpha版之后推出。
+
+RC：(Release　Candidate) 顾名思义么 ! 用在软件上就是候选版本。系统平台上就是发行候选版本。RC版不会再加入新的功能了，主要着重于除错。
+
+GA:General Availability,正式发布的版本，在国外都是用GA来说明release版本的。
+
+RTM：(Release to Manufacture)是给工厂大量压片的版本，内容跟正式版是一样的，不过RTM版也有出限制、评估版的。但是和正式版本的主要程序代码都是一样的。
+
+OEM：是给计算机厂商随着计算机贩卖的，也就是随机版。只能随机器出货，不能零售。只能全新安装，不能从旧有操作系统升级。包装不像零售版精美，通常只有一面CD和说明书(授权书)。 
+
+RVL：号称是正式版，其实RVL根本不是版本的名称。它是中文版/英文版文档破解出来的。 
+
+EVAL：而流通在网络上的EVAL版，与“评估版”类似，功能上和零售版没有区别。 
+
+RTL：Retail(零售版)是真正的正式版，正式上架零售版。在安装盘的i386文件夹里有一个eula.txt，最后有一行EULAID，就是你的版本。比如简体中文正式版是EULAID:WX.4_PRO_RTL_CN，繁体中文正式版是WX.4_PRO_RTL_TW。其中：如果是WX.开头是正式版，WB.开头是测试版。_PRE，代表家庭版；_PRO，代表专业版。
+
+α、β、λ常用来表示软件测试过程中的三个阶段，α是第一阶段，一般只供内部测试使用；β是第二个阶段，已经消除了软件中大部分的不完善之处，但仍有可能还存在缺陷和漏洞，一般只提供给特定的用户群来测试使用；λ是第三个阶段，此时产品已经相当成熟，只需在个别地方再做进一步的优化处理即可上市发行。 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Wed, 31 Jan 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/01/aso/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/01/aso/</guid>
+        
+        <category>aso</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>kim.cracksby.yalu102</title>
+        <description>&lt;h3 id=&quot;前言&quot;&gt;前言&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/zhangkn/KNyalu102&quot;&gt;优化一些配置信息：比如 dropbear.plist、bootstrap中包含scp、点击icon 自动激活&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;ps:/Users/devzkn/code/re/yalu102-master&lt;/p&gt;
+
+&lt;h3 id=&quot;正文&quot;&gt;正文&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;从工程中看到解压tar 的命令的执行（可以自己封装一下）&lt;a href=&quot;https://github.com/zhangkn/KNyalu102/blob/master/yalu102/jailbreak.m&quot;&gt;jailbreak.m&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   jl=&quot;/bin/tar&quot;; // 从此段代码可以看出，以后可以将scp 放到bootstrap.tar 的/bootstrap/usr/bin 中即可，这样再也不用依赖openssh来获取scp,获取使用wget 下载scp.
+                
+                chdir(&quot;/&quot;);
+                
+                posix_spawn(&amp;amp;pd, jl, 0, 0, (char**)&amp;amp;(const char*[]){jl, &quot;--preserve-permissions&quot;, &quot;--no-overwrite-dir&quot;, &quot;-xvf&quot;, [bootstrap UTF8String], NULL}, NULL);//    posix_spawn(&amp;amp;nPid, cmd, &amp;amp;y, &amp;amp;x, argv, envp);
+                NSLog(@&quot;pid = %x&quot;, pd);
+                waitpid(pd, 0, 0);
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;拷贝scp 到放到bootstrap
+      &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;devzkndeMacBook-Pro:zhangkn.github.io devzkn$ scp usb2222:/usr/bin/scp /Users/devzkn/code/re/yalu102-master/yalu102/bootstrap/usr/bin 
+ &amp;lt;!-- tar -cvf /tmp/etc.tar /etc         &amp;lt;==仅打包，不压缩！ --&amp;gt;
+devzkndeMacBook-Pro:yalu102-master devzkn$ tar -cvf /Users/devzkn/code/re/yalu102-master/yalu102/bootstrap.tar /Users/devzkn/code/re/yalu102-master/yalu102/bootstrap
+ # 注意避免路径前缀
+devzkndeMBP:yalu102 devzkn$ tar  -cvf ./bootstrap.tar  bootstrap
+chmod +x  /Users/devzkn/code/re/yalu102-master/yalu102/bootstrap.tar
+&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/zhangkn/KNBin/blob/master/knscp&quot;&gt;手动安装scp&lt;/a&gt;
+      &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;https://coolstar.org/publicrepo/ 添加源
+devzkndeMacBook-Pro:bin devzkn$ cat /Users/devzkn/code/re/yalu102-master/yalu102/scp | ssh usb2222 &quot;cat &amp;gt; scp&quot;
+devzkndeMacBook-Pro:bin devzkn$ ssh usb2222 &quot; chmod +x scp&quot;
+devzkndeMacBook-Pro:bin devzkn$ ssh usb2222 &quot;mv scp /usr/bin/scp&quot;
+&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;see-also&quot;&gt;see also&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://bbs.iosre.com/t/yalu102-ssl/9353&quot;&gt;http://bbs.iosre.com/t/yalu102-ssl/9353&lt;/a&gt;
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rsync的一大优势，是可以增量拷贝，即不覆盖原本已存在的文件。
+在使用rsync前，需要在Cydia里搜索并下载rsync。安装完成后，使用方法如下（类比scp）：
+scp
+scp root@192.168.1.1:/var/log/syslog ~/
+scp -P 2222 root@localhost:/var/log/syslog ~/
+rsync
+rsync -avzu --progress root@192.168.1.1:/var/log/syslog ~/
+rsync -avzu --progress -e ssh -p 2222 root@localhost:/var/log/syslog ~/
+即source和destination不变；
+把scp改成rsync -avzu --progress
+把scp -P 2222改成rsync -avzu --progress -e ssh -p 2222
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.vuln.cn/wooyundrops&quot;&gt;wooyundrops&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://drops.xmd5.com/static/drops/&quot;&gt;drops.xmd5.com&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.theiphonewiki.com/wiki/Bypassing_Jailbreak_Detection&quot;&gt;Bypassing Jailbreak Detection&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Mon, 29 Jan 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/01/kim.cracksby.yalu102/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/01/kim.cracksby.yalu102/</guid>
+        
+        <category>iOSre</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>SpringBoard</title>
+        <description>&lt;h3 id=&quot;前言&quot;&gt;前言&lt;/h3&gt;
+
+&lt;h3 id=&quot;正文&quot;&gt;正文&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;hook SpringBoard&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;%hook SpringBoard
+-(void)applicationDidFinishLaunching: (id)application
+{
+    @autoreleasepool {
+        %orig;
+
+    }
+}
+%end
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;see-also&quot;&gt;see also&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;[liberios jailbreakiOS11.1.1Liberios](https://mrmad.com.tw/liberios&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://pangu8.com/jailbreak/11/Liberios.ipa&quot;&gt;可以越狱成功的ipa&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.reddit.com/r/Electra_JB/&quot;&gt;Electra_JB&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://twitter.com/saurik/status/952725123601084416&quot;&gt;以后关注这个就知道最新版的cydia有没有出来&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/zhangkn/tickets&quot;&gt;100行Python代码自动抢火车票！&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/heardrwt/RevealLoader&quot;&gt;RevealLoader&lt;/a&gt;
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Depends: mobilesubstrate, preferenceloader, applist
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.joeyio.com/2014/08/12/tweak-flexloader/&quot;&gt;动态加载 FLEX 的越狱插件 - FLEXLoader&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://iphonedevwiki.net/index.php/PreferenceLoader&quot;&gt;iphonedevwiki-PreferenceLoader&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.swiftyper.com/2017/06/04/inspect-third-party-app-using-flexloader/&quot;&gt;PreferenceLoader&lt;/a&gt;
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1、PreferenceLoader 是一个 MobileSubstrate 提供的工具，它可以让开发者在系统设置界面添加应用程序入口。
+2、在 iOS 设备的 /Library/PreferenceLoader/Preferences 下放入一个 plist 和三个图标文件（对应不同分辨率）。其中，plist 文件用来指定设置界面的展示内容，而图标文件则是用于在系统设置的入口处显示。
+3、参考 RevealLoader 修改 plist 文件内容.(https://github.com/zhangkn/RevealLoader/tree/master/layout/Library/PreferenceLoader/Preferences)比较重要的是两个字段是 ALSettingsPath 和 ALSettingsKeyPrefix
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rpetrich/AppList&quot;&gt;AppList 项目地址&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/zhangkn/RevealLoader/tree/master/layout/Library/PreferenceLoader/Preferences&quot;&gt;PreferenceLoader 使用例子&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://clang.llvm.org/docs/&quot;&gt;http://clang.llvm.org/docs/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://rheard.com/blog/&quot;&gt;http://rheard.com/blog/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Mon, 29 Jan 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/01/SpringBoard/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/01/SpringBoard/</guid>
+        
+        <category>iOSre</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>preferences-vpn</title>
+        <description>&lt;h3 id=&quot;前言&quot;&gt;前言&lt;/h3&gt;
+
+&lt;h3 id=&quot;正文&quot;&gt;正文&lt;/h3&gt;
+
+&lt;h3 id=&quot;参考&quot;&gt;参考&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://bbs.iosre.com/t/preferences-vpn/5000&quot;&gt;逆向Preferences中关于VPN部分的问题&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1、-- Preferences打开VPN连接的实现方式：
+ 在Preferences中通过调用VPNPreferences.bundle里面的VPNBundleController的setVPNActive:forSpecifier:方法实现的;
+2、-- tweak 实现打开已配置过的VPN功能：
+ 并且可以用Cycript注入Preferences，生成一个VPNBundleController对象直接调用_setVPNActive:打开已配置过的VPN 
+3、---VPNBundleController实例的创建：
+ 通过VPNBundleController的initWithParentListController:方法可以拿到一个VPNBundleController实例去调用_setVPNActive:方法。
+4、创建要在Preferences, 切换可以在SB：
+ 缺乏头文件引入，可以使用  VPNBundleController = [[objc_getClass(&quot;VPNBundleController&quot;) alloc] initWithParentListController:nil]; 实现
+5、--SBVPNConnectionChangedNotification 监听&quot;VPNConnectionStatusChanged&quot;消息
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://bbs.iosre.com/t/preferences-vpn/5000/3&quot;&gt;/preferences-vpn&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/I-SpongeBob/iosre/blob/1b4d46d9523fd9562e46d97653f6f622b39afb9f/iosre/VPN/setvpna/setvpntest/SetVpn.m&quot;&gt;SetVpn.m&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/CPDigitalDarkroom/iOS9-SpringBoard-Headers/blob/a11be523d5644a178614585ff57f9638300c2cc0/System/Library/PreferenceBundles/VPNPreferences.bundle/VPNPreferences-Structs.h&quot;&gt;VPNPreferences-Structs.h&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/zhangkn/iOS-10.1.1-Headers&quot;&gt;iOS-10.1.1-Headers&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Naville/ManualVPN/blob/8570c5fefae1fdbe9f6ef0c485bd69dee0124b36/Tweak.xm&quot;&gt;ManualVPN&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/yangzhenglun/hookPro/blob/4eba639a395935dde190419459e54f011fa00e42/smyvpn/Tweak.xm&quot;&gt;smyvpn&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://bbs.iosre.com/t/app-deb/4869&quot;&gt;https://github.com/yangzhenglun/hookPro/blob/4eba639a395935dde190419459e54f011fa00e42/smyvpn/Tweak.xm&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 26 Jan 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/01/preferences-vpn/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/01/preferences-vpn/</guid>
+        
+        <category>iOSre</category>
+        
+        
+      </item>
+    
+  </channel>
+</rss>

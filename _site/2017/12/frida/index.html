@@ -1,0 +1,1416 @@
+<!DOCTYPE html>
+<html xmlns:wb="https://open.weibo.com/wb"><!-- 微博分享 在HTML标签中增加XML命名空间 -->
+
+
+  <head>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NXGLR9F');</script>
+<!-- End Google Tag Manager -->
+
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>frida</title>
+  <meta name="description" content="前言fridafrida-docsDynamic instrumentation toolkit for developers, reverse-engineers, and security researchers.Frida提供了一个名为“ FridaGadget.dylib ” 的动态库，可用于在非越狱设备...">
+  <meta name="author" content="zhangkn">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="frida">
+  <meta name="twitter:description" content="前言fridafrida-docsDynamic instrumentation toolkit for developers, reverse-engineers, and security researchers.Frida提供了一个名为“ FridaGadget.dylib ” 的动态库，可用于在非越狱设备...">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="frida">
+  <meta property="og:description" content="前言fridafrida-docsDynamic instrumentation toolkit for developers, reverse-engineers, and security researchers.Frida提供了一个名为“ FridaGadget.dylib ” 的动态库，可用于在非越狱设备...">
+  
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
+  <link href="/images/favicon.png" rel="shortcut icon" type="image/png">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="http://localhost:4000/2017/12/frida/">
+  <link rel="alternate" type="application/rss+xml" title="ReverseEngineering" href="http://localhost:4000/feed.xml">
+  <!--Google网站管理员工具的特定元标记  显示您网站的专用搜寻框，以及导向您网站的其他直接link  google的网站认证代码，也就是证明这个网站的所有者是你 获取以上代码到自己网站上，可以进入http://www.google.com/webmasters/tools/，将自己网站添加进google网站管理，有利于google的收录 
+
+  https://www.google.com/webmasters/verification/verification?hl=zh-CN&siteUrl=https://zhangkn.github.io/
+  -->
+  <meta name="google-site-verification" content="OEpYd_8xV1ri67dIngAWDEoYNeVBe_cMXrdBugMW5TI" />
+
+
+  <meta name="robots" content="all" />
+  <meta name="googlebot" content="all" />
+  <!-- baiducse-->
+
+  <meta name="baidu-site-verification" content="e7615181b86ddd4f27bb47ab18b021e4"/><!--  验证新域名 （该代码当日有效)-->
+
+<!-- 站点统计 两行代码 搞定计数 http://busuanzi.ibruce.info/-->
+  <script 
+  async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>  
+
+<!-- 百度统计 -->
+  
+  <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?e7f6d46714fcd28fb24be011203bee5f";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+  </script>
+  
+
+<!-- google 统计 -->
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-111030597-1', 'auto');
+      ga('send', 'pageview');
+  </script>
+  
+
+  
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-5776998009494842",
+    enable_page_level_ads: true
+  });
+</script>
+<!-- linkedin  http://www.linkedin.com/badges/profile/create?vanityname=iosre&trk=pprof-settings-badge 
+<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>-->
+
+
+
+</head>
+
+
+  <body>
+
+   <!-- Google Tag Manager (noscript) -->
+   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXGLR9F"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <span class="mobile btn-mobile-menu">        
+      <div class="nav_container">
+         <nav class="nav-menu-item" style = "float:right">
+            <i class="nav-menu-item">
+              <a href="/#blog" title="" class="blog-button">  博客主页
+              </a>
+            </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/archive" title="archive" class="btn-mobile-menu__icon">
+                      所有文章
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/tags" title="tags" class="btn-mobile-menu__icon">
+                      标签
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/about" title="about" class="btn-mobile-menu__icon">
+                      关于我
+                  </a>
+                </i>
+            
+          </nav>
+      </div>
+    </span>
+    <header class="panel-cover panel-cover--collapsed" style="background-image: url('/images/background-cover.jpg')" itemscope itemtype="https://schema.org/WPHeader">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+        <!-- 头像效果-start -->
+        <div class="ih-item circle effect right_to_left" itemprop="author" itemscope itemtype="https://schema.org/Person">            
+            <a href="/#blog" title="前往 ReverseEngineering 的主页" class="blog-button">
+                <div class="img" itemprop="image"><img src="/images/avatar.jpg" alt="img"></div>
+                <div class="info">
+                    <div class="info-back" >
+                        <h2  itemprop="name" > 
+                            
+                                zhangkn
+                            
+                        </h2>
+                        <p  itemprop="description">
+                           
+                                iOSre / Anti
+                            
+                        </p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- 头像效果-end -->
+        <h1 class="panel-cover__title panel-title" itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><a  itemprop="name" href="/#blog" title="link to homepage for ReverseEngineering" class="blog-button">ReverseEngineering</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">个人站</span>
+        
+        <hr class="panel-cover__divider" />
+        <p itemprop="description" itemscope itemtype="https://schema.org/Organization" class="panel-cover__description">Kunnan Zhang's Personal Website</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+        
+        
+
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">博客主页</a></li>
+                
+                  <li class="navigation__item"><a href="/archive" title="archive">所有文章</a></li>
+                
+                  <li class="navigation__item"><a href="/tags" title="tags">标签</a></li>
+                
+                  <li class="navigation__item"><a href="/about" title="about">关于我</a></li>
+                
+              </ul>
+            </nav>
+          </div>          
+        </div>
+
+
+
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="panel-cover--overlay cover-clear"></div>
+    
+  </div>
+
+ 
+
+  
+
+</header>
+
+
+    <div class="content-wrapper" >
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single" itemscope itemtype="https://schema.org/BlogPosting">
+  <link itemprop="mainEntityOfPage" href="https://zhangkn.github.io/archive/">
+  <header class="post-header" itemscope itemtype="https://schema.org/WPHeader">
+    <h1  itemprop="Headline" class="post-title">frida <!-- <div class="social-share"> -->
+
+   <ul class="share-buttons">
+    <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fzhangkn.github.io&quote=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&quote=' + encodeURIComponent(document.URL)); return false;"><img alt="Share on Facebook" src="/images/flat_web_icon_set/color/Facebook.png" /></a></li>
+    <li><a href="https://twitter.com/intent/tweet?source=https%3A%2F%2Fzhangkn.github.io&text=:%20https%3A%2F%2Fzhangkn.github.io&via=zhangkunnan" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20'  + encodeURIComponent(document.URL)); return false;"><img alt="Tweet" src="/images/flat_web_icon_set/color/Twitter.png" /></a></li>
+    <li><a href="https://plus.google.com/share?url=https%3A%2F%2Fzhangkn.github.io" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(document.URL)); return false;"><img alt="Share on Google+" src="/images/flat_web_icon_set/color/Google+.png" /></a></li>
+    <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fzhangkn.github.io&title=&summary=&source=https%3A%2F%2Fzhangkn.github.io" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(document.URL) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/flat_web_icon_set/color/LinkedIn.png" /></a></li>
+    <li><a href="mailto:zhang_kn@icloud.com?subject=&body=:%20https%3A%2F%2Fzhangkn.github.io" target="_blank" title="Send email" onclick="window.open('mailto:zhang_kn@icloud.com?subject=' + encodeURIComponent(document.title) + '&body=' +  encodeURIComponent(document.URL)); return false;"><img alt="Send email" src="/images/flat_web_icon_set/color/Email.png" /></a></li>
+
+    <!--<wb:share-button appkey="3233061066" addition="simple" type="button" ralateUid="2939794294"></wb:share-button>-->
+
+  </ul>
+<!-- </div> -->
+
+
+
+
+</h1> 
+    <div class="post-meta">
+      <img src="/images/calendar.png" width="20px"/> 
+      <time datetime="2017-12-13 00:00:00 +0800" itemprop="datePublished" class="post-meta__date date">2017-12-13</time>  
+         
+      <span id="busuanzi_container_page_pv"> | 阅读：<span id="busuanzi_value_page_pv"></span>次</span>
+
+    </p>
+
+
+    </div>
+
+    
+  </header>
+
+  <section class="post"  itemscope itemtype="https://schema.org/BlogPosting" >
+    <h3 id="前言">前言</h3>
+<p><a href="https://www.frida.re/">frida</a>
+<br />
+<a href="https://www.frida.re/docs/home/">frida-docs</a><br />
+Dynamic instrumentation toolkit for developers, reverse-engineers, and security researchers.
+Frida提供了一个名为“ FridaGadget.dylib ” 的动态库，可用于在非越狱设备上测试新开发的应用程序。</p>
+
+<h3 id="the-mach-o-ios-binary-format-binary-structure--usrincludemach-oh">The Mach-O (iOS binary format) binary structure:  /usr/include/mach-o/*.h</h3>
+
+<p>Before continuing, it is necessary to have at least a small understanding of the binary structure of an iOS application.</p>
+
+<p>A Mach-O file consists of 2 main pieces: the header and the data. The header is basically a map of the file describing what it contains and the position of everything contained in it. The data comes directly after the header and consists of a number of binary blobs of data, one after the other.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+            ,---------------------------,
+  Header    |  Mach header              |
+            |    Segment 1              |
+            |      Section 1 (__text)   | --,
+            |---------------------------|   |
+  Data      |           blob            | &lt;-'
+            '---------------------------'
+</code></pre>
+</div>
+
+<blockquote>
+  <ul>
+    <li>1、The Mach-O (iOS binary format) binary structure</li>
+  </ul>
+</blockquote>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>-1) header structure：The header contains general information about the binary: byte order (magic number), CPU type, amount of load commands, etc.
+-2)The load commands section is like a table of contents of the binary: 
+it describes the position of the segments, symbols table, dynamic symbols table etc. 
+Each load command includes meta-information, such as type of command, its name, position in a binary, etc. 
+-3) 链接信息：The data section contains the application code and the data, such as symbol tables, dynamic symbol tables, etc.
+</code></pre>
+</div>
+
+<p>官方描述</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Header: Specifies the target architecture of the file, such as PPC, PPC64, IA-32, or x86-64.
+Load commands: Specify the logical structure of the file and the layout of the file in virtual memory.
+Raw segment data: Contains raw data for the segments defined in the load commands.
+</code></pre>
+</div>
+
+<p><img src="/images/posts/frida/match-o-structure.jpg" alt="" /></p>
+
+<p>详情：/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/usr/include/mach-o/loader.h</p>
+
+<blockquote>
+  <ul>
+    <li>2、The process to insert a new library involves multiple steps</li>
+  </ul>
+</blockquote>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>- 1. Insert the library to the application container
+
+- 2. Insert the load command on the load commands section of the binary
+
+- 3. Increment the load command counter on the header section
+
+- 4. Increase the size binary number on the header section
+</code></pre>
+</div>
+
+<h4 id="mach-header">mach header</h4>
+<p><img src="/images/posts/frida/Header_butter_fly.png" alt="" /></p>
+<blockquote>
+  <ul>
+    <li>1、可以借助otool 查看 mach header
+      <div class="highlighter-rouge"><pre class="highlight"><code>devzkndeMacBook-Pro:bin devzkn$ otool -h ps
+Mach header
+    magic cputype cpusubtype  caps    filetype ncmds sizeofcmds      flags
+ 0xfeedfacf 16777223          3  0x80           2    16       1696 0x00200085
+</code></pre>
+      </div>
+      <p>cputype其定义参见/usr/include/mach/machine.h</p>
+    </li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>2、the filetype field of the mach_header （具体的请查看&lt;mach-o/loader.h&gt;）</li>
+  </ul>
+</blockquote>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>#define MH_OBJECT 0x1   /* relocatable object file  gcc -c xxx.c 生成xxx.o文件 */
+#define MH_EXECUTE  0x2   /* demand paged executable file */
+#define MH_FVMLIB 0x3   /* fixed VM shared library file */
+#define MH_CORE   0x4   /* core file 崩溃时的Dump文件 */
+#define MH_PRELOAD  0x5   /* preloaded executable file */
+#define MH_DYLIB  0x6   /* dynamically bound shared library */
+#define MH_DYLINKER 0x7   /* dynamic link editor */
+#define MH_BUNDLE 0x8   /* dynamically bound bundle file */
+#define MH_DYLIB_STUB 0x9   /* shared library stub for static */
+          /*  linking only, no section contents */
+#define MH_DSYM   0xa   /* companion file with only debug */
+          /*  sections */
+#define MH_KEXT_BUNDLE  0xb   /* x86_64 kexts 内核扩展文件 */
+
+</code></pre>
+</div>
+<blockquote>
+  <ul>
+    <li>3、flags field of the mach_header</li>
+  </ul>
+</blockquote>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>#define MH_PIE 0x200000     /* When this bit is set, the OS will
+             load the main executable at a
+             random address.  Only used in
+             MH_EXECUTE filetypes. */
+#define MH_ALLOW_STACK_EXECUTION 0x20000/* When this bit is set, all stacks 
+             in the task will be given stack
+             execution privilege.  Only used in
+             MH_EXECUTE filetypes. */
+#define MH_NO_HEAP_EXECUTION 0x1000000  /* When this bit is set, the OS will
+             run the main executable with
+             a non-executable heap even on
+             platforms (e.g. i386) that don't
+             require it. Only used in MH_EXECUTE
+             filetypes. */
+#define  MH_NOUNDEFS 0x1   /* the object file has no undefined
+             references */
+
+</code></pre>
+</div>
+
+<h4 id="load-commands--otool--l-git">load commands:  otool -l git</h4>
+<p>加载命令的数目以及总的大小在header中已经给出。</p>
+
+<p>具体的可以在loader.h 中查看  Constants for the cmd field of all load commands, the type</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>#define LC_SEGMENT  0x1 /* segment of this file to be mapped */
+#define LC_LOAD_DYLIB 0xc /* load a dynamically linked shared library */
+#define LC_ENCRYPTION_INFO 0x21 /* encrypted segment information */
+#define LC_CODE_SIGNATURE 0x1d  /* local of code signature */
+#define LC_UUID   0x1b  /* the uuid */
+</code></pre>
+</div>
+
+<h4 id="lc_segment-的数据结构">LC_SEGMENT 的数据结构</h4>
+<p>A segment is made up of zero or more sections.每个段可以拥有零个或多个区域（section）。每一个段（segment）都拥有一段虚拟地址映射到进程的地址空间。</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>struct segment_command { /* for 32-bit architectures */
+  uint32_t  cmd;    /* LC_SEGMENT */
+  uint32_t  cmdsize;  /* includes sizeof section structs */
+  char    segname[16];  /* segment name */
+  uint32_t  vmaddr;   /* memory address of this segment */
+  uint32_t  vmsize;   /* memory size of this segment */
+  uint32_t  fileoff;  /* file offset of this segment */
+  uint32_t  filesize; /* amount to map from the file */
+  vm_prot_t maxprot;  /* maximum VM protection */
+  vm_prot_t initprot; /* initial VM protection */
+  uint32_t  nsects;   /* number of sections in segment */
+  uint32_t  flags;    /* flags */
+};
+</code></pre>
+</div>
+<p>1）nsects 标志着segment 包含了多少的sections。
+ 2）flag字段 SG_HIGHVM，SG_FVMLIB，SG_NORELOC，SG_PROTECTED_VERSION_1</p>
+
+<h4 id="section的数据结构">Section的数据结构</h4>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>struct section { /* for 32-bit architectures */
+  char    sectname[16]; /* name of this section */
+  char    segname[16];  /* segment this section goes in */
+  uint32_t  addr;   /* memory address of this section */
+  uint32_t  size;   /* size in bytes of this section */
+  uint32_t  offset;   /* file offset of this section */
+  uint32_t  align;    /* section alignment (power of 2) */
+  uint32_t  reloff;   /* file offset of relocation entries */
+  uint32_t  nreloc;   /* number of relocation entries */
+  uint32_t  flags;    /* flags (section type and attributes)*/
+  uint32_t  reserved1;  /* reserved (for offset or index) */
+  uint32_t  reserved2;  /* reserved (for count or sizeof) */
+};
+</code></pre>
+</div>
+
+<blockquote>
+  <ul>
+    <li>The currently known segment names and the section names in those segments 可以通过otool –s查看某segment的某个section。</li>
+  </ul>
+</blockquote>
+
+<p>段的命名规则是两个下划线紧跟着大写字母（如__TEXT），而section的命名则是两个下划线紧跟着小写字母（__text）。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+#define SEG_PAGEZERO  "__PAGEZERO"  /* the pagezero segment which has no */
+          /* protections and catches NULL */
+          /* references for MH_EXECUTE files */
+
+
+#define SEG_TEXT  "__TEXT"  /* the tradition UNIX text segment 含有可执行代码和只读的数据。 为了让内核将它 直接从可执行文件映射到共享内存，静态连接器设置该段的虚拟内存权限为不允许写。当这个段被映射到内存后，可以被所有进程共享。（这主要用在frameworks, bundles和共享库等程序中，也可以为同一个可执行文件的多个进程拷贝使用） */
+#define SECT_TEXT "__text"  /* the real text part of the text */
+          /* section no headers, and no padding */
+#define SECT_FVMLIB_INIT0 "__fvmlib_init0"  /* the fvmlib initialization */
+            /*  section */
+#define SECT_FVMLIB_INIT1 "__fvmlib_init1"  /* the section following the */
+                  /*  fvmlib initialization */
+            /*  section */
+
+#define SEG_DATA  "__DATA"  /* the tradition UNIX data segment */
+#define SECT_DATA "__data"  /* the real initialized data section */
+          /* no padding, no bss overlap */
+#define SECT_BSS  "__bss"   /* the real uninitialized data section*/
+          /* no padding */
+#define SECT_COMMON "__common"  /* the section common symbols are */
+          /* allocated in by the link editor */
+
+#define SEG_OBJC  "__OBJC"  /* objective-C runtime segment */
+#define SECT_OBJC_SYMBOLS "__symbol_table"  /* symbol table */
+#define SECT_OBJC_MODULES "__module_info" /* module information */
+#define SECT_OBJC_STRINGS "__selector_strs" /* string table */
+#define SECT_OBJC_REFS "__selector_refs"  /* string table */
+
+#define SEG_ICON   "__ICON" /* the icon segment */
+#define SECT_ICON_HEADER "__header" /* the icon headers */
+#define SECT_ICON_TIFF   "__tiff" /* the icons in tiff format */
+
+#define SEG_LINKEDIT  "__LINKEDIT"  /* the segment containing all structs */
+          /* created and maintained by the link */
+          /* editor.  Created with -seglinkedit */
+          /* option to ld(1) for MH_EXECUTE and */
+          /* FVMLIB file types only */
+
+#define SEG_UNIXSTACK "__UNIXSTACK" /* the unix stack segment */
+
+#define SEG_IMPORT  "__IMPORT"  /* the segment for the self (dyld) */
+          /* modifing code stubs that has read, */
+          /* write and execute permissions */
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>devzkndeMacBook-Pro:bin devzkn$ otool -d vi
+vi:
+Contents of (__DATA,__data) section
+</code></pre>
+</div>
+<div class="highlighter-rouge"><pre class="highlight"><code>devzkndeMacBook-Pro:bin devzkn$ otool -sv  __DATA __data vi
+vi:
+Contents of (__DATA,__data) section
+00000001001a2b20  c0 5b 17 00 01 00 00 00 c8 62 17 00 01 00 00 00 
+00000001001a2b30  cf 5b 17 00 01 00 00 00 37 5c 17 00 01 00 00 00 
+</code></pre>
+</div>
+
+<p>print the text section (disassemble with -v),当然我们可以借助hopper 和IDA 查看</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>devzkndeMacBook-Pro:bin devzkn$ otool -tv vi
+vi:
+(__TEXT,__text) section
+0000000100000b34  pushq %rbp
+0000000100000b35  movq  %rsp, %rbp
+0000000100000b38  pushq %r15
+0000000100000b3a  pushq %r14
+0000000100000b3c  pushq %r13
+</code></pre>
+</div>
+
+<h3 id="install-frida-on-device-and-mac">install frida on device and mac</h3>
+
+<blockquote>
+  <ul>
+    <li>1、 install frida-server through Cydia:<br />
+Start Cydia and add Frida’s repository by navigating to Manage -&gt; Sources -&gt; Edit -&gt; Add and entering https://build.frida.re
+      <div class="highlighter-rouge"><pre class="highlight"><code>apt-get update
+</code></pre>
+      </div>
+      <div class="highlighter-rouge"><pre class="highlight"><code>-rwxr-xr-x 1 root wheel 11292672 Dec 14 00:54 /usr/sbin/frida-server*
+-rw-r--r-- 1 root wheel 779 Dec 14 00:54 /Library/LaunchDaemons/re.frida.server.plist
+</code></pre>
+      </div>
+    </li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>2、mac里面python自带easy_install pip
+pip是python的包管理工具
+      <div class="highlighter-rouge"><pre class="highlight"><code>devzkndeMacBook-Pro:site-packages devzkn$ sudo easy_install pip
+</code></pre>
+      </div>
+    </li>
+    <li>3、install the Frida Python package on your host machine
+      <div class="highlighter-rouge"><pre class="highlight"><code>devzkndeMacBook-Pro:site-packages devzkn$ sudo -H pip install frida
+</code></pre>
+      </div>
+    </li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>4、Connect your device via USB and make sure that Frida work
+      <div class="highlighter-rouge"><pre class="highlight"><code>-U, --usb             connect to USB device
+-a, --applications    list only applications
+-i, --installed       include all installed applications
+devzkndeMacBook-Pro:site-packages devzkn$  frida-ps -Uai
+PID  Name          Identifier                 
+---  ------------  ---------------------------
+904  Cydia         com.saurik.Cydia           
+856  微信            com.tencent.xin            
+858  邮件            com.apple.mobilemail       
+App Store     com.apple.AppStore         
+</code></pre>
+      </div>
+    </li>
+    <li>5、 upgrade frida
+      <div class="highlighter-rouge"><pre class="highlight"><code>devzkndeMacBook-Pro:bin devzkn$ sudo pip install --upgrade frida --ignore-installed six
+</code></pre>
+      </div>
+    </li>
+  </ul>
+</blockquote>
+
+<h3 id="debug">debug</h3>
+
+<blockquote>
+  <ul>
+    <li>1、pdb.py can be invoked as a script to debug other scripts.
+      <div class="highlighter-rouge"><pre class="highlight"><code>devzkndeMacBook-Pro:frida-ios-dump-master devzkn$ python -m pdb  ./dump.py 微信
+/Users/devzkn/Downloads/kevin－software/ios-Reverse_Engineering/frida-ios-dump-master/dump.py(7)&lt;module&gt;()
+-&gt; import sys
+</code></pre>
+      </div>
+    </li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>2、Pdb help
+      <div class="highlighter-rouge"><pre class="highlight"><code>(Pdb) h
+Documented commands (type help &lt;topic&gt;):
+========================================
+EOF    bt         cont      enable  jump  pp       run      unt   
+a      c          continue  exit    l     q        s        until 
+alias  cl         d         h       list  quit     step     up    
+args   clear      debug     help    n     r        tbreak   w     
+b      commands   disable   ignore  next  restart  u        whatis
+break  condition  down      j       p     return   unalias  where 
+</code></pre>
+      </div>
+    </li>
+  </ul>
+</blockquote>
+
+<h4 id="pdb-常用命令">pdb 常用命令</h4>
+<ul>
+  <li>break 或b  :  设置断点	设置断点</li>
+  <li>continue或c:  继续执行程序</li>
+  <li>list 或l	 :  查看当前行的代码段</li>
+  <li>step 或s	 :  进入函数</li>
+  <li>return 或r :  执行代码直到从当前函数返回</li>
+  <li>exit 或 q  :  中止并退出</li>
+  <li>next 或 n	 :  执行下一行</li>
+  <li>pp	     :  打印变量的值
+    <div class="highlighter-rouge"><pre class="highlight"><code>(Pdb) pp os.getcwd()
+'/Users/devzkn/Downloads/kevin\xef\xbc\x8dsoftware/ios-Reverse_Engineering/frida-ios-dump-master'
+</code></pre>
+    </div>
+  </li>
+  <li>help 或者h :</li>
+</ul>
+
+<blockquote>
+  <ul>
+    <li>1、python print 汉字
+      <div class="highlighter-rouge"><pre class="highlight"><code>(Pdb) print sys.argv
+['./dump.py', '\xe5\xbe\xae\xe4\xbf\xa1']
+(Pdb) print sys.argv[1]
+微信
+</code></pre>
+      </div>
+    </li>
+  </ul>
+</blockquote>
+
+<h3 id="frida-ios-dump-master的使用"><a href="https://github.com/zhangkn/frida-ios-dump">frida-ios-dump-master</a>的使用</h3>
+
+<blockquote>
+  <ul>
+    <li>1、安装上面步骤install frida on device and mac</li>
+    <li>2、使用usbmuxd 进行端口转发 本地端口2222 转发到iOS的22端口</li>
+    <li>3、执行dump.py
+      <div class="highlighter-rouge"><pre class="highlight"><code>devzkndeMacBook-Pro:bin devzkn$ frida-ps -Uai
+ PID  Name          Identifier                 
+----  ------------  ---------------------------
+1314  App Store     com.apple.AppStore         
+2151  微信            com.tencent.xin            
+2183  淘宝联盟          com.alimama.moon           
+1309  设置            com.apple.Preferences      
+</code></pre>
+      </div>
+      <p>必须在dump.py 所在的目录下执行。即使使用ln -l 也会失败。</p>
+      <div class="highlighter-rouge"><pre class="highlight"><code>devzkndeMacBook-Pro:frida-ios-dump-master devzkn$ ./dump.py 驱蚊大咖
+open target  app......
+start dump target app......
+</code></pre>
+      </div>
+    </li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>4、ln -s  dump.py  会仅仅打开app 而已。
+      <div class="highlighter-rouge"><pre class="highlight"><code>devzkndeMacBook-Pro:bin devzkn$ ln -s /Users/devzkn/decrypted/frida-ios-dump-master/dump.py ./dump.py
+</code></pre>
+      </div>
+    </li>
+  </ul>
+</blockquote>
+
+<h3 id="qa">Q&amp;A</h3>
+
+<blockquote>
+  <ul>
+    <li>1、<a href="https://github.com/pypa/pip/issues/3165">Operation not permitted: ‘/var/folders/6t/h404bjcd5tb_4q86tpv_251rv_0h0j/T/pip-sYsqDS-uninstall/System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/six-1.4.1-py2.7.egg-info’</a>
+      <div class="highlighter-rouge"><pre class="highlight"><code>This is because OS X El Capitan ships with six 1.4.1 installed already and when it attempts to uninstall it (because awscli depends on botocore, botocore depends on python-dateutil, and python-dateutil depends on six &gt;= 1.5) it doesn't have permission to do so because System Integrity Protection doesn't allow even root to modify those directories.
+</code></pre>
+      </div>
+      <div class="highlighter-rouge"><pre class="highlight"><code>devzkndeMacBook-Pro:site-packages devzkn$ sudo -H pip install --ignore-installed six
+</code></pre>
+      </div>
+    </li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>2、 Ignoring Provides line with DepCompareOp for package libstatusbar
+      <div class="highlighter-rouge"><pre class="highlight"><code>W: Ignoring Provides line with DepCompareOp for package libstatusbar
+W: Ignoring Provides line with DepCompareOp for package libmoorecon
+W: You may want to run apt-get update to correct these problems
+</code></pre>
+      </div>
+      <div class="highlighter-rouge"><pre class="highlight"><code>iPhone:~ root# apt-get update
+</code></pre>
+      </div>
+    </li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>3、frida-server 没有启动
+      <div class="highlighter-rouge"><pre class="highlight"><code>iPhone:/usr/sbin root# killall SpringBoard
+iPhone:/usr/sbin root# ps -e |grep frida-server
+ 2290 ttys000    0:00.01 grep frida-server
+</code></pre>
+      </div>
+    </li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>4、-sh: /usr/sbin/frida-server: Bad CPU type in executable
+      <div class="highlighter-rouge"><pre class="highlight"><code>installed Frida for 32-bit devices
+</code></pre>
+      </div>
+    </li>
+    <li>5、 <a href="https://github.com/frida/frida-core/issues/69">Unable to start server: Error binding to address: Address already in use</a>
+      <div class="highlighter-rouge"><pre class="highlight"><code>removed
+</code></pre>
+      </div>
+    </li>
+    <li>6、frida-ps<br />
+      <div class="highlighter-rouge"><pre class="highlight"><code>devzkndeMacBook-Pro:site-packages devzkn$  frida-ps --help
+Usage: frida-ps [options]
+Options:
+--version             show program's version number and exit
+-h, --help            show this help message and exit
+-D ID, --device=ID    connect to device with the given ID
+-U, --usb             connect to USB device
+-R, --remote          connect to remote frida-server
+-H HOST, --host=HOST  connect to remote frida-server on HOST
+-a, --applications    list only applications
+-i, --installed       include all installed applications
+</code></pre>
+      </div>
+      <p><br /></p>
+    </li>
+  </ul>
+</blockquote>
+
+<h3 id="问题求救"><a href="Failed to spawn: unexpectedly timed out while waiting for app to launch">问题求救</a></h3>
+
+<h4 id="前言-1">前言</h4>
+<p>今天准备接触下frida， 使用下 AloneMonkey/frida-ios-dump的py，
+但是发现了一个问题</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>Failed to spawn: unable to launch iOS app: timeout  
+</code></pre>
+</div>
+
+<h4 id="问题具体分析">问题具体分析</h4>
+
+<blockquote>
+  <p>install frida on device and mac 之后，running the frida-ps command</p>
+  <div class="highlighter-rouge"><pre class="highlight"><code>devzkndeMacBook-Pro:~ devzkn$ frida-ps -Uai
+PID  Name          Identifier                 
+---  ------------  ---------------------------
+824  Cydia         com.saurik.Cydia           
+804  设置            com.apple.Preferences      
+372  邮件            com.apple.mobilemail       
+</code></pre>
+  </div>
+  <ul>
+    <li>但是Failed to spawn
+      <div class="highlighter-rouge"><pre class="highlight"><code>devzkndeMacBook-Pro:~ devzkn$ frida -U -f com.apple.mobilemail 
+   ____
+  / _  |   Frida 10.6.27 - A world-class dynamic instrumentation framework
+ | (_| |
+  &gt; _  |   Commands:
+ /_/ |_|       help      -&gt; Displays the help system
+ . . . .       object?   -&gt; Display information about 'object'
+ . . . .       exit/quit -&gt; Exit
+ . . . .
+ . . . .   More info at http://www.frida.re/docs/home/
+Failed to spawn: unable to launch iOS app: timeout    
+</code></pre>
+      </div>
+    </li>
+  </ul>
+</blockquote>
+
+<p>运行dump.py的时候也没用效果</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>devzkndeMacBook-Pro:~ devzkn$ /Users/devzkn/Downloads/frida-ios-dump-master/dump.py 邮件
+open target app......
+devzkndeMacBook-Pro:~ devzkn$
+</code></pre>
+</div>
+<h4 id="desktop-运行环境">Desktop 运行环境</h4>
+<blockquote>
+  <ul>
+    <li>1、 frida version:10.6.27
+      <div class="highlighter-rouge"><pre class="highlight"><code>devzkndeMacBook-Pro:~ devzkn$ frida --version
+10.6.27
+</code></pre>
+      </div>
+    </li>
+    <li>Mac version:10.13.1 (17B48)</li>
+  </ul>
+</blockquote>
+
+<h4 id="device--运行环境">Device  运行环境</h4>
+
+<blockquote>
+  <ul>
+    <li>iPhone version:8.3
+      <div class="highlighter-rouge"><pre class="highlight"><code>iPhone:/System/Library/CoreServices root# cat /System/Library/CoreServices/SystemVersion.plist|grep string*
+  &lt;string&gt;12F70&lt;/string&gt;
+  &lt;string&gt;1983-2015 Apple Inc.&lt;/string&gt;
+  &lt;string&gt;iPhone OS&lt;/string&gt;
+  &lt;string&gt;8.3&lt;/string&gt;
+</code></pre>
+      </div>
+    </li>
+  </ul>
+</blockquote>
+
+<h4 id="使用-p-倒是可以成功">使用-P 倒是可以成功：</h4>
+<div class="highlighter-rouge"><pre class="highlight"><code>evzkndeMacBook-Pro:frida-ios-dump-master devzkn$  frida -U -p 1292
+     ____
+    / _  |   Frida 10.6.27 - A world-class dynamic instrumentation framework
+   | (_| |
+    &gt; _  |   Commands:
+   /_/ |_|       help      -&gt; Displays the help system
+   . . . .       object?   -&gt; Display information about 'object'
+   . . . .       exit/quit -&gt; Exit
+   . . . .
+   . . . .   More info at http://www.frida.re/docs/home/
+                                                                                
+}
+[iPhone::PID::1292]-&gt; obj
+                          ObjC                          
+                          Object
+</code></pre>
+</div>
+
+<blockquote>
+  <ul>
+    <li>1、 使用./dump.py刚才仅仅成功过一次，无法重现了
+      <div class="highlighter-rouge"><pre class="highlight"><code>devzkndeMacBook-Pro:frida-ios-dump-master devzkn$ ./dump.py xx
+open target app......
+start dump target app......
+</code></pre>
+      </div>
+    </li>
+  </ul>
+</blockquote>
+
+<p><a href="http://bbs.iosre.com/t/failed-to-spawn-unable-to-launch-ios-app-timeout/10422">Failed to spawn: unable to launch iOS app: timeout </a></p>
+
+<h4 id="问题的解决方法"><a href="http://iosre.com/t/failed-to-spawn-unable-to-launch-ios-app-timeout/10422/10">问题的解决方法</a></h4>
+
+<p><a href="http://iosre.com/t/failed-to-spawn-unable-to-launch-ios-app-timeout/10422/10">引用iosre的解答</a></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>Frida 从 9.0 开始，改 hook launchd 来 spawn process，Frida 8.2.5 以前是利用 dylib 注入的方式来 spawn。
+
+目前解决方法:
+1.降回旧版Frida
+2.不要使用spawn
+
+我之前也一直在研究这个问题，目前只知道 Frida spawn process 在修改 kernel process flags 时，会导致32-bit 装置重启，不过我还没研究出为什么，大概只能判断 32-bit, 64-bit kernel 处理稍有不同。
+
+有人懂这一块地也希望能一起研究研究
+</code></pre>
+</div>
+
+<h4 id="failed-to-spawn-的替代方案">Failed to spawn 的替代方案</h4>
+
+<blockquote>
+  <ul>
+    <li>1、先使用frida-ps -Uai 查看PID</li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>2、使用 frida -p attach</li>
+  </ul>
+</blockquote>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>devzkndeMacBook-Pro:zhangkn.github.io devzkn$ frida -U -p 1262
+     ____
+    / _  |   Frida 10.6.27 - A world-class dynamic instrumentation framework
+   | (_| |
+    &gt; _  |   Commands:
+   /_/ |_|       help      -&gt; Displays the help system
+   . . . .       object?   -&gt; Display information about 'object'
+   . . . .       exit/quit -&gt; Exit
+   . . . .
+   . . . .   More info at http://www.frida.re/docs/home/
+                                                                                
+[iPhone::PID::1262]-&gt; 
+</code></pre>
+</div>
+
+<h3 id="frida-ios-dump-失败的原因">frida-ios-dump 失败的原因</h3>
+
+<p>刚才进行了pdb ,发现执行到这里</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>(Pdb) l
+108  		script = loadJsFile(session, APP_JS);
+109  		name = target.decode('utf8');
+110  		script.post(name);
+111  		opened.wait();
+112  		session.detach();
+113  -&gt;		createDir(os.getcwd()+"/"+OUTPUT)
+114  		print "start dump target app......"
+115  		session = device.attach(name);
+116  		script = loadJsFile(session, DUMP_JS);
+117  		script.post("dump");
+118  		finished.wait();
+(Pdb) s
+--Return--
+&gt; /Users/devzkn/Downloads/kevin－software/ios-Reverse_Engineering/frida-ios-dump-master/dump.py(113)main()-&gt;None
+-&gt; createDir(os.getcwd()+"/"+OUTPUT)
+(Pdb) l
+108  		script = loadJsFile(session, APP_JS);
+109  		name = target.decode('utf8');
+110  		script.post(name);
+111  		opened.wait();
+112  		session.detach();
+113  -&gt;		createDir(os.getcwd()+"/"+OUTPUT)
+114  		print "start dump target app......"
+115  		session = device.attach(name);
+116  		script = loadJsFile(session, DUMP_JS);
+117  		script.post("dump");
+118  		finished.wait();
+(Pdb) s
+UnicodeDecodeError: UnicodeD...ge(128)')
+&gt; /Users/devzkn/Downloads/kevin－software/ios-Reverse_Engineering/frida-ios-dump-master/dump.py(127)&lt;module&gt;()
+-&gt; main(sys.argv[1])
+(Pdb) l
+122  		if len(sys.argv) &lt; 2:
+123  			print "usage: ./dump.py 微信"
+124  			sys.exit(0)
+125  		else:
+126  			try:
+127  -&gt;				main(sys.argv[1])
+128  			except KeyboardInterrupt:
+129  				if session:
+130  					session.detach()
+131  				sys.exit()
+132  			except:
+(Pdb) s
+&gt; /Users/devzkn/Downloads/kevin－software/ios-Reverse_Engineering/frida-ios-dump-master/dump.py(128)&lt;module&gt;()
+-&gt; except KeyboardInterrupt:
+(Pdb) pp UnicodeDecodeError
+&lt;type 'exceptions.UnicodeDecodeError'&gt;
+</code></pre>
+</div>
+
+<p>因此，我换了一个路径，就可以了。</p>
+
+<p>因此问题在于createDi的时候，编码失败了。 以后创建目录命名要小心了。</p>
+
+<h3 id="辅助shell">辅助shell</h3>
+
+<p>为了解决目前frida-ios-dump-master的一些小问题，写了一个<a href="https://github.com/zhangkn/KNBin/blob/master/kndump">shell</a></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c">#!/bin/sh</span>
+<span class="c"># frida-ps -Uai 查看，来获取参数</span>
+<span class="c"># usage: devzkndeMacBook-Pro:~ devzkn$ kndump 邮件</span>
+<span class="c"># dump app   </span>
+<span class="nb">cd</span> ~/decrypted/frida-ios-dump-master 
+rm -rf ./Payload
+./dump.py <span class="nv">$1</span>
+open .
+<span class="nb">exit </span>0
+</code></pre>
+</div>
+
+<h3 id="参考资源">参考资源：</h3>
+
+<p><a href="https://github.com/as0ler/frida-scripts">frida-scripts</a> Repository including some useful frida script for iOS Reversing 
+<a href="https://github.com/as0ler?tab=repositories">Murphy</a>
+<a href="https://www.ibm.com/developerworks/cn/linux/l-cn-pythondebugger/">Python 代码调试技巧</a></p>
+<ul>
+  <li><a href="https://docs.python.org/2/library/pdb.html">pdb — The Python Debugger</a></li>
+  <li><a href="http://www.ninoishere.com/frida/">frida 安装</a></li>
+  <li>
+    <p><a href="https://pypi.python.org/pypi/frida#downloads">frida#downloads</a></p>
+  </li>
+  <li><a href="https://bbs.pediy.com/thread-223296.htm">通过案例入门Frida-安装firda及其基本功能</a></li>
+  <li><a href="https://www.frida.re/docs/functions/">functions</a></li>
+  <li>
+    <p><a href="http://www.interface-inspector.com/">interface-inspector</a></p>
+  </li>
+  <li><a href="https://bbs.pediy.com/thread-209957.htm">初探Mach-O学习小记(附源码)</a></li>
+</ul>
+
+<h4 id="mach-o-相关的文档">mach-o 相关的文档</h4>
+<ul>
+  <li><a href="http://turingh.github.io/2016/03/07/mach-o%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E5%88%86%E6%9E%90/">0.mach-o文件格式分析</a></li>
+  <li><a href="http://dongaxis.github.io/2015/01/01/mac-o%E6%96%87%E4%BB%B6%E5%8A%A0%E8%BD%BD%E7%9A%84%E5%85%A8%E8%BF%87%E7%A8%8B-1/">1.mach-o文件加载的全过程(1)</a></li>
+  <li><a href="http://objccn.io/issue-6-3/">2.Mach-O 可执行文件</a></li>
+  <li><a href="http://zhiwei.li/text/2012/02/15/iphone-mach-o%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E4%B8%8E%E4%BB%A3%E7%A0%81%E7%AD%BE%E5%90%8D/">3.iPhone Mach-O文件格式与代码签名</a></li>
+  <li><a href="http://www.codeproject.com/Articles/187181/Dynamic-Linking-of-Imported-Functions-in-Mach-O">4.Dynamic Linking of Imported Functions in Mach-O</a></li>
+  <li><a href="http://www.mc2lab.com/?p=68">5.otool详解Mach-o文件头部</a></li>
+  <li><a href="http://math-atlas.sourceforge.net/devel/assembly/MachORuntime.pdf">MachORuntime.pdf</a></li>
+  <li><a href="https://developer.apple.com/library/content/documentation/DeveloperTools/Conceptual/MachOTopics/0-Introduction/introduction.html">Mach-O Programming Topics</a></li>
+  <li><a href="https://samhuri.net/posts/2010/01/basics-of-the-mach-o-file-format">basics-of-the-mach-o-file-format</a>
+<br /></li>
+  <li><a href="https://developer.apple.com/library/content/technotes/tn2206/_index.html">macOS Code Signing In Depth</a></li>
+  <li><a href="https://zhiwei.li/text/2012/02/12/ios%E5%90%AF%E5%8A%A8%E9%A1%BA%E5%BA%8F/">iOS启动顺序</a></li>
+  <li><a href="https://zhiwei.li/text/category/reverse_engineering/">reverse_engineering</a></li>
+</ul>
+
+<p><br /></p>
+
+
+    <!-- 转载声明的封装-->
+    <p itemprop="publisher">
+      转载请注明：<a  itemprop="author" target="_blank" href='http://localhost:4000'>张坤楠的博客</a> > <a target="_blank" href='/2017/12/frida/'>frida</a> 
+    </p>
+
+    <p>
+
+      在操作过程或者文章有问题的话欢迎在  <a target="_blank" href='/2017/12/frida/'>原文</a> 里提问或指正。
+    </p>
+
+  </section>
+</article>
+
+<section>
+
+            <div class="content-play">
+              <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang" title="打赏，支持一下">赞赏支持</a></p>
+              <div class="hide_box-play"></div>
+              <div class="shang_box-play">
+                <a class="shang_close-play" href="javascript:void(0)" onclick="dashangToggle()" title="关闭"><img src="/images/payimg/close.jpg" alt="取消" /></a>
+                <div class="shang_tit-play">
+                  <p>感谢您的支持，我会继续努力的!</p>
+                </div>
+                <div class="shang_payimg">
+                    <img src="/images/payimg/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+                </div>
+              <div class="shang_payimg">    
+                    <img src="/images/payimg/weipayimg.jpg" alt="扫码支持" title="扫一扫" />
+                </div>
+                <div class="pay_explain">扫码打赏，你说多少就多少</div>
+                <div class="shang_payselect">
+                  <div class="pay_item checked" data-id="alipay">
+                    <span class="pay_logo"><img src="/images/payimg/alipay.jpg" alt="支付宝" /></span>
+                  </div>
+                  <div class="pay_item" data-id="weipay">
+                    <span class="pay_logo"><img src="/images/payimg/wechat.jpg" alt="微信" /></span>
+                  </div>
+                </div>
+               
+              </div>
+            </div>
+            <script type="text/javascript">
+            function dashangToggle(){
+              $(".hide_box-play").fadeToggle();
+              $(".shang_box-play").fadeToggle();
+            }
+            </script>
+
+            <div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';"></div>
+
+            <style type="text/css">
+              .content-play{width:80%;margin-top: 20px;margin-bottom: 10px;height:40px;}
+              .hide_box-play{z-index:999;filter:alpha(opacity=50);background:#666;opacity: 0.5;-moz-opacity: 0.5;left:0;top:0;height:99%;width:100%;position:fixed;display:none;}
+              .shang_box-play{width:540px;height:540px;padding:10px;background-color:#fff;border-radius:10px;position:fixed;z-index:1000;left:50%;top:50%;margin-left:-280px;margin-top:-280px;border:1px dotted #dedede;display:none;}
+              .shang_box-play img{border:none;border-width:0;}
+              .dashang{display:block;width:100px;margin:5px auto;height:25px;line-height:25px;padding:10px;background-color:#E74851;color:#fff;text-align:center;text-decoration:none;border-radius:10px;font-weight:bold;font-size:16px;transition: all 0.3s;}
+              .dashang:hover{opacity:0.8;padding:15px;font-size:18px;}
+              .shang_close-play{float:right;display:inline-block;
+                margin-right: 10px;margin-top: 20px;
+              }
+              .shang_logo{display:block;text-align:center;margin:20px auto;}
+              .shang_tit-play{width: 100%;height: 75px;text-align: center;line-height: 66px;color: #a3a3a3;font-size: 16px;background: url('/images/payimg/cy-reward-title-bg.jpg');font-family: 'Microsoft YaHei';margin-top: 7px;margin-right:2px;}
+              .shang_tit-play p{color:#a3a3a3;text-align:center;font-size:16px;}
+              .shang_payimg{width:140px;padding:10px;padding-left: 80px; /*border:6px solid #EA5F00;**/margin:0 auto;border-radius:3px;height:140px;display:inline-block;}
+              .shang_payimg img{display:inline-block;margin-right:10px;float:left;text-align:center;width:140px;height:140px; }
+              .pay_explain{text-align:center;margin:10px auto;font-size:12px;color:#545454;}
+              .shang_payselect{text-align:center;margin:0 auto;margin-top:40px;cursor:pointer;height:60px;width:500px;margin-left:110px;}
+              .shang_payselect .pay_item{display:inline-block;margin-right:140px;float:left;}
+              .shang_info-play{clear:both;}
+              .shang_info-play p,.shang_info-play a{color:#C3C3C3;text-align:center;font-size:12px;text-decoration:none;line-height:2em;}
+            </style>
+
+       <ul class="pager">
+        
+        <li class="previous">
+            <a href="/2017/01/iOS_Wifilist/" data-toggle="tooltip" data-placement="top" title="the static analysis of iOS application">上一篇：  <span>the static analysis of iOS application</span>
+            </a>
+        </li>
+        
+        
+        <li class="next">
+            <a href="/2017/12/usefulCommand/" data-toggle="tooltip" data-placement="top" title="usefulCommand">下一篇：  <span>usefulCommand</span>
+            </a>
+        </li>
+        
+    </ul>
+</section>
+
+<section class="post-comments">
+<!-- http://www.uyan.cc/getcode-->
+  
+    <div id="disqus_thread"></div>
+    <script>
+    
+    var disqus_config = function () {
+        this.page.url = "http://localhost:4000/2017/12/frida/";
+        this.page.identifier = "/2017/12/frida/";
+    };
+    var disqus_shortname = 'iosre';
+    
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>要查看<a href="http://disqus.com/?ref_noscript"> Disqus </a>评论，请启用 JavaScript</noscript>
+    <!--<script id="dsq-count-scr" src="//iosre.disqus.com/count.js" async></script>-->
+  
+
+</section>
+
+<section class="post-gitcomments">
+    <!-- http://www.uyan.cc/getcode-->
+    
+
+    <div id="container"></div>
+    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+    <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+  id: '/2017/12/frida/', // 可选。默认为 location.href
+  owner: 'zhangkn',
+  repo: 'githubpages-comments',
+  oauth: {
+    client_id: 'eb8baa6afd018fb78abf',
+    client_secret: 'c7b3a1a69585b929f76b9b849a5266c6198d8498',
+},
+})
+        gitment.render('container')
+    </script>
+
+    
+
+</section>
+<section class="read-more">
+   
+   
+   <div class="read-more-item">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h2 class="post-list__post-title post-title"><a href="/2017/12/usefulCommand/" title="link to usefulCommand">usefulCommand</a></h2>
+       <p class="excerpt">前言常用的命令和工具mkdir      -p      # mkdir -p或--parents 若所要建立目录的上层目录目前尚未建立，则会一并建立上层目录；# devzkndeMacBook-Pro:Layout devzkn$ mkdir -p private/var/mobile/Media/TouchSprite/lua/            python      SimpleHTTPServer 可以使用在部署机器工作中，比如在cydia，中创建一个自己的私有源      ...&hellip;</p>
+       <div class="post-list__meta"><time datetime="2017-12-14 00:00:00 +0800" class="post-list__meta--date date">2017-12-14</time> &#8226; <span class="post-list__meta--tags tags">iOSre</span><a class="btn-border-small" href=/2017/12/usefulCommand/>继续阅读</a></div>
+   </div>
+   
+   
+   
+   
+   <div class="read-more-item">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h2 class="post-list__post-title post-title"><a href="/2017/01/iOS_Wifilist/" title="link to the static analysis of iOS application">the static analysis of iOS application</a></h2>
+       <p class="excerpt">前言　　使用iNalyzer进行静态分析并不适合头文件很多的app，因为头文件很多的话，就会导致大量的图表等分析文件，很消耗资源，这种情况可考虑使用hopper进行静态分析。Running dot for graph 1175/42806-rw-r--r--@ 1 devzkn  staff  47328989 Dec 10 13:35 static_2017_12_10-13_33_12.zip开篇就讲iNalyzer，是因为iNalyzer 能明显体现出静态分析的流程特点，以及它的安装...&hellip;</p>
+       <div class="post-list__meta"><time datetime="2017-01-03 00:00:00 +0800" class="post-list__meta--date date">2017-01-03</time> &#8226; <span class="post-list__meta--tags tags">iOSre</span><a class="btn-border-small" href=/2017/01/iOS_Wifilist/>继续阅读</a></div>
+   </div>
+   
+</section>
+
+
+
+            <section class="footer">
+    <footer>
+        <div class = "footer_div">  
+        <nav class="cover-navigation navigation--social">
+          <ul class="navigation">
+
+          
+          <!-- Weibo -->
+          <li class="navigation__item_social">
+            <a href="http://weibo.com/602056727" title="@602056727 的微博" target="_blank">
+              <i class='social fa fa-weibo fa-2x'></i>
+              <span class="label">Weibo</span>
+            </a>
+          </li>
+          
+
+          
+          <!-- Github -->
+          <li class="navigation__item_social">
+            <a href="https://github.com/zhangkn" title="@zhangkn 的 Github" target="_blank">
+              <i class='social fa fa-github fa-2x'></i>
+              <span class="label">Github</span>
+            </a>
+          </li>
+          
+          
+          
+          <!-- Twitter -->
+          <li class="navigation__item_social">
+            <a href="http://twitter.com/zhangkunnan" title="@zhangkunnan" target="_blank">
+              <i class='social fa fa-twitter fa-2x'></i>
+              <span class="label">Twitter</span>
+            </a>
+          </li>
+          
+
+          
+          <!-- Google Plus -->
+          <li class="navigation__item_social">
+            <a href="https://plus.google.com/114188876079505437133" rel="author" title="Google+" target="_blank">
+              <i class='social fa fa-google-plus-square fa-2x'></i>
+              <span class="label">Google Plus</span>
+            </a>
+          </li>
+          
+
+          <!-- RSS -->
+          <li class="navigation__item_social">
+            <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+              <i class='social fa fa-rss fa-2x'></i>
+              <span class="label">RSS</span>
+            </a>
+          </li>
+
+          
+          <!-- Email -->
+          <li class="navigation__item_social">
+            <a href="mailto:zhang_kn@icloud.com" title="Contact me">
+              <i class='social fa fa-envelope fa-2x'></i>
+              <span class="label">Email</span>
+            </a>
+          </li>
+          
+
+
+         
+
+          <!-- linkedin  medium start 
+        <div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="zh_CN" data-type="vertical" data-theme="light" data-vanity="iosre"><a class="LI-simple-link" href='https://cn.linkedin.com/in/iosre?trk=profile-badge'>张坤楠</a></div>
+linkedin  medium end  -->
+
+
+
+
+
+          </ul>
+        </nav>
+
+        </div>
+
+        <div class = "footer_div"  itemscope itemtype="https://schema.org/BlogPosting" >  
+           <p class="copyright text-muted"  itemprop="author">
+
+            Copyright &copy; ReverseEngineering 2018 Theme by <a href="http://localhost:4000">kn</a> |
+            <iframe  itemprop="image"
+                style="margin-left: 2px; margin-bottom:-5px;"
+                frameborder="0" scrolling="0" width="170px" height="20px"
+                src="https://ghbtns.com/github-btn.html?user=zhangkn&repo=zhangkn.github.io&type=star&count=true" >
+            </iframe>
+
+            <iframe 
+            style="margin-left: 2px; margin-bottom:-5px;"
+            src="https://ghbtns.com/github-btn.html?user=zhangkn&repo=zhangkn.github.io&type=watch&count=true&v=2" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+
+            <iframe
+            style="margin-left: 2px; margin-bottom:-5px;"
+             src="https://ghbtns.com/github-btn.html?user=zhangkn&type=follow&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+
+             <wb:follow-button uid="2939794294" type="red_2" width="136" height="24" scrolling="0"  style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" ></wb:follow-button>
+
+             <iframe width="100%" height="500"  frameborder="0" scrolling="no" src="https://widget.weibo.com/livestream/listlive.php?language=zh_cn&width=0&height=500&uid=5934185471&skin=1&refer=1&appkey=3233061066&pic=0&titlebar=1&border=1&publish=1&atalk=1&recomm=0&at=0&atopic=iOS%E9%80%86%E5%90%91&ptopic=iOS%E9%80%86%E5%90%91&dpc=1"></iframe>
+
+
+            
+
+
+            </p>
+        	<div align="right">
+    			<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+          <!-- 访问统计 -->
+          <span id="busuanzi_container_site_pv">
+            本站总访问量
+            <span id="busuanzi_value_site_pv"></span>次
+          </span>
+
+        </div>
+        <div>
+
+
+
+    </footer>
+</section>
+
+                
+	<!-- google搜索  content-play -->
+<section class="ces">
+<!--  自己申请的ces-->
+<!--<script> 
+  (function() {
+    var cx = '013483152311799686538:__rsnolmpao';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+-->
+<!-- ad ces-->
+<script>
+  (function() {
+    var cx = 'partner-pub-5776998009494842:2886811629';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:searchbox-only></gcse:searchbox-only>
+
+
+<script type="text/javascript" src="https://www.google.com/cse/query_renderer.js"></script>
+<div id="queries"></div>
+<script src="https://www.google.com/cse/api/partner-pub-5776998009494842/cse/2886811629/queries/js?oe=UTF-8&amp;callback=(new+PopularQueryRenderer(document.getElementById(%22queries%22))).render"></script>
+
+
+
+<nav class="animated">
+  <ul>
+  
+    <li>
+      <form class="search" method="get" action="https://www.google.com/search">
+        <div>
+          <input type="text" id="search" name="q" placeholder="站内搜索">
+        </div>
+      </form>
+    </li>
+</nav>
+
+
+
+
+
+</section>
+
+<!--  20171212 新增-->
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+
+<script type="text/javascript" src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+ done = false;
+ $('form.search').on('submit', function (event) {
+    if (false === done) {
+      event.preventDefault();
+      var orgVal = $(this).find('#search').val();
+      $(this).find('#search').val('site:http://localhost:4000 ' + orgVal);
+      done = true;
+      $(this).submit();
+    }
+  });
+
+});
+
+</script>
+<!-- 微博 分享按钮-->
+<script src="https://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+
+
+
+    
+<div class="bdsharebuttonbox" data-tag="share_1">
+	<a class="bds_mshare" data-cmd="mshare"></a>
+	<a class="bds_qzone" data-cmd="qzone" href="#"></a>
+	<a class="bds_tsina" data-cmd="tsina"></a>
+	<a class="bds_baidu" data-cmd="baidu"></a>
+	<a class="bds_renren" data-cmd="renren"></a>
+	<a class="bds_tqq" data-cmd="tqq"></a>
+	<a class="bds_more" data-cmd="more">更多</a>
+	<a class="bds_count" data-cmd="count"></a>
+</div>
+<script>window._bd_share_config={selectShare:[{"bdselectMiniList":['qzone','tqq','twi','bdxc','tqf','fbook','weixin']}],"common":{"bdSnsKey":{"tsina":"apachecn","tqq":"apachecn","t163":"apachecn","tsohu":"apachecn"},"bdDesc":"frida 原文:","bdText":"frida 原文：","bdMini":"2","bdMiniList":["mshare","sqq","weixin","tsina","qzone","tqq","youdao","evernotecn","fbook","twi","linkedin","douban","bdysc","tieba","ty","mail"],"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"6","bdPos":"right","bdTop":"277"},"image":{"viewList":["qzone","tsina","tqq","twi","weixin","fbook"],"viewText":"分享到：","viewSize":"16"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+    
+  </body>
+
+</html>

@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html xmlns:wb="https://open.weibo.com/wb"><!-- 微博分享 在HTML标签中增加XML命名空间 -->
+
+
+  <head>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NXGLR9F');</script>
+<!-- End Google Tag Manager -->
+
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>CycriptTricks</title>
+  <meta name="description" content="前言">
+  <meta name="author" content="zhangkn">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="CycriptTricks">
+  <meta name="twitter:description" content="前言">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="CycriptTricks">
+  <meta property="og:description" content="前言">
+  
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
+  <link href="/images/favicon.png" rel="shortcut icon" type="image/png">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="http://localhost:4000/2017/12/CycriptTricks/">
+  <link rel="alternate" type="application/rss+xml" title="ReverseEngineering" href="http://localhost:4000/feed.xml">
+  <!--Google网站管理员工具的特定元标记  显示您网站的专用搜寻框，以及导向您网站的其他直接link  google的网站认证代码，也就是证明这个网站的所有者是你 获取以上代码到自己网站上，可以进入http://www.google.com/webmasters/tools/，将自己网站添加进google网站管理，有利于google的收录 
+
+  https://www.google.com/webmasters/verification/verification?hl=zh-CN&siteUrl=https://zhangkn.github.io/
+  -->
+  <meta name="google-site-verification" content="OEpYd_8xV1ri67dIngAWDEoYNeVBe_cMXrdBugMW5TI" />
+
+
+  <meta name="robots" content="all" />
+  <meta name="googlebot" content="all" />
+  <!-- baiducse-->
+
+  <meta name="baidu-site-verification" content="e7615181b86ddd4f27bb47ab18b021e4"/><!--  验证新域名 （该代码当日有效)-->
+
+<!-- 站点统计 两行代码 搞定计数 http://busuanzi.ibruce.info/-->
+  <script 
+  async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>  
+
+<!-- 百度统计 -->
+  
+  <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?e7f6d46714fcd28fb24be011203bee5f";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+  </script>
+  
+
+<!-- google 统计 -->
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-111030597-1', 'auto');
+      ga('send', 'pageview');
+  </script>
+  
+
+  
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-5776998009494842",
+    enable_page_level_ads: true
+  });
+</script>
+<!-- linkedin  http://www.linkedin.com/badges/profile/create?vanityname=iosre&trk=pprof-settings-badge 
+<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>-->
+
+
+
+</head>
+
+
+  <body>
+
+   <!-- Google Tag Manager (noscript) -->
+   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXGLR9F"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <span class="mobile btn-mobile-menu">        
+      <div class="nav_container">
+         <nav class="nav-menu-item" style = "float:right">
+            <i class="nav-menu-item">
+              <a href="/#blog" title="" class="blog-button">  博客主页
+              </a>
+            </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/archive" title="archive" class="btn-mobile-menu__icon">
+                      所有文章
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/tags" title="tags" class="btn-mobile-menu__icon">
+                      标签
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/about" title="about" class="btn-mobile-menu__icon">
+                      关于我
+                  </a>
+                </i>
+            
+          </nav>
+      </div>
+    </span>
+    <header class="panel-cover panel-cover--collapsed" style="background-image: url('/images/background-cover.jpg')" itemscope itemtype="https://schema.org/WPHeader">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+        <!-- 头像效果-start -->
+        <div class="ih-item circle effect right_to_left" itemprop="author" itemscope itemtype="https://schema.org/Person">            
+            <a href="/#blog" title="前往 ReverseEngineering 的主页" class="blog-button">
+                <div class="img" itemprop="image"><img src="/images/avatar.jpg" alt="img"></div>
+                <div class="info">
+                    <div class="info-back" >
+                        <h2  itemprop="name" > 
+                            
+                                zhangkn
+                            
+                        </h2>
+                        <p  itemprop="description">
+                           
+                                iOSre / Anti
+                            
+                        </p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- 头像效果-end -->
+        <h1 class="panel-cover__title panel-title" itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><a  itemprop="name" href="/#blog" title="link to homepage for ReverseEngineering" class="blog-button">ReverseEngineering</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">个人站</span>
+        
+        <hr class="panel-cover__divider" />
+        <p itemprop="description" itemscope itemtype="https://schema.org/Organization" class="panel-cover__description">Kunnan Zhang's Personal Website</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+        
+        
+
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">博客主页</a></li>
+                
+                  <li class="navigation__item"><a href="/archive" title="archive">所有文章</a></li>
+                
+                  <li class="navigation__item"><a href="/tags" title="tags">标签</a></li>
+                
+                  <li class="navigation__item"><a href="/about" title="about">关于我</a></li>
+                
+              </ul>
+            </nav>
+          </div>          
+        </div>
+
+
+
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="panel-cover--overlay cover-clear"></div>
+    
+  </div>
+
+ 
+
+  
+
+</header>
+
+
+    <div class="content-wrapper" >
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single" itemscope itemtype="https://schema.org/BlogPosting">
+  <link itemprop="mainEntityOfPage" href="https://zhangkn.github.io/archive/">
+  <header class="post-header" itemscope itemtype="https://schema.org/WPHeader">
+    <h1  itemprop="Headline" class="post-title">CycriptTricks <!-- <div class="social-share"> -->
+
+   <ul class="share-buttons">
+    <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fzhangkn.github.io&quote=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&quote=' + encodeURIComponent(document.URL)); return false;"><img alt="Share on Facebook" src="/images/flat_web_icon_set/color/Facebook.png" /></a></li>
+    <li><a href="https://twitter.com/intent/tweet?source=https%3A%2F%2Fzhangkn.github.io&text=:%20https%3A%2F%2Fzhangkn.github.io&via=zhangkunnan" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20'  + encodeURIComponent(document.URL)); return false;"><img alt="Tweet" src="/images/flat_web_icon_set/color/Twitter.png" /></a></li>
+    <li><a href="https://plus.google.com/share?url=https%3A%2F%2Fzhangkn.github.io" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(document.URL)); return false;"><img alt="Share on Google+" src="/images/flat_web_icon_set/color/Google+.png" /></a></li>
+    <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fzhangkn.github.io&title=&summary=&source=https%3A%2F%2Fzhangkn.github.io" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(document.URL) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/flat_web_icon_set/color/LinkedIn.png" /></a></li>
+    <li><a href="mailto:zhang_kn@icloud.com?subject=&body=:%20https%3A%2F%2Fzhangkn.github.io" target="_blank" title="Send email" onclick="window.open('mailto:zhang_kn@icloud.com?subject=' + encodeURIComponent(document.title) + '&body=' +  encodeURIComponent(document.URL)); return false;"><img alt="Send email" src="/images/flat_web_icon_set/color/Email.png" /></a></li>
+
+    <!--<wb:share-button appkey="3233061066" addition="simple" type="button" ralateUid="2939794294"></wb:share-button>-->
+
+  </ul>
+<!-- </div> -->
+
+
+
+
+</h1> 
+    <div class="post-meta">
+      <img src="/images/calendar.png" width="20px"/> 
+      <time datetime="2017-12-29 00:00:00 +0800" itemprop="datePublished" class="post-meta__date date">2017-12-29</time>  
+         
+      <span id="busuanzi_container_page_pv"> | 阅读：<span id="busuanzi_value_page_pv"></span>次</span>
+
+    </p>
+
+
+    </div>
+
+    
+  </header>
+
+  <section class="post"  itemscope itemtype="https://schema.org/BlogPosting" >
+    <h3 id="前言">前言</h3>
+
+<p>Cycript 是一个能够理解Objective-C语法的javascript解释器， 它能够挂钩正在运行的进程， 以在运行时修改很多东西, 一般我们用于动态调试应用, 如果要调试的代码是用C编写的,通过<a href="/images/posts/antiDebugger/lldb-commands-map.png">lldb</a>来调试.</p>
+
+<blockquote>
+  <ul>
+    <li>刚开始分析逆向的时候，常常利用它进行控制器class的定位;完成类似功能的工具有<a href="https://zhangkn.github.io/2017/12/KNAFlexLoader/">AFlexLoader</a>、<a href="https://zhangkn.github.io/2017/12/Passionfruit/">Passionfruit</a></li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>Powerful private methods
+      <div class="highlighter-rouge"><pre class="highlight"><code>_ivarDescription
+_shortMethodDescription
+nextResponder
+_autolayoutTrace
+recursiveDescription
+_methodDescription
+</code></pre>
+      </div>
+    </li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>安装
+      <div class="highlighter-rouge"><pre class="highlight"><code>iPhone:~ root# apt-get install cycript
+</code></pre>
+      </div>
+    </li>
+  </ul>
+</blockquote>
+
+<h3 id="动态库的注入方式">动态库的注入方式</h3>
+
+<blockquote>
+  <ul>
+    <li>cycript注入动态库的方式</li>
+  </ul>
+</blockquote>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+在挂载的进程上创建一个挂起的线程, 然后在这个线程里申请一片用于加载动态库的内存,然后恢复线程,动态库就被注入(通过 taskfor_pid函数获取目标进程句柄，然后通过在进程内创建新线程并执行自己的代码。)
+</code></pre>
+</div>
+<blockquote>
+  <ul>
+    <li>通过环境变量DYLD_INSERT_LIBRARIES 注入
+      <div class="highlighter-rouge"><pre class="highlight"><code>DYLD_INSERT_LIBRARIES=/PathFrom/dumpdecrypted.dylib /PathTo
+#New Run Script Phase：
+cd ${TARGET_BUILD_DIR}
+export DYLD_INSERT_LIBRARIES=./libKNoke.dylib &amp;&amp; /Applications/QKNQ.app/Contents/MacOS/QKNQ
+</code></pre>
+      </div>
+    </li>
+    <li><a href="https://github.com/Tyilo/insert_dylib">二次打包动态库的注入,避免每次从环境变量注入–偏静态：通过LC_LOAD_DYLIB实现dylib的加载</a></li>
+  </ul>
+</blockquote>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>#通过修改可执行文件的Load Commands来实现的. 在Load Commands中增加一个LC_LOAD_DYLIB , 写入dylib路径
+Usage: insert_dylib dylib_path binary_path [new_binary_path]
+
+1、现在iOS上的绝大多数以root权限运行的App，都是通过setuid + bash来实现的
+2、App运行所需要的信息，一般都存放在其MachO头部43中，其中dylib的信息是由load commands指定的
+这些信息是以静态的方式存放在二进制文件里（不是由DYLD_INSERT_LIBRARIES动态指定），而又是由dyld动态加载的，所以我们给它起了个“偏静态”的名字--在此App得到执行时，dyld会查看其MachO头部中的load commands，并把里面LC_LOAD_DYLIB相关的dylib给加载到进程的内存空间
+</code></pre>
+</div>
+<p><a href="https://github.com/Tyilo/insert_dylib">insert_dylib:# Command line utility for inserting a dylib load command into a Mach-O binary </a></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>修改App可执行文件的头部，给它添加这么一个load command，并指定load我们构造的dylib就好
+</code></pre>
+</div>
+
+<h3 id="cycript的常用命令">cycript的常用命令</h3>
+
+<blockquote>
+  <ul>
+    <li>List all subclasses
+      <div class="highlighter-rouge"><pre class="highlight"><code>cy# [c for each (c in ObjectiveC.classes) if (class_getSuperclass(c) &amp;&amp; [c isSubclassOfClass:UIViewController])]
+[c for each (c in ObjectiveC.classes) if (class_getSuperclass(c) &amp;&amp; [c isSubclassOfClass:UIView])]
+</code></pre>
+      </div>
+    </li>
+    <li>格式化
+      <div class="highlighter-rouge"><pre class="highlight"><code>.toString()
+</code></pre>
+      </div>
+    </li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>根据地址获取对象。
+      <div class="highlighter-rouge"><pre class="highlight"><code>#address
+</code></pre>
+      </div>
+    </li>
+    <li>bundleIdentifier
+      <div class="highlighter-rouge"><pre class="highlight"><code>[[NSBundle mainBundle] bundleIdentifier]
+</code></pre>
+      </div>
+    </li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>可执行文件路径
+      <div class="highlighter-rouge"><pre class="highlight"><code>[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask][0]
+</code></pre>
+      </div>
+    </li>
+    <li>Inject Into Processes
+      <div class="highlighter-rouge"><pre class="highlight"><code>iPhone:~ root# cycript -p Mookn
+</code></pre>
+      </div>
+    </li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>Objective-C Messages
+      <div class="highlighter-rouge"><pre class="highlight"><code>cy# [UIApp description]
+@"&lt;DFApplication: 0x4870560&gt;"
+cy# [#0x4870560 _ivarDescription].toString()
+# 查看 _delegate
+cy# *UIApp
+isa:UIApplication,_hasAlternateNextResponder:false,_hasInputAssistantItem:false,_delegate:(typedef void*)(0x1467c58e0),
+</code></pre>
+      </div>
+    </li>
+    <li>JavaScript Extensions
+      <div class="highlighter-rouge"><pre class="highlight"><code>cy# [for (x of [1,2,3]) x+1]
+[2,3,4]
+</code></pre>
+      </div>
+    </li>
+    <li>Bridged Object Model
+      <div class="highlighter-rouge"><pre class="highlight"><code>cy# choose(CALayer) instanceof Array
+true
+</code></pre>
+      </div>
+    </li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>Foreign Function Calls
+      <div class="highlighter-rouge"><pre class="highlight"><code>cy# var a = malloc(128)
+(typedef void*)(0x8b00b90)
+</code></pre>
+      </div>
+    </li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>Magical Tab-Complete
+      <div class="highlighter-rouge"><pre class="highlight"><code>cy# a = ({m: 4, b: 5})
+{m:4,b:5}
+cy# a["m"]
+4
+</code></pre>
+      </div>
+    </li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>C++11 Lambda Syntax
+      <div class="highlighter-rouge"><pre class="highlight"><code>cy#  [&amp;](int a)-&gt;int{return a}
+(extern "C" int 80904192(int))
+</code></pre>
+      </div>
+    </li>
+  </ul>
+</blockquote>
+
+<h3 id="私有api的使用">私有API的使用</h3>
+
+<blockquote>
+  <ul>
+    <li>打印出当前界面的view层级
+      <div class="highlighter-rouge"><pre class="highlight"><code>cy# UIApp.keyWindow.recursiveDescription().toString()
+</code></pre>
+      </div>
+    </li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>通过view的nextResponder方法，可以找出它的下一个事件传递来源，常用来确定它所属的视图控制器
+      <div class="highlighter-rouge"><pre class="highlight"><code>cy# [#0x181009f0 nextResponder]
+</code></pre>
+      </div>
+    </li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>_shortMethodDescription 也可以用于lldb的断点调试，避免地址计算
+      <div class="highlighter-rouge"><pre class="highlight"><code># 1、iPhone端开启debugserver的端口监听
+iPhone:~ root# debugserver *:12345 -a "WeKNChat"
+# 2、Mac端LLDB的接入：在terminal上输入lldb命令，然后输入下方的地址进行连接。因为我们使用usbmuxd进行了端口的转发，因此可以使用本地的环回测试地址来进行debugserver的连接。
+process connect connect://127.0.0.1:12345
+# 3、找到需要下断点的类，然后在LLDB命令行输入_shortMethodDescription
+(lldb) po [CMesKNsageMgr _shortMethodDescription]
+#进行断点
+(lldb) b 0x52260f9
+#resuming Process
+# 查看register
+(lldb) register read --all
+#补充 ： 打印数据模型内容很有用的私有函数方法[模型对象 _ivarDescription]；
+</code></pre>
+      </div>
+    </li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>快捷的获取ViewControlle(Shortcut to find the ViewController’s class name on the keyWindow): _printHierarchy
+      <div class="highlighter-rouge"><pre class="highlight"><code>#支持iOS8之后
+cy# [[[UIWindow keyWindow] rootViewController] _printHierarchy].toString()
+</code></pre>
+      </div>
+    </li>
+    <li>_ivarDescription: Prints all names and values of instance variables of a specified object
+      <div class="highlighter-rouge"><pre class="highlight"><code>cy# [#0x5822600 _ivarDescription].toString()
+</code></pre>
+      </div>
+    </li>
+    <li>_autolayoutTrace:基于layout展示View架构
+      <div class="highlighter-rouge"><pre class="highlight"><code>cy# [[UIApp keyWindow] _autolayoutTrace].toString()
+</code></pre>
+      </div>
+    </li>
+    <li>choose():get an array of existing objects of a certain class(当前堆栈中查找到特定类的对象数据)
+      <div class="highlighter-rouge"><pre class="highlight"><code>cy# a = choose(UILabel).toString()
+</code></pre>
+      </div>
+    </li>
+  </ul>
+</blockquote>
+
+<h3 id="参考">参考</h3>
+<ul>
+  <li><a href="http://iphonedevwiki.net/index.php/Cycript_Tricks">CycriptTricks</a></li>
+  <li><a href="http://www.cycript.org/debs/?C=M;O=D">debs</a></li>
+  <li><a href="https://github.com/iOS-Reverse-Engineering-Dev">iOS Reverse Engineering Dev Community</a></li>
+  <li><a href="https://github.com/steventroughtonsmith">steventroughtonsmith</a></li>
+  <li><a href="https://github.com/zhangkn/Swift-Apps-Reverse-Engineering/blob/master/Reverse%20Engineering%20Swift%20Applications.pdf">Swift-Apps-Reverse-Engineering</a></li>
+  <li><a href="http://iosdevlog.com/">iosdevlog</a></li>
+  <li><a href="https://jiaxianhua.github.io/">JiaXianhua blog</a></li>
+  <li><a href="https://github.com/limneos/weak_classdump">weak_classdump</a></li>
+  <li>
+    <p><a href="http://iosre.com/t/powerful-private-methods-for-debugging-in-cycript-lldb/3414">Powerful private methods for debugging in Cycript &amp; LLDB</a></p>
+  </li>
+  <li><a href="http://iosre.com/t/igrimace-hook-root-app/440">颤抖吧，■■■■■■■■！手把手教你hook以root权限运行的App</a>
+    <div class="highlighter-rouge"><pre class="highlight"><code>现在iOS上的绝大多数以root权限运行的App，都是通过setuid + bash来实现的
+App运行所需要的信息，一般都存放在其MachO头部43中，其中dylib的信息是由load commands指定的
+这些信息是以静态的方式存放在二进制文件里（不是由DYLD_INSERT_LIBRARIES动态指定），而又是由dyld动态加载的，所以我们给它起了个“偏静态”的名字
+</code></pre>
+    </div>
+  </li>
+  <li><a href="http://iosre.com/u/snakeninny/activity/topics">snakeninny</a></li>
+  <li><a href="https://mikulove.com/">mikulove</a>
+    <h3 id="附">附</h3>
+  </li>
+</ul>
+
+<blockquote>
+  <ul>
+    <li>查找进程名称
+      <div class="highlighter-rouge"><pre class="highlight"><code>iPhone:~ root# ps -e |grep  /var/mobile*
+</code></pre>
+      </div>
+    </li>
+    <li><a href="https://www.jianshu.com/p/7ab7234f5187">iOS逆向记录(三)</a></li>
+  </ul>
+</blockquote>
+
+
+    <!-- 转载声明的封装-->
+    <p itemprop="publisher">
+      转载请注明：<a  itemprop="author" target="_blank" href='http://localhost:4000'>张坤楠的博客</a> > <a target="_blank" href='/2017/12/CycriptTricks/'>CycriptTricks</a> 
+    </p>
+
+    <p>
+
+      在操作过程或者文章有问题的话欢迎在  <a target="_blank" href='/2017/12/CycriptTricks/'>原文</a> 里提问或指正。
+    </p>
+
+  </section>
+</article>
+
+<section>
+
+            <div class="content-play">
+              <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang" title="打赏，支持一下">赞赏支持</a></p>
+              <div class="hide_box-play"></div>
+              <div class="shang_box-play">
+                <a class="shang_close-play" href="javascript:void(0)" onclick="dashangToggle()" title="关闭"><img src="/images/payimg/close.jpg" alt="取消" /></a>
+                <div class="shang_tit-play">
+                  <p>感谢您的支持，我会继续努力的!</p>
+                </div>
+                <div class="shang_payimg">
+                    <img src="/images/payimg/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+                </div>
+              <div class="shang_payimg">    
+                    <img src="/images/payimg/weipayimg.jpg" alt="扫码支持" title="扫一扫" />
+                </div>
+                <div class="pay_explain">扫码打赏，你说多少就多少</div>
+                <div class="shang_payselect">
+                  <div class="pay_item checked" data-id="alipay">
+                    <span class="pay_logo"><img src="/images/payimg/alipay.jpg" alt="支付宝" /></span>
+                  </div>
+                  <div class="pay_item" data-id="weipay">
+                    <span class="pay_logo"><img src="/images/payimg/wechat.jpg" alt="微信" /></span>
+                  </div>
+                </div>
+               
+              </div>
+            </div>
+            <script type="text/javascript">
+            function dashangToggle(){
+              $(".hide_box-play").fadeToggle();
+              $(".shang_box-play").fadeToggle();
+            }
+            </script>
+
+            <div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';"></div>
+
+            <style type="text/css">
+              .content-play{width:80%;margin-top: 20px;margin-bottom: 10px;height:40px;}
+              .hide_box-play{z-index:999;filter:alpha(opacity=50);background:#666;opacity: 0.5;-moz-opacity: 0.5;left:0;top:0;height:99%;width:100%;position:fixed;display:none;}
+              .shang_box-play{width:540px;height:540px;padding:10px;background-color:#fff;border-radius:10px;position:fixed;z-index:1000;left:50%;top:50%;margin-left:-280px;margin-top:-280px;border:1px dotted #dedede;display:none;}
+              .shang_box-play img{border:none;border-width:0;}
+              .dashang{display:block;width:100px;margin:5px auto;height:25px;line-height:25px;padding:10px;background-color:#E74851;color:#fff;text-align:center;text-decoration:none;border-radius:10px;font-weight:bold;font-size:16px;transition: all 0.3s;}
+              .dashang:hover{opacity:0.8;padding:15px;font-size:18px;}
+              .shang_close-play{float:right;display:inline-block;
+                margin-right: 10px;margin-top: 20px;
+              }
+              .shang_logo{display:block;text-align:center;margin:20px auto;}
+              .shang_tit-play{width: 100%;height: 75px;text-align: center;line-height: 66px;color: #a3a3a3;font-size: 16px;background: url('/images/payimg/cy-reward-title-bg.jpg');font-family: 'Microsoft YaHei';margin-top: 7px;margin-right:2px;}
+              .shang_tit-play p{color:#a3a3a3;text-align:center;font-size:16px;}
+              .shang_payimg{width:140px;padding:10px;padding-left: 80px; /*border:6px solid #EA5F00;**/margin:0 auto;border-radius:3px;height:140px;display:inline-block;}
+              .shang_payimg img{display:inline-block;margin-right:10px;float:left;text-align:center;width:140px;height:140px; }
+              .pay_explain{text-align:center;margin:10px auto;font-size:12px;color:#545454;}
+              .shang_payselect{text-align:center;margin:0 auto;margin-top:40px;cursor:pointer;height:60px;width:500px;margin-left:110px;}
+              .shang_payselect .pay_item{display:inline-block;margin-right:140px;float:left;}
+              .shang_info-play{clear:both;}
+              .shang_info-play p,.shang_info-play a{color:#C3C3C3;text-align:center;font-size:12px;text-decoration:none;line-height:2em;}
+            </style>
+
+       <ul class="pager">
+        
+        <li class="previous">
+            <a href="/2017/12/html/" data-toggle="tooltip" data-placement="top" title="html">上一篇：  <span>html</span>
+            </a>
+        </li>
+        
+        
+        <li class="next">
+            <a href="/2018/01/AppSync/" data-toggle="tooltip" data-placement="top" title="AppSync">下一篇：  <span>AppSync</span>
+            </a>
+        </li>
+        
+    </ul>
+</section>
+
+<section class="post-comments">
+<!-- http://www.uyan.cc/getcode-->
+  
+    <div id="disqus_thread"></div>
+    <script>
+    
+    var disqus_config = function () {
+        this.page.url = "http://localhost:4000/2017/12/CycriptTricks/";
+        this.page.identifier = "/2017/12/CycriptTricks/";
+    };
+    var disqus_shortname = 'iosre';
+    
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>要查看<a href="http://disqus.com/?ref_noscript"> Disqus </a>评论，请启用 JavaScript</noscript>
+    <!--<script id="dsq-count-scr" src="//iosre.disqus.com/count.js" async></script>-->
+  
+
+</section>
+
+<section class="post-gitcomments">
+    <!-- http://www.uyan.cc/getcode-->
+    
+
+    <div id="container"></div>
+    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+    <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+  id: '/2017/12/CycriptTricks/', // 可选。默认为 location.href
+  owner: 'zhangkn',
+  repo: 'githubpages-comments',
+  oauth: {
+    client_id: 'eb8baa6afd018fb78abf',
+    client_secret: 'c7b3a1a69585b929f76b9b849a5266c6198d8498',
+},
+})
+        gitment.render('container')
+    </script>
+
+    
+
+</section>
+<section class="read-more">
+   
+   
+   <div class="read-more-item">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h2 class="post-list__post-title post-title"><a href="/2018/01/AppSync/" title="link to AppSync">AppSync</a></h2>
+       <p class="excerpt">前言借助AppSync限制签名验证，,利用它可以安装未签名的ipa。安装未签名的ipa      添加源：http://apt.so/，并安装对应系统版本的AppSync        使用iTools 或者ipainstaller 进行ipa文件的安装      #在iPhone安装ipa installer Console之后利用命令行安装iPhone:~ root# ipainstaller ./*_v6.5.9.ipaAnalyzing 信_v6.5.9.ipa...Install...&hellip;</p>
+       <div class="post-list__meta"><time datetime="2018-01-02 00:00:00 +0800" class="post-list__meta--date date">2018-01-02</time> &#8226; <span class="post-list__meta--tags tags">iOSre</span><a class="btn-border-small" href=/2018/01/AppSync/>继续阅读</a></div>
+   </div>
+   
+   
+   
+   
+   <div class="read-more-item">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h2 class="post-list__post-title post-title"><a href="/2017/12/html/" title="link to html">html</a></h2>
+       <p class="excerpt">前言HTML（超文本标记语言——HyperText Markup Language）是构成Web世界的基石。它描述并定义了一个网页的内容。其他除HTML以外的技术则通常用来描述一个网页的表现／展示效果（CSS）或功能（JavaScript）。内联元素和块元素的特点      block（块）元素的特点      ①总是在新行上开始；②高度，行高以及外边距和内边距都可控制；③宽度是它的容器的100%，除非设定一个宽度。④它可以容纳内联元素和其他块元素              inline元...&hellip;</p>
+       <div class="post-list__meta"><time datetime="2017-12-26 00:00:00 +0800" class="post-list__meta--date date">2017-12-26</time> &#8226; <span class="post-list__meta--tags tags">html</span><a class="btn-border-small" href=/2017/12/html/>继续阅读</a></div>
+   </div>
+   
+</section>
+
+
+
+            <section class="footer">
+    <footer>
+        <div class = "footer_div">  
+        <nav class="cover-navigation navigation--social">
+          <ul class="navigation">
+
+          
+          <!-- Weibo -->
+          <li class="navigation__item_social">
+            <a href="http://weibo.com/602056727" title="@602056727 的微博" target="_blank">
+              <i class='social fa fa-weibo fa-2x'></i>
+              <span class="label">Weibo</span>
+            </a>
+          </li>
+          
+
+          
+          <!-- Github -->
+          <li class="navigation__item_social">
+            <a href="https://github.com/zhangkn" title="@zhangkn 的 Github" target="_blank">
+              <i class='social fa fa-github fa-2x'></i>
+              <span class="label">Github</span>
+            </a>
+          </li>
+          
+          
+          
+          <!-- Twitter -->
+          <li class="navigation__item_social">
+            <a href="http://twitter.com/zhangkunnan" title="@zhangkunnan" target="_blank">
+              <i class='social fa fa-twitter fa-2x'></i>
+              <span class="label">Twitter</span>
+            </a>
+          </li>
+          
+
+          
+          <!-- Google Plus -->
+          <li class="navigation__item_social">
+            <a href="https://plus.google.com/114188876079505437133" rel="author" title="Google+" target="_blank">
+              <i class='social fa fa-google-plus-square fa-2x'></i>
+              <span class="label">Google Plus</span>
+            </a>
+          </li>
+          
+
+          <!-- RSS -->
+          <li class="navigation__item_social">
+            <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+              <i class='social fa fa-rss fa-2x'></i>
+              <span class="label">RSS</span>
+            </a>
+          </li>
+
+          
+          <!-- Email -->
+          <li class="navigation__item_social">
+            <a href="mailto:zhang_kn@icloud.com" title="Contact me">
+              <i class='social fa fa-envelope fa-2x'></i>
+              <span class="label">Email</span>
+            </a>
+          </li>
+          
+
+
+         
+
+          <!-- linkedin  medium start 
+        <div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="zh_CN" data-type="vertical" data-theme="light" data-vanity="iosre"><a class="LI-simple-link" href='https://cn.linkedin.com/in/iosre?trk=profile-badge'>张坤楠</a></div>
+linkedin  medium end  -->
+
+
+
+
+
+          </ul>
+        </nav>
+
+        </div>
+
+        <div class = "footer_div"  itemscope itemtype="https://schema.org/BlogPosting" >  
+           <p class="copyright text-muted"  itemprop="author">
+
+            Copyright &copy; ReverseEngineering 2018 Theme by <a href="http://localhost:4000">kn</a> |
+            <iframe  itemprop="image"
+                style="margin-left: 2px; margin-bottom:-5px;"
+                frameborder="0" scrolling="0" width="170px" height="20px"
+                src="https://ghbtns.com/github-btn.html?user=zhangkn&repo=zhangkn.github.io&type=star&count=true" >
+            </iframe>
+
+            <iframe 
+            style="margin-left: 2px; margin-bottom:-5px;"
+            src="https://ghbtns.com/github-btn.html?user=zhangkn&repo=zhangkn.github.io&type=watch&count=true&v=2" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+
+            <iframe
+            style="margin-left: 2px; margin-bottom:-5px;"
+             src="https://ghbtns.com/github-btn.html?user=zhangkn&type=follow&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+
+             <wb:follow-button uid="2939794294" type="red_2" width="136" height="24" scrolling="0"  style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" ></wb:follow-button>
+
+             <iframe width="100%" height="500"  frameborder="0" scrolling="no" src="https://widget.weibo.com/livestream/listlive.php?language=zh_cn&width=0&height=500&uid=5934185471&skin=1&refer=1&appkey=3233061066&pic=0&titlebar=1&border=1&publish=1&atalk=1&recomm=0&at=0&atopic=iOS%E9%80%86%E5%90%91&ptopic=iOS%E9%80%86%E5%90%91&dpc=1"></iframe>
+
+
+            
+
+
+            </p>
+        	<div align="right">
+    			<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+          <!-- 访问统计 -->
+          <span id="busuanzi_container_site_pv">
+            本站总访问量
+            <span id="busuanzi_value_site_pv"></span>次
+          </span>
+
+        </div>
+        <div>
+
+
+
+    </footer>
+</section>
+
+                
+	<!-- google搜索  content-play -->
+<section class="ces">
+<!--  自己申请的ces-->
+<!--<script> 
+  (function() {
+    var cx = '013483152311799686538:__rsnolmpao';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+-->
+<!-- ad ces-->
+<script>
+  (function() {
+    var cx = 'partner-pub-5776998009494842:2886811629';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:searchbox-only></gcse:searchbox-only>
+
+
+<script type="text/javascript" src="https://www.google.com/cse/query_renderer.js"></script>
+<div id="queries"></div>
+<script src="https://www.google.com/cse/api/partner-pub-5776998009494842/cse/2886811629/queries/js?oe=UTF-8&amp;callback=(new+PopularQueryRenderer(document.getElementById(%22queries%22))).render"></script>
+
+
+
+<nav class="animated">
+  <ul>
+  
+    <li>
+      <form class="search" method="get" action="https://www.google.com/search">
+        <div>
+          <input type="text" id="search" name="q" placeholder="站内搜索">
+        </div>
+      </form>
+    </li>
+</nav>
+
+
+
+
+
+</section>
+
+<!--  20171212 新增-->
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+
+<script type="text/javascript" src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+ done = false;
+ $('form.search').on('submit', function (event) {
+    if (false === done) {
+      event.preventDefault();
+      var orgVal = $(this).find('#search').val();
+      $(this).find('#search').val('site:http://localhost:4000 ' + orgVal);
+      done = true;
+      $(this).submit();
+    }
+  });
+
+});
+
+</script>
+<!-- 微博 分享按钮-->
+<script src="https://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+
+
+
+    
+<div class="bdsharebuttonbox" data-tag="share_1">
+	<a class="bds_mshare" data-cmd="mshare"></a>
+	<a class="bds_qzone" data-cmd="qzone" href="#"></a>
+	<a class="bds_tsina" data-cmd="tsina"></a>
+	<a class="bds_baidu" data-cmd="baidu"></a>
+	<a class="bds_renren" data-cmd="renren"></a>
+	<a class="bds_tqq" data-cmd="tqq"></a>
+	<a class="bds_more" data-cmd="more">更多</a>
+	<a class="bds_count" data-cmd="count"></a>
+</div>
+<script>window._bd_share_config={selectShare:[{"bdselectMiniList":['qzone','tqq','twi','bdxc','tqf','fbook','weixin']}],"common":{"bdSnsKey":{"tsina":"apachecn","tqq":"apachecn","t163":"apachecn","tsohu":"apachecn"},"bdDesc":"CycriptTricks 原文:","bdText":"CycriptTricks 原文：","bdMini":"2","bdMiniList":["mshare","sqq","weixin","tsina","qzone","tqq","youdao","evernotecn","fbook","twi","linkedin","douban","bdysc","tieba","ty","mail"],"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"6","bdPos":"right","bdTop":"277"},"image":{"viewList":["qzone","tsina","tqq","twi","weixin","fbook"],"viewText":"分享到：","viewSize":"16"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+    
+  </body>
+
+</html>

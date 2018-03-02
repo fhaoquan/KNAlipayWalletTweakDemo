@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html xmlns:wb="https://open.weibo.com/wb"><!-- 微博分享 在HTML标签中增加XML命名空间 -->
+
+
+  <head>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NXGLR9F');</script>
+<!-- End Google Tag Manager -->
+
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>ReverseEngineering</title>
+  <meta name="description" content="Kunnan Zhang's Personal Website">
+  <meta name="author" content="zhangkn">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="ReverseEngineering">
+  <meta name="twitter:description" content="Kunnan Zhang's Personal Website">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="ReverseEngineering">
+  <meta property="og:description" content="Kunnan Zhang's Personal Website">
+  
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
+  <link href="/images/favicon.png" rel="shortcut icon" type="image/png">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="http://localhost:4000/page/2/">
+  <link rel="alternate" type="application/rss+xml" title="ReverseEngineering" href="http://localhost:4000/feed.xml">
+  <!--Google网站管理员工具的特定元标记  显示您网站的专用搜寻框，以及导向您网站的其他直接link  google的网站认证代码，也就是证明这个网站的所有者是你 获取以上代码到自己网站上，可以进入http://www.google.com/webmasters/tools/，将自己网站添加进google网站管理，有利于google的收录 
+
+  https://www.google.com/webmasters/verification/verification?hl=zh-CN&siteUrl=https://zhangkn.github.io/
+  -->
+  <meta name="google-site-verification" content="OEpYd_8xV1ri67dIngAWDEoYNeVBe_cMXrdBugMW5TI" />
+
+
+  <meta name="robots" content="all" />
+  <meta name="googlebot" content="all" />
+  <!-- baiducse-->
+
+  <meta name="baidu-site-verification" content="e7615181b86ddd4f27bb47ab18b021e4"/><!--  验证新域名 （该代码当日有效)-->
+
+<!-- 站点统计 两行代码 搞定计数 http://busuanzi.ibruce.info/-->
+  <script 
+  async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>  
+
+<!-- 百度统计 -->
+  
+  <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?e7f6d46714fcd28fb24be011203bee5f";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+  </script>
+  
+
+<!-- google 统计 -->
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-111030597-1', 'auto');
+      ga('send', 'pageview');
+  </script>
+  
+
+  
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-5776998009494842",
+    enable_page_level_ads: true
+  });
+</script>
+<!-- linkedin  http://www.linkedin.com/badges/profile/create?vanityname=iosre&trk=pprof-settings-badge 
+<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>-->
+
+
+
+</head>
+
+
+  <body>
+
+   <!-- Google Tag Manager (noscript) -->
+   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXGLR9F"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <span class="mobile btn-mobile-menu">        
+      <div class="nav_container">
+         <nav class="nav-menu-item" style = "float:right">
+            <i class="nav-menu-item">
+              <a href="/#blog" title="" class="blog-button">  博客主页
+              </a>
+            </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/archive" title="archive" class="btn-mobile-menu__icon">
+                      所有文章
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/tags" title="tags" class="btn-mobile-menu__icon">
+                      标签
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/about" title="about" class="btn-mobile-menu__icon">
+                      关于我
+                  </a>
+                </i>
+            
+          </nav>
+      </div>
+    </span>
+    <header class="panel-cover " style="background-image: url('/images/background-cover.jpg')" itemscope itemtype="https://schema.org/WPHeader">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+        <!-- 头像效果-start -->
+        <div class="ih-item circle effect right_to_left" itemprop="author" itemscope itemtype="https://schema.org/Person">            
+            <a href="/#blog" title="前往 ReverseEngineering 的主页" class="blog-button">
+                <div class="img" itemprop="image"><img src="/images/avatar.jpg" alt="img"></div>
+                <div class="info">
+                    <div class="info-back" >
+                        <h2  itemprop="name" > 
+                            
+                                zhangkn
+                            
+                        </h2>
+                        <p  itemprop="description">
+                           
+                                iOSre / Anti
+                            
+                        </p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- 头像效果-end -->
+        <h1 class="panel-cover__title panel-title" itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><a  itemprop="name" href="/#blog" title="link to homepage for ReverseEngineering" class="blog-button">ReverseEngineering</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">个人站</span>
+        
+        <hr class="panel-cover__divider" />
+        <p itemprop="description" itemscope itemtype="https://schema.org/Organization" class="panel-cover__description">Kunnan Zhang's Personal Website</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+        
+        
+
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">博客主页</a></li>
+                
+                  <li class="navigation__item"><a href="/archive" title="archive">所有文章</a></li>
+                
+                  <li class="navigation__item"><a href="/tags" title="tags">标签</a></li>
+                
+                  <li class="navigation__item"><a href="/about" title="about">关于我</a></li>
+                
+              </ul>
+            </nav>
+          </div>          
+        </div>
+
+
+
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="panel-cover--overlay cover-clear"></div>
+    
+  </div>
+
+ 
+
+  
+
+</header>
+
+
+    <div class="content-wrapper" >
+        <div class="content-wrapper__inner">
+            <div class="main-post-list hidden">
+
+  <ol class="post-list">
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2017/12/assemblyLanguage/" title="访问 assemblyLanguage">assemblyLanguage</a></h2>
+      <p class="excerpt">前言汇编语言是用助记符，符号和数字等来表示指令的程序设计语言，它与机器语言指令是一一对应的      不同内核的CPU，必须有对应的汇编语言编译器将汇编语言编写的程序编译成对应CPU的机器语言代码，CPU才能正确识别和执行这些代码;不同架构的CPU的汇编指令集并不相同        汇编的本质就是在（寄存器和寄存器）或 （寄存器和内存）之间来回move 数据.      汇编程序员可以使用指令来读写CPU中的寄存器，从而实现对于CPU的控制                  8086的寻址...&hellip;</p>
+      <div class="post-list__meta">        
+        <time datetime="2017-12-24 00:00:00 +0800" class="post-list__meta--date date">
+          <img src="/images/calendar.png" width="20px" /> 
+          2017-12-24</time> 
+        <div class = "tag-img-icon">
+          <img src="/images/tag-icon.svg" width="20px" /> 
+        </div>
+        <a href="/tags">
+          <div class = "post-list-icon-mate">
+            <span class="post-list__meta--tags-right">iOSre</span>
+          </div>
+          <div class = "post-list-small-mate">
+          <a class="btn-border-small" href=/2017/12/assemblyLanguage/>阅读全文 » </a>
+          </div>
+      </div>
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2017/12/Passionfruit/" title="访问 Passionfruit">Passionfruit</a></h2>
+      <p class="excerpt">前言  我在使用Passionfruit 的时候，安装步骤碰到的问题是fatal error: ‘frida-core.h’ file not found,具体的请看Q&amp;A。  安全审计的工具 我觉得iNalyzer 已经过时了，推荐这款Passionfruit;  Passionfruit 通过frida注入代码到目标应用实现了个“动态分析iOS应用”的图形界面。Passionfruit 的实现原理Passionfruit 通过 frida 注入代码到目标应用实现功能，再通过 n...&hellip;</p>
+      <div class="post-list__meta">        
+        <time datetime="2017-12-22 00:00:00 +0800" class="post-list__meta--date date">
+          <img src="/images/calendar.png" width="20px" /> 
+          2017-12-22</time> 
+        <div class = "tag-img-icon">
+          <img src="/images/tag-icon.svg" width="20px" /> 
+        </div>
+        <a href="/tags">
+          <div class = "post-list-icon-mate">
+            <span class="post-list__meta--tags-right">iOSre</span>
+          </div>
+          <div class = "post-list-small-mate">
+          <a class="btn-border-small" href=/2017/12/Passionfruit/>阅读全文 » </a>
+          </div>
+      </div>
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2017/12/codeshare.frida.re/" title="访问 codeshare.frida.re">codeshare.frida.re</a></h2>
+      <p class="excerpt">前言最近觉得Frida 很有潜力，就发现了codeshare.frida.re本文演示下如何使用codeshare。ios-app-info      1、使用frida-ps 查看app 信息      devzkndeMacBook-Pro:zhangkn.github.io devzkn$ frida-ps -Uai PID  Name                Identifier                                     ----  ------...&hellip;</p>
+      <div class="post-list__meta">        
+        <time datetime="2017-12-18 00:00:00 +0800" class="post-list__meta--date date">
+          <img src="/images/calendar.png" width="20px" /> 
+          2017-12-18</time> 
+        <div class = "tag-img-icon">
+          <img src="/images/tag-icon.svg" width="20px" /> 
+        </div>
+        <a href="/tags">
+          <div class = "post-list-icon-mate">
+            <span class="post-list__meta--tags-right">iOSre</span>
+          </div>
+          <div class = "post-list-small-mate">
+          <a class="btn-border-small" href=/2017/12/codeshare.frida.re/>阅读全文 » </a>
+          </div>
+      </div>
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2017/12/antiDebugger/" title="访问 antiDebugger">antiDebugger</a></h2>
+      <p class="excerpt">前言软件的逆向工程指的是通过分析一个程序或系统的功能、结构或行为，将它的技术实现或设计细节推导出来的过程。当我们因为工作需要，或是对一个软件的功能很感兴趣，却又拿不到它的源代码时，往往可以通过逆向工程的方式对它进行分析，探索它的实现原理。一个生动的比喻：照着配方包饺子,是正向开发 吃着饺子推配方（API 调用顺序）,是逆向工程。iOS 逆向分析方法从二进制文件入手，尝试从汇编代码中理清原始逻辑，并修改/绕过以达到目的。      1、网络分析      抓包工具有 tcpdump, Wir...&hellip;</p>
+      <div class="post-list__meta">        
+        <time datetime="2017-12-18 00:00:00 +0800" class="post-list__meta--date date">
+          <img src="/images/calendar.png" width="20px" /> 
+          2017-12-18</time> 
+        <div class = "tag-img-icon">
+          <img src="/images/tag-icon.svg" width="20px" /> 
+        </div>
+        <a href="/tags">
+          <div class = "post-list-icon-mate">
+            <span class="post-list__meta--tags-right">iOSre</span>
+          </div>
+          <div class = "post-list-small-mate">
+          <a class="btn-border-small" href=/2017/12/antiDebugger/>阅读全文 » </a>
+          </div>
+      </div>
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2017/12/dumpdecrypted/" title="访问 dumpdecrypted">dumpdecrypted</a></h2>
+      <p class="excerpt">前言本文重点推荐使用frida-ios-dump-master，而非dumpdecrypted.dylib。frida-ios-dump-master使用frida-ios-dump-master 只需先用frida-ps查看applications Name ，之后执行dump.py 即可在dump.py 目录下生成砸壳之后的ipa包。Frida环境的搭建可以看下这篇文章dumpdecrypted.dylib  *dumpdecrypted的原理：通过向宏 DYLD_INSERT_LIB...&hellip;</p>
+      <div class="post-list__meta">        
+        <time datetime="2017-12-16 00:00:00 +0800" class="post-list__meta--date date">
+          <img src="/images/calendar.png" width="20px" /> 
+          2017-12-16</time> 
+        <div class = "tag-img-icon">
+          <img src="/images/tag-icon.svg" width="20px" /> 
+        </div>
+        <a href="/tags">
+          <div class = "post-list-icon-mate">
+            <span class="post-list__meta--tags-right">iOSre</span>
+          </div>
+          <div class = "post-list-small-mate">
+          <a class="btn-border-small" href=/2017/12/dumpdecrypted/>阅读全文 » </a>
+          </div>
+      </div>
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2017/12/CustomHTTPProtocol/" title="访问 CustomHTTPProtocol">CustomHTTPProtocol</a></h2>
+      <p class="excerpt">前言在每一个 HTTP 请求开始时，URL 加载系统创建一个合适的 NSURLProtocol 对象处理对应的 URL 请求;而我们需要做的就是写一个继承自 NSURLProtocol 的类，并通过 - registerClass: 方法注册我们的协议类;然后 URL 加载系统就会在请求发出时使用我们创建的协议对象对该请求进行处理。这样，我们需要解决的核心问题就变成了如何使用 NSURLProtocol 来处理所有的网络请求，本文主要是对官网提供的CustomHTTPProtocol 进行...&hellip;</p>
+      <div class="post-list__meta">        
+        <time datetime="2017-12-16 00:00:00 +0800" class="post-list__meta--date date">
+          <img src="/images/calendar.png" width="20px" /> 
+          2017-12-16</time> 
+        <div class = "tag-img-icon">
+          <img src="/images/tag-icon.svg" width="20px" /> 
+        </div>
+        <a href="/tags">
+          <div class = "post-list-icon-mate">
+            <span class="post-list__meta--tags-right">iOSre</span>
+          </div>
+          <div class = "post-list-small-mate">
+          <a class="btn-border-small" href=/2017/12/CustomHTTPProtocol/>阅读全文 » </a>
+          </div>
+      </div>
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2017/12/WebSocket/" title="访问 WebSocket">WebSocket</a></h2>
+      <p class="excerpt">前言websocket 是一种网络通信协议,提供全双工通信信道,以基于事件的方式，赋予浏览器实时通信能力。协议标识符是ws（如果加密，则为wss），服务器网址就是 URL;Socket 与 WebScoketSocket 其实并不是一个协议。它工作在 OSI 模型会话层（第5层），是为了方便大家直接使用更底层协议（一般是 TCP 或 UDP ）而存在的一个抽象层。而 WebSocket 则不同，它是一个完整的 应用层协议，包含一套标准的 API 。所以，从使用上来说，WebSocket 更...&hellip;</p>
+      <div class="post-list__meta">        
+        <time datetime="2017-12-15 00:00:00 +0800" class="post-list__meta--date date">
+          <img src="/images/calendar.png" width="20px" /> 
+          2017-12-15</time> 
+        <div class = "tag-img-icon">
+          <img src="/images/tag-icon.svg" width="20px" /> 
+        </div>
+        <a href="/tags">
+          <div class = "post-list-icon-mate">
+            <span class="post-list__meta--tags-right">iOSre</span>
+          </div>
+          <div class = "post-list-small-mate">
+          <a class="btn-border-small" href=/2017/12/WebSocket/>阅读全文 » </a>
+          </div>
+      </div>
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2017/12/KNAFlexLoader/" title="访问 KNAFlexLoader">KNAFlexLoader</a></h2>
+      <p class="excerpt">前言AFlexLoader A dylib Loader for Flex, You can use it to analyse 3rd-party apps without sourcecodeinstalleddevzkndeMacBook-Pro:AFlexLoader-master devzkn$ sh /Users/devzkn/code/other/AFlexLoader-master/deploy ==&gt; Cleaning…&gt; Making all for twe...&hellip;</p>
+      <div class="post-list__meta">        
+        <time datetime="2017-12-15 00:00:00 +0800" class="post-list__meta--date date">
+          <img src="/images/calendar.png" width="20px" /> 
+          2017-12-15</time> 
+        <div class = "tag-img-icon">
+          <img src="/images/tag-icon.svg" width="20px" /> 
+        </div>
+        <a href="/tags">
+          <div class = "post-list-icon-mate">
+            <span class="post-list__meta--tags-right">iOSre</span>
+          </div>
+          <div class = "post-list-small-mate">
+          <a class="btn-border-small" href=/2017/12/KNAFlexLoader/>阅读全文 » </a>
+          </div>
+      </div>
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2017/12/usefulCommand/" title="访问 usefulCommand">usefulCommand</a></h2>
+      <p class="excerpt">前言常用的命令和工具mkdir      -p      # mkdir -p或--parents 若所要建立目录的上层目录目前尚未建立，则会一并建立上层目录；# devzkndeMacBook-Pro:Layout devzkn$ mkdir -p private/var/mobile/Media/TouchSprite/lua/            python      SimpleHTTPServer 可以使用在部署机器工作中，比如在cydia，中创建一个自己的私有源      ...&hellip;</p>
+      <div class="post-list__meta">        
+        <time datetime="2017-12-14 00:00:00 +0800" class="post-list__meta--date date">
+          <img src="/images/calendar.png" width="20px" /> 
+          2017-12-14</time> 
+        <div class = "tag-img-icon">
+          <img src="/images/tag-icon.svg" width="20px" /> 
+        </div>
+        <a href="/tags">
+          <div class = "post-list-icon-mate">
+            <span class="post-list__meta--tags-right">iOSre</span>
+          </div>
+          <div class = "post-list-small-mate">
+          <a class="btn-border-small" href=/2017/12/usefulCommand/>阅读全文 » </a>
+          </div>
+      </div>
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2017/12/frida/" title="访问 frida">frida</a></h2>
+      <p class="excerpt">前言fridafrida-docsDynamic instrumentation toolkit for developers, reverse-engineers, and security researchers.Frida提供了一个名为“ FridaGadget.dylib ” 的动态库，可用于在非越狱设备上测试新开发的应用程序。The Mach-O (iOS binary format) binary structure:  /usr/include/mach-o/*.hBefor...&hellip;</p>
+      <div class="post-list__meta">        
+        <time datetime="2017-12-13 00:00:00 +0800" class="post-list__meta--date date">
+          <img src="/images/calendar.png" width="20px" /> 
+          2017-12-13</time> 
+        <div class = "tag-img-icon">
+          <img src="/images/tag-icon.svg" width="20px" /> 
+        </div>
+        <a href="/tags">
+          <div class = "post-list-icon-mate">
+            <span class="post-list__meta--tags-right">iOSre</span>
+          </div>
+          <div class = "post-list-small-mate">
+          <a class="btn-border-small" href=/2017/12/frida/>阅读全文 » </a>
+          </div>
+      </div>
+      <hr class="post-list__divider" />
+    </li>
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2017/01/iOS_Wifilist/" title="访问 the static analysis of iOS application">the static analysis of iOS application</a></h2>
+      <p class="excerpt">前言　　使用iNalyzer进行静态分析并不适合头文件很多的app，因为头文件很多的话，就会导致大量的图表等分析文件，很消耗资源，这种情况可考虑使用hopper进行静态分析。Running dot for graph 1175/42806-rw-r--r--@ 1 devzkn  staff  47328989 Dec 10 13:35 static_2017_12_10-13_33_12.zip开篇就讲iNalyzer，是因为iNalyzer 能明显体现出静态分析的流程特点，以及它的安装...&hellip;</p>
+      <div class="post-list__meta">        
+        <time datetime="2017-01-03 00:00:00 +0800" class="post-list__meta--date date">
+          <img src="/images/calendar.png" width="20px" /> 
+          2017-01-03</time> 
+        <div class = "tag-img-icon">
+          <img src="/images/tag-icon.svg" width="20px" /> 
+        </div>
+        <a href="/tags">
+          <div class = "post-list-icon-mate">
+            <span class="post-list__meta--tags-right">iOSre</span>
+          </div>
+          <div class = "post-list-small-mate">
+          <a class="btn-border-small" href=/2017/01/iOS_Wifilist/>阅读全文 » </a>
+          </div>
+      </div>
+      <hr class="post-list__divider" />
+    </li>
+    
+  </ol>
+
+  <hr class="post-list__divider " />
+
+<nav class="pagination" role="navigation">
+
+	<!-- 百度搜索 
+    <script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=5841224908133801750' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();</script>-->
+
+	
+    
+        <a class="newer-posts pagination__newer btn btn-small btn-tertiary" href="/#blog">&larr; 最近</a>
+    
+    <span class="pagination__page-number">2 / 2</span>
+    
+
+    
+
+</nav>
+
+
+
+
+   <div class="timeline-item-tags g-col g-row fl-none ff-row-wrap">
+            <span class="post-tag">ios</span>
+            <span class="post-tag">reverse-engineering</span>
+    </div>
+
+
+</div>
+
+            <section class="footer">
+    <footer>
+        <div class = "footer_div">  
+        <nav class="cover-navigation navigation--social">
+          <ul class="navigation">
+
+          
+          <!-- Weibo -->
+          <li class="navigation__item_social">
+            <a href="http://weibo.com/602056727" title="@602056727 的微博" target="_blank">
+              <i class='social fa fa-weibo fa-2x'></i>
+              <span class="label">Weibo</span>
+            </a>
+          </li>
+          
+
+          
+          <!-- Github -->
+          <li class="navigation__item_social">
+            <a href="https://github.com/zhangkn" title="@zhangkn 的 Github" target="_blank">
+              <i class='social fa fa-github fa-2x'></i>
+              <span class="label">Github</span>
+            </a>
+          </li>
+          
+          
+          
+          <!-- Twitter -->
+          <li class="navigation__item_social">
+            <a href="http://twitter.com/zhangkunnan" title="@zhangkunnan" target="_blank">
+              <i class='social fa fa-twitter fa-2x'></i>
+              <span class="label">Twitter</span>
+            </a>
+          </li>
+          
+
+          
+          <!-- Google Plus -->
+          <li class="navigation__item_social">
+            <a href="https://plus.google.com/114188876079505437133" rel="author" title="Google+" target="_blank">
+              <i class='social fa fa-google-plus-square fa-2x'></i>
+              <span class="label">Google Plus</span>
+            </a>
+          </li>
+          
+
+          <!-- RSS -->
+          <li class="navigation__item_social">
+            <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+              <i class='social fa fa-rss fa-2x'></i>
+              <span class="label">RSS</span>
+            </a>
+          </li>
+
+          
+          <!-- Email -->
+          <li class="navigation__item_social">
+            <a href="mailto:zhang_kn@icloud.com" title="Contact me">
+              <i class='social fa fa-envelope fa-2x'></i>
+              <span class="label">Email</span>
+            </a>
+          </li>
+          
+
+
+         
+
+          <!-- linkedin  medium start 
+        <div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="zh_CN" data-type="vertical" data-theme="light" data-vanity="iosre"><a class="LI-simple-link" href='https://cn.linkedin.com/in/iosre?trk=profile-badge'>张坤楠</a></div>
+linkedin  medium end  -->
+
+
+
+
+
+          </ul>
+        </nav>
+
+        </div>
+
+        <div class = "footer_div"  itemscope itemtype="https://schema.org/BlogPosting" >  
+           <p class="copyright text-muted"  itemprop="author">
+
+            Copyright &copy; ReverseEngineering 2018 Theme by <a href="http://localhost:4000">kn</a> |
+            <iframe  itemprop="image"
+                style="margin-left: 2px; margin-bottom:-5px;"
+                frameborder="0" scrolling="0" width="170px" height="20px"
+                src="https://ghbtns.com/github-btn.html?user=zhangkn&repo=zhangkn.github.io&type=star&count=true" >
+            </iframe>
+
+            <iframe 
+            style="margin-left: 2px; margin-bottom:-5px;"
+            src="https://ghbtns.com/github-btn.html?user=zhangkn&repo=zhangkn.github.io&type=watch&count=true&v=2" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+
+            <iframe
+            style="margin-left: 2px; margin-bottom:-5px;"
+             src="https://ghbtns.com/github-btn.html?user=zhangkn&type=follow&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+
+             <wb:follow-button uid="2939794294" type="red_2" width="136" height="24" scrolling="0"  style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" ></wb:follow-button>
+
+             <iframe width="100%" height="500"  frameborder="0" scrolling="no" src="https://widget.weibo.com/livestream/listlive.php?language=zh_cn&width=0&height=500&uid=5934185471&skin=1&refer=1&appkey=3233061066&pic=0&titlebar=1&border=1&publish=1&atalk=1&recomm=0&at=0&atopic=iOS%E9%80%86%E5%90%91&ptopic=iOS%E9%80%86%E5%90%91&dpc=1"></iframe>
+
+
+            
+
+
+            </p>
+        	<div align="right">
+    			<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+          <!-- 访问统计 -->
+          <span id="busuanzi_container_site_pv">
+            本站总访问量
+            <span id="busuanzi_value_site_pv"></span>次
+          </span>
+
+        </div>
+        <div>
+
+
+
+    </footer>
+</section>
+
+                
+	<!-- google搜索  content-play -->
+<section class="ces">
+<!--  自己申请的ces-->
+<!--<script> 
+  (function() {
+    var cx = '013483152311799686538:__rsnolmpao';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+-->
+<!-- ad ces-->
+<script>
+  (function() {
+    var cx = 'partner-pub-5776998009494842:2886811629';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:searchbox-only></gcse:searchbox-only>
+
+
+<script type="text/javascript" src="https://www.google.com/cse/query_renderer.js"></script>
+<div id="queries"></div>
+<script src="https://www.google.com/cse/api/partner-pub-5776998009494842/cse/2886811629/queries/js?oe=UTF-8&amp;callback=(new+PopularQueryRenderer(document.getElementById(%22queries%22))).render"></script>
+
+
+
+<nav class="animated">
+  <ul>
+  
+    <li>
+      <form class="search" method="get" action="https://www.google.com/search">
+        <div>
+          <input type="text" id="search" name="q" placeholder="站内搜索">
+        </div>
+      </form>
+    </li>
+</nav>
+
+
+
+
+
+</section>
+
+<!--  20171212 新增-->
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+
+<script type="text/javascript" src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+ done = false;
+ $('form.search').on('submit', function (event) {
+    if (false === done) {
+      event.preventDefault();
+      var orgVal = $(this).find('#search').val();
+      $(this).find('#search').val('site:http://localhost:4000 ' + orgVal);
+      done = true;
+      $(this).submit();
+    }
+  });
+
+});
+
+</script>
+<!-- 微博 分享按钮-->
+<script src="https://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+
+
+
+    
+<div class="bdsharebuttonbox" data-tag="share_1">
+	<a class="bds_mshare" data-cmd="mshare"></a>
+	<a class="bds_qzone" data-cmd="qzone" href="#"></a>
+	<a class="bds_tsina" data-cmd="tsina"></a>
+	<a class="bds_baidu" data-cmd="baidu"></a>
+	<a class="bds_renren" data-cmd="renren"></a>
+	<a class="bds_tqq" data-cmd="tqq"></a>
+	<a class="bds_more" data-cmd="more">更多</a>
+	<a class="bds_count" data-cmd="count"></a>
+</div>
+<script>window._bd_share_config={selectShare:[{"bdselectMiniList":['qzone','tqq','twi','bdxc','tqf','fbook','weixin']}],"common":{"bdSnsKey":{"tsina":"apachecn","tqq":"apachecn","t163":"apachecn","tsohu":"apachecn"},"bdDesc":" 原文:","bdText":" 原文：","bdMini":"2","bdMiniList":["mshare","sqq","weixin","tsina","qzone","tqq","youdao","evernotecn","fbook","twi","linkedin","douban","bdysc","tieba","ty","mail"],"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"6","bdPos":"right","bdTop":"277"},"image":{"viewList":["qzone","tsina","tqq","twi","weixin","fbook"],"viewText":"分享到：","viewSize":"16"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+    
+  </body>
+
+</html>
